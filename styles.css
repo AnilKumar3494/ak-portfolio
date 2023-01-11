@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
 :root {
   --bg-black-900: #f2f2fc;
   --bg-black-100: #fdf9ff;
@@ -17,8 +21,8 @@ body.dark {
 
 body {
   line-height: 1.5;
-  font-size: 16px;
-  font-family: "Poppins";
+  font-size: 1rem;
+  font-family: "Rubik";
 }
 
 * {
@@ -41,14 +45,8 @@ ul {
   background: var(--bg-black-900);
   min-height: 100vh;
   display: block;
-  padding: 0 30px;
+  padding: 0 2rem;
 
-  /* position: fixed;
-    left: 270px;
-    top: 0;
-    right: 0;
-
-    z-index: 0; */
   opacity: 1;
 }
 .main_content {
@@ -71,17 +69,16 @@ ul {
 /* section css */
 
 .section .container {
-  padding-top: 60px;
-  padding-bottom: 70px;
+  padding-top: 5rem;
 }
 .section_title {
   flex: 0 0 100%;
   max-width: 100%;
-  margin-bottom: 60px;
+  margin-bottom: 4rem;
 }
 
 .section_title h2 {
-  font-size: 40px;
+  font-size: 2.5rem;
   color: var(--text-black-900);
   font-weight: 800;
   position: relative;
@@ -109,12 +106,12 @@ ul {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -15px;
-  margin-right: -15px;
+  margin-left: -1rem;
+  margin-right: -1rem;
   position: relative;
 }
 .btn {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   padding: 12px 35px;
   color: azure;
@@ -240,17 +237,18 @@ ul {
 }
 
 h3.hello {
-  font-size: 32px;
+  font-size: 2rem;
   margin: 15px 0;
+  font-weight: 600;
 }
 h3.hello span {
   font-family: "Clicker Script";
-  font-size: 45px;
+  font-size: 2.8rem;
   font-weight: 800;
   color: var(--skin-color);
 }
 h3.my_profession {
-  font-size: 30px;
+  font-size: 1.8rem;
   margin: 15px 0;
 }
 .typing {
@@ -258,7 +256,7 @@ h3.my_profession {
 }
 .home .home_info p {
   margin-bottom: 60px;
-  font-size: 20px;
+  font-size: 1.5rem;
   text-align: justify;
   color: var(--text-black-700);
 }
@@ -311,7 +309,7 @@ h3.my_profession {
   max-width: 100%;
 }
 .about .about_content .about_text h3 {
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-bottom: 15px;
   font-weight: 800;
   color: var(--text-black-900);
@@ -320,9 +318,9 @@ h3.my_profession {
   color: var(--skin-color);
 }
 .about .about_content .about_text p {
-  font-size: 16px;
+  font-size: 1rem;
   text-align: justify;
-  line-height: 25px;
+  line-height: 1.5;
   color: var(--text-black-700);
 }
 
@@ -338,7 +336,7 @@ h3.my_profession {
 .about .about_content .personal_info .info_item p {
   font-weight: 600;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--text-black-900);
   border-bottom: 1px solid var(--bg-black-50);
 }
@@ -365,7 +363,7 @@ h3.my_profession {
   margin-bottom: 20px;
 }
 .about .about_content .skills .skill_items h5 {
-  line-height: 40px;
+  line-height: 1.5;
   font-weight: 600;
   font-size: 16px;
   color: var(--text-black-900);
@@ -414,6 +412,8 @@ h3.my_profession {
 .about .about_content .timeline_box .timeline {
   background-color: var(--bg-black-100);
   padding: 30px 15px;
+
+  border: 1px solid var(--bg-black-50);
   border-radius: 10px;
   width: 100%;
   position: relative;
@@ -456,14 +456,14 @@ h3.my_profession {
 }
 .about .about_content .timeline .timeline_item .timeline_title {
   font-weight: 800;
-  font-size: 18px;
+  font-size: 1.3rem;
   margin-bottom: 15px;
   text-transform: capitalize;
   color: var(--text-black-900);
 }
 .about .about_content .timeline .timeline_item .timeline_text {
-  line-height: 25px;
-  font-size: 16px;
+  line-height: 1.5;
+  font-size: 1rem;
   text-align: justify;
   color: var(--text-black-700);
 }
@@ -497,7 +497,7 @@ h3.my_profession {
   transition: all 0.3s ease;
 }
 .service .service_item .service_item_inner .icon .fa {
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 60px;
   color: var(--skin-color);
 }
@@ -508,15 +508,15 @@ h3.my_profession {
   color: azure;
 }
 .service .service_item .service_item_inner h4 {
-  margin-bottom: 15px;
-  font-size: 18px;
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
   color: var(--text-black-900);
-  font-weight: 800;
+  font-weight: 600;
 }
 .service .service_item .service_item_inner p {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--text-black-700);
-  line-height: 25px;
+  line-height: 1.5;
 }
 
 /* portfolio */
@@ -544,7 +544,7 @@ h3.my_profession {
   cursor: pointer;
 }
 .portfolio .portfolio_item .portfolio_item_inner h4 {
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: 600;
   color: var(--skin-color);
   margin: 10px auto 20px;
@@ -555,7 +555,7 @@ h3.my_profession {
 }
 
 .portfolio .portfolio_item .portfolio_item_inner p {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--text-black-700);
   text-align: justify;
   line-height: 25px;
@@ -566,7 +566,7 @@ h3.my_profession {
 .contact .contact_text {
   flex: 0 0 100%;
   max-width: 100%;
-  font-size: 24px;
+  font-size: 1.7rem;
   font-weight: 600;
   color: var(--text-black-900);
   margin-bottom: 30px;
@@ -591,7 +591,7 @@ h3.my_profession {
 }
 
 .contact .contact_item .contact_item_inner .fa {
-  font-size: 24px;
+  font-size: 2rem;
   color: var(--skin-color);
   margin-bottom: 20px;
   cursor: pointer;
@@ -599,6 +599,7 @@ h3.my_profession {
 .contact .contact_item .contact_item_inner h4,
 .contact .contact_item .contact_item_inner h4 a {
   color: var(--text-black-900);
+  font-size: 1.6rem;
   font-weight: 800;
   margin-bottom: 10px;
 }
@@ -606,8 +607,8 @@ h3.my_profession {
 .contact .contact_item .contact_item_inner p,
 .contact .contact_item .contact_item_inner p a {
   color: var(--text-black-700);
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 1rem;
+  line-height: 1.5;
   transition: all 0.2s ease;
 }
 
@@ -625,7 +626,7 @@ h3.my_profession {
 .contact .reach_out h2 {
   color: var(--text-black-900);
   font-weight: 800;
-  font-size: 24px;
+  font-size: 1.7rem;
   margin-bottom: 20px;
 }
 
@@ -654,7 +655,7 @@ h3.my_profession {
   background: var(--bg-black-100);
   border: 2px solid var(--bg-black-50);
   padding: 10px 15px;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--text-black-700);
   transition: all 0.3s ease;
 }
@@ -667,7 +668,7 @@ h3.my_profession {
 .contact .contact_form .form_item .text_area {
   height: 140px;
   padding: 10px 15px;
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--text-black-700);
 }
 
@@ -683,7 +684,7 @@ h3.my_profession {
   .aside {
     position: fixed;
     top: 0;
-    height: 10%;
+    height: 10vh;
     width: 100%;
 
     opacity: 0.5;
@@ -752,7 +753,7 @@ h3.my_profession {
   .aside .nav {
     position: absolute;
     top: 10vh;
-    left: -100%;
+    left: -200%;
 
     text-align: center;
     margin: 0px;
@@ -782,6 +783,11 @@ h3.my_profession {
     align-items: center;
 
     transition: all 0.3s linear;
+  }
+  .aside .nav li a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-black-900);
   }
 
   /* nav_toggler */
@@ -839,6 +845,12 @@ h3.my_profession {
 }
 
 @media (max-width: 624px) {
+  .home .home_info p,
+  .about .about_content .about_text p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
   .contact .contact_item {
     flex: 0 0 100%;
     max-width: 100%;
@@ -846,5 +858,13 @@ h3.my_profession {
   .about .about_content .personal_info .info_item {
     flex: 0 0 70%;
     max-width: 70%;
+  }
+}
+
+@media (max-width: 440px) {
+  .aside .nav li a {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-black-900);
   }
 }
