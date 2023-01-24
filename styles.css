@@ -50,7 +50,7 @@ ul {
   opacity: 1;
 }
 .main_content {
-  margin-left: 21%;
+  margin-left: 18%;
 }
 .hidden {
   display: none !important;
@@ -232,8 +232,11 @@ ul {
 }
 
 .home .home_info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
   flex: 0 0 100%;
-  max-width: 100%;
 }
 
 h3.hello {
