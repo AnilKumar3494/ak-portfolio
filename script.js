@@ -14,3 +14,12 @@ let nav_itemEL = document.querySelector("#nav_item");
 function selected() {
   nav_itemEL.classList.toggle("active");
 }
+
+const activePage = window.location.pathname;
+const navLinksEl = document
+  .querySelectorAll(".aside .nav li a")
+  .forEach((link) => {
+    if (link.href.includes(`${activePage}`)) {
+      link.classList.add("active");
+    }
+  });

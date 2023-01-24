@@ -55,560 +55,579 @@
   </head>
 
   <body class="dark">
-    <main class="main_container">
-      <div class="aside">
-        <div class="logo">
-          <a href="#">AK</a>
-        </div>
-        <div class="nav_toggler" onclick="asideNavBar()">
-          <span></span>
-        </div>
-        <ul class="nav" id="nav_list">
-          <li>
-            <a href="#home" onclick="selected()" id="nav_item"
-              ><i class="fa fa-home"></i> Home</a
-            >
-          </li>
-          <li>
-            <a href="#about" onclick="selected()" id="nav_item"
-              ><i class="fa fa-user"></i> About</a
-            >
-          </li>
-          <li>
-            <a href="#services" onclick="selected()" id="nav_item"
-              ><i class="fa fa-list"></i> Services</a
-            >
-          </li>
-          <li>
-            <a href="#portfolio" onclick="selected()" id="nav_item"
-              ><i class="fa fa-briefcase"></i> Portfolio</a
-            >
-          </li>
-          <li>
-            <a href="#contact" onclick="selected()" id="nav_item"
-              ><i class="fa fa-comments"></i> Contact</a
-            >
-          </li>
-        </ul>
+    <div class="aside">
+      <div class="logo">
+        <a href="#">AK</a>
       </div>
+      <div class="nav_toggler" onclick="asideNavBar()">
+        <span></span>
+      </div>
+      <ul class="nav" id="nav_list">
+        <li>
+          <a href="#home"><i class="fa fa-home"></i> Home</a>
+        </li>
+        <li>
+          <a href="#about"><i class="fa fa-user"></i> About</a>
+        </li>
+        <li>
+          <a href="#services"><i class="fa fa-list"></i> Services</a>
+        </li>
+        <li>
+          <a href="#portfolio"><i class="fa fa-briefcase"></i> Portfolio</a>
+        </li>
+        <li>
+          <a href="#contact"><i class="fa fa-comments"></i> Contact</a>
+        </li>
+      </ul>
+    </div>
+    <main class="main_content">
+      <section class="home section" id="home">
+        <div class="container">
+          <div class="row">
+            <div class="home_info padd_15">
+              <h3 class="hello">
+                Hello, my name is <span class="name">Anil Kumar</span>
+              </h3>
+              <h3 class="my_profession">
+                I'm a <span class="typing">Web Developer</span>
+              </h3>
+              <p>
+                As a professional web developer and content writer, I have
+                coupled web development expertise with the ability to generate
+                appealing, engaging, and instructive material for websites. My
+                expertise in HTML, CSS, and JavaScript enables me to design and
+                develop websites, while my writing talents enable me to generate
+                blog entries, product descriptions, and other material that
+                attracts and retains visitors. I ensure that the website is
+                aesthetically beautiful, user-friendly, and search engine
+                optimised, while simultaneously providing users with important
+                content.
+              </p>
+              <a href="#contact" class="btn hire_me">Hire Me</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <div class="main_content">
-        <section class="home section" id="home">
-          <div class="container">
-            <div class="row">
-              <div class="home_info padd_15">
-                <h3 class="hello">
-                  Hello, my name is <span class="name">Anil Kumar</span>
-                </h3>
-                <h3 class="my_profession">
-                  I'm a <span class="typing">Web Developer</span>
-                </h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Perferendis, cumque tenetur ratione facilis libero culpa
-                  dolorem atque qui ullam at rerum. Rem asperiores nesciunt,
-                  eius accusantium architecto quisquam. Temporibus, a!
+      <section class="about section" id="about">
+        <div class="container">
+          <div class="row">
+            <div class="section_title padd_15">
+              <h2>About Me</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="about_content padd_15">
+              <div class="row">
+                <div class="about_text padd_15">
+                  <h3>I'm Anil kumar a <span>Web Developer</span></h3>
+                  <p>
+                    As a web developer, I have a solid grasp of web development
+                    technologies and markup languages, covering HTML, CSS,
+                    JavaScript, and associated frameworks. I have expertise
+                    in designing and maintaining websites, and I can design and
+                    execute aesthetically appealing, search engine optimized,
+                    and user-friendly interfaces. I have a keen eye for detail
+                    and the ability to debug and troubleshoot programmes. In
+                    addition, I am adept at working in a team atmosphere and
+                    communicating well with clients and other stakeholders.
+                  </p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="personal_info padd_15">
+                  <h3 class="title">Personal Information</h3>
+                  <div class="row">
+                    <div class="info_item padd_15">
+                      <p>Birthday <span>19 December 2000</span></p>
+                    </div>
+                    <div class="info_item padd_15">
+                      <p>Age <span>22</span></p>
+                    </div>
+                    <div class="info_item padd_15">
+                      <p>Email <span>karapaanilkumar005@gmail.com</span></p>
+                    </div>
+                    <div class="info_item padd_15">
+                      <p>Degree <span>B.Tech in ECE</span></p>
+                    </div>
+                    <div class="info_item padd_15">
+                      <p>Phone <span>+91 9492661973</span></p>
+                    </div>
+                    <div class="info_item padd_15">
+                      <p>City <span>Vizag</span></p>
+                    </div>
+                    <div class="info_item padd_15">
+                      <p>Open to new Jobs: <span>Yes</span></p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="buttons padd_15">
+                      <a
+                        href="https://drive.google.com/file/d/1jUavvmxQoUSeFljtySBnCBOnAtQQM7-U/view?usp=sharing"
+                        target="_blank"
+                        class="btn"
+                        >Download CV</a
+                      >
+                      <a href="#contact" class="btn hire_me">Hire Me</a>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="skills padd_15">
+                  <h3 class="title">Skills</h3>
+                  <div class="row">
+                    <div class="skill_items padd_15">
+                      <h5>HTML</h5>
+                      <div class="progress">
+                        <div class="progress_in" style="width: 95%"></div>
+                        <div class="skill_percent">95%</div>
+                      </div>
+                    </div>
+
+                    <div class="skill_items padd_15">
+                      <h5>Java</h5>
+                      <div class="progress">
+                        <div class="progress_in" style="width: 80%"></div>
+                        <div class="skill_percent">80%</div>
+                      </div>
+                    </div>
+
+                    <div class="skill_items padd_15">
+                      <h5>CSS</h5>
+                      <div class="progress">
+                        <div class="progress_in" style="width: 76%"></div>
+                        <div class="skill_percent">76%</div>
+                      </div>
+                    </div>
+
+                    <div class="skill_items padd_15">
+                      <h5>MySQL</h5>
+                      <div class="progress">
+                        <div class="progress_in" style="width: 70%"></div>
+                        <div class="skill_percent">70%</div>
+                      </div>
+                    </div>
+
+                    <div class="skill_items padd_15">
+                      <h5>Js</h5>
+                      <div class="progress">
+                        <div class="progress_in" style="width: 70%"></div>
+                        <div class="skill_percent">70%</div>
+                      </div>
+                    </div>
+
+                    <div class="skill_items padd_15">
+                      <h5>GCP</h5>
+                      <div class="progress">
+                        <div class="progress_in" style="width: 40%"></div>
+                        <div class="skill_percent">40%</div>
+                      </div>
+                    </div>
+
+                    <div class="skill_items padd_15">
+                      <h5>Angular</h5>
+                      <div class="progress">
+                        <div class="progress_in" style="width: 50%"></div>
+                        <div class="skill_percent">50%</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="education padd_15">
+                  <h3 class="title">Education</h3>
+                  <div class="row">
+                    <div class="timeline_box padd_15">
+                      <div class="timeline shadow_dark">
+                        <div class="timeline_item">
+                          <div class="circle_dot"></div>
+                          <h3 class="timeline_date">
+                            <i class="fa fa-calendar"></i> 2018 - 2022
+                          </h3>
+                          <h4 class="timeline_title">Bachelor's in ECE</h4>
+                          <p class="timeline_text">
+                            Despite being in ECE, I learned and developed
+                            various skills in the field of Computer Science.
+                          </p>
+                        </div>
+
+                        <div class="timeline_item">
+                          <div class="circle_dot"></div>
+                          <h3 class="timeline_date">
+                            <i class="fa fa-calendar"></i> 2016 - 2018
+                          </h3>
+                          <h4 class="timeline_title">12th Intermediate</h4>
+                          <p class="timeline_text">MPC with a 94.5%</p>
+                        </div>
+
+                        <div class="timeline_item">
+                          <div class="circle_dot"></div>
+                          <h3 class="timeline_date">
+                            <i class="fa fa-calendar"></i> 2016
+                          </h3>
+                          <h4 class="timeline_title">10th SCC</h4>
+                          <p class="timeline_text">SSC with 9.5GPA</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="experience padd_15">
+                  <h3 class="title">Experience</h3>
+                  <div class="row">
+                    <div class="timeline_box padd_15">
+                      <div class="timeline shadow_dark">
+                        <div class="timeline_item">
+                          <div class="circle_dot"></div>
+                          <h3 class="timeline_date">
+                            <i class="fa fa-calendar"></i> September-2022 to
+                            Present
+                          </h3>
+                          <h4 class="timeline_title">Wipro Project Engineer</h4>
+                          <p class="timeline_text">
+                            Front-end and back-end technologies were learned.
+                            Worked on HTML, CSS, Angular, Hibernate, and
+                            Springboot. Built an online bus reservation system
+                            as a group project.
+                            <br /><br />
+                            Learned the basics of Google Cloud: hosting WebApp,
+                            GKE cluster, load balancing, and cloud storage. and
+                            used GCP to host and deploy cloud applications for
+                            different projects.
+                          </p>
+                        </div>
+
+                        <div class="timeline_item">
+                          <div class="circle_dot"></div>
+                          <h3 class="timeline_date">
+                            <i class="fa fa-calendar"></i> August-2022 to
+                            September-2022
+                          </h3>
+                          <h4 class="timeline_title">
+                            Olive Crypto System - Java Developer
+                          </h4>
+                          <p class="timeline_text">
+                            Developed a desktop application for a banking
+                            management system using Java and RDBMS. Implemented
+                            the SpringBoot, SpringBootJPA, and Hibernate
+                            frameworks. Learned about different payment methods
+                            and payment gateways.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="service section" id="services">
+        <div class="container">
+          <div class="row">
+            <div class="section_title padd_15">
+              <h2>Services</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="service_item padd_15">
+              <div class="service_item_inner">
+                <div class="icon">
+                  <i class="fa fa-mobile-alt"></i>
+                </div>
+                <h4>Responsive WebDesign</h4>
+              </div>
+            </div>
+
+            <div class="service_item padd_15">
+              <div class="service_item_inner">
+                <div class="icon">
+                  <i class="fa fa-laptop-code"></i>
+                </div>
+                <h4>Java Developer</h4>
+              </div>
+            </div>
+
+            <div class="service_item padd_15">
+              <div class="service_item_inner">
+                <div class="icon">
+                  <i class="fa fa-code"></i>
+                </div>
+                <h4>Web Development</h4>
+              </div>
+            </div>
+
+            <div class="service_item padd_15">
+              <div class="service_item_inner">
+                <div class="icon">
+                  <i class="fa fa-solid fa-keyboard"></i>
+                </div>
+                <h4>Technical Content Writer</h4>
+              </div>
+            </div>
+
+            <div class="service_item padd_15">
+              <div class="service_item_inner">
+                <div class="icon">
+                  <i class="fa fa-solid fa-camera-retro"></i>
+                </div>
+                <h4>Photography</h4>
+              </div>
+            </div>
+
+            <div class="service_item padd_15">
+              <div class="service_item_inner">
+                <div class="icon">
+                  <i class="fa fa-palette"></i>
+                </div>
+                <h4>Photo Editing</h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolio section" id="portfolio">
+        <div class="container">
+          <div class="row">
+            <div class="section_title padd_15">
+              <h2>Portfolio</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="portfolio_heading padd_15">
+              <h2>My Projects</h2>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="portfolio_item">
+              <div class="portfolio_item_inner shadow_dark">
+                <h4 class="padd_15">Bus Reservation System</h4>
+                <p class="padd_15">
+                  In today's bus transportation industry, many private bus
+                  transportation companies use the old method of handling work
+                  on paper, which seems to be costly and time-consuming. It is
+                  also not assured that all transactions will be error-free,
+                  which may result in many computation errors in bill production
+                  and pricing. The solution to this challenge is to develop an
+                  online bus ticket booking system. Customers may purchase
+                  tickets online and the bus ticket cannot be lost, stolen, or
+                  left behind. Furthermore, the online system allows clients to
+                  verify the availability of bus tickets before purchasing them
+                  and clients do not need to pay cash for bus tickets since they
+                  may pay for them while going.
                 </p>
-                <a href="#contact" class="btn hire_me">Hire Me</a>
+                <p class="padd_15">
+                  <br />
+                  <span>Programming Languages Used:</span> Springboot,
+                  Angular13, CSS3, HTML5, JSP, JPA.
+                </p>
               </div>
-              <div class="home_img padd_15">
-                <img src="IMG-20220512-WA0028.jpg" alt="my_pic" />
+            </div>
+
+            <div class="portfolio_item">
+              <div class="portfolio_item_inner shadow_dark">
+                <h4 class="padd_15">Bank Management System</h4>
+                <p class="padd_15">
+                  Bank Management System is a desktop-based Java application
+                  that functions similarly to an ATM. For new users, it can
+                  create an ATM card number and PIN, while existing users may
+                  deposit and withdraw money utilising options such as quick
+                  fast-cash and withdraw. Clients may also review their
+                  transactions and get a mini-statement.
+                </p>
+                <p class="padd_15">
+                  <br />
+                  <span>Programming Languages Used:</span> Java, MySQL
+                </p>
+              </div>
+            </div>
+
+            <div class="portfolio_item">
+              <div class="portfolio_item_inner shadow_dark">
+                <h4 class="padd_15">Simple Website</h4>
+                <p class="padd_15">
+                  It is a simple website designed using HTML, CSS, and JS. It
+                  displays information about a company and lets the user to get
+                  in contact with them via different social media platforms.
+                </p>
+                <p class="padd_15">
+                  <br />
+                  <span>Programming Languages Used:</span> HTML5, CSS3, JS
+                </p>
+              </div>
+            </div>
+
+            <div class="portfolio_item">
+              <div class="portfolio_item_inner shadow_dark">
+                <h4 class="padd_15">Imaginnovate Home Page</h4>
+                <p class="padd_15">
+                  I designed a resposive home page using HTML, CSS and JS for
+                  Imaginnovate.
+                </p>
+                <p class="padd_15">
+                  <br />
+                  <span>Programming Languages Used:</span> HTML5, CSS3, JS
+                </p>
+              </div>
+            </div>
+
+            <div class="portfolio_item">
+              <div class="portfolio_item_inner shadow_dark">
+                <h4 class="padd_15">e-commerce website</h4>
+                <p class="padd_15">
+                  It is an online shopping platform where clients can order
+                  clothes.
+                </p>
+                <p class="padd_15">
+                  <br />
+                  <span>Programming Languages Used:</span> HTML5, CSS3, JS
+                </p>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="about section" id="about">
-          <div class="container">
-            <div class="row">
-              <div class="section_title padd_15">
-                <h2>About Me</h2>
+      <section class="contact section" id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="section_title padd_15">
+              <h2>Contact Me</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="contact_text padd_15">
+              <p>Feel Free to Reach Out to Me</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="contact_item padd_15">
+              <div class="contact_item_inner shadow_dark">
+                <div class="icon"><i class="fa fa-phone"></i></div>
+                <h4>Call me at:</h4>
+                <p>9492661973</p>
               </div>
             </div>
 
-            <div class="row">
-              <div class="about_content padd_15">
-                <div class="row">
-                  <div class="about_text padd_15">
-                    <h3>I'm Anil kumar a <span>Web Developer</span></h3>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Nam voluptatibus repudiandae consequatur debitis ad, hic
-                      sunt aliquam, ab necessitatibus vel autem quidem
-                      exercitationem dicta laborum optio error accusamus dolore
-                      tempore a soluta? Vero rerum minus debitis impedit
-                      consequuntur? Est dicta praesentium eius hic quidem magni
-                      sit illum optio quae nisi?
-                    </p>
+            <div class="contact_item padd_15">
+              <div class="contact_item_inner shadow_dark">
+                <div class="icon"><i class="fa fa-envelope"></i></div>
+                <h4>Email me at:</h4>
+                <p>karapaanilkumar005@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="contact_item padd_15 flex_100">
+              <div class="contact_item_inner shadow_dark">
+                <div class="icon">
+                  <i class="fa fa-brands fa-linkedin"></i>
+                </div>
+                <h4>
+                  <a
+                    href="https://www.linkedin.com/in/anil-kumar-karapa/"
+                    target="_blank"
+                    >LinkedIn:</a
+                  >
+                </h4>
+                <p>
+                  <a
+                    href="https://www.linkedin.com/in/anil-kumar-karapa/"
+                    target="_blank"
+                    >https://www.linkedin.com/in/anil-kumar-karapa/</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="contact_item padd_15 flex_100">
+              <div class="contact_item_inner shadow_dark">
+                <div class="icon">
+                  <i class="fa fa-brands fa-whatsapp"></i>
+                </div>
+                <h4>
+                  <a href="https://wa.me/qr/BIQYYQQNSQUDN1" target="_blank"
+                    >WhatsApp:</a
+                  >
+                </h4>
+                <p>
+                  <a href="https://wa.me/qr/BIQYYQQNSQUDN1" target="_blank"
+                    >https://wa.me/qr/BIQYYQQNSQUDN1</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="reach_out padd_15">
+              <h2>Send Your Thoughts</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="contact_form padd_15">
+              <div class="row">
+                <div class="form_item col_6 padd_15">
+                  <div class="form_group">
+                    <input
+                      type="text"
+                      class="form_control"
+                      placeholder="Name"
+                    />
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="personal_info padd_15">
-                    <h3 class="title">Personal Information</h3>
-                    <div class="row">
-                      <div class="info_item padd_15">
-                        <p>Birthday <span>19 December 2000</span></p>
-                      </div>
-                      <div class="info_item padd_15">
-                        <p>Age <span>22</span></p>
-                      </div>
-                      <div class="info_item padd_15">
-                        <p>Email <span>karapaanilkumar005@gmail.com</span></p>
-                      </div>
-                      <div class="info_item padd_15">
-                        <p>Degree <span>B.Tech in ECE</span></p>
-                      </div>
-                      <div class="info_item padd_15">
-                        <p>Phone <span>+91 9492661973</span></p>
-                      </div>
-                      <div class="info_item padd_15">
-                        <p>City <span>Vizag</span></p>
-                      </div>
-                      <div class="info_item padd_15">
-                        <p>Open to new Jobs: <span>Yes</span></p>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="buttons padd_15">
-                        <a
-                          href="https://drive.google.com/file/d/1jUavvmxQoUSeFljtySBnCBOnAtQQM7-U/view?usp=sharing"
-                          class="btn"
-                          >Download CV</a
-                        >
-                        <a href="#contact" class="btn hire_me">Hire Me</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="skills padd_15">
-                    <h3 class="title">Skills</h3>
-                    <div class="row">
-                      <div class="skill_items padd_15">
-                        <h5>HTML</h5>
-                        <div class="progress">
-                          <div class="progress_in" style="width: 95%"></div>
-                          <div class="skill_percent">95%</div>
-                        </div>
-                      </div>
-
-                      <div class="skill_items padd_15">
-                        <h5>Java</h5>
-                        <div class="progress">
-                          <div class="progress_in" style="width: 80%"></div>
-                          <div class="skill_percent">80%</div>
-                        </div>
-                      </div>
-
-                      <div class="skill_items padd_15">
-                        <h5>CSS</h5>
-                        <div class="progress">
-                          <div class="progress_in" style="width: 76%"></div>
-                          <div class="skill_percent">76%</div>
-                        </div>
-                      </div>
-
-                      <div class="skill_items padd_15">
-                        <h5>MySQL</h5>
-                        <div class="progress">
-                          <div class="progress_in" style="width: 70%"></div>
-                          <div class="skill_percent">70%</div>
-                        </div>
-                      </div>
-
-                      <div class="skill_items padd_15">
-                        <h5>Js</h5>
-                        <div class="progress">
-                          <div class="progress_in" style="width: 70%"></div>
-                          <div class="skill_percent">70%</div>
-                        </div>
-                      </div>
-
-                      <div class="skill_items padd_15">
-                        <h5>GCP</h5>
-                        <div class="progress">
-                          <div class="progress_in" style="width: 40%"></div>
-                          <div class="skill_percent">40%</div>
-                        </div>
-                      </div>
-
-                      <div class="skill_items padd_15">
-                        <h5>Angular</h5>
-                        <div class="progress">
-                          <div class="progress_in" style="width: 50%"></div>
-                          <div class="skill_percent">50%</div>
-                        </div>
-                      </div>
-                    </div>
+                <div class="form_item col_6 padd_15">
+                  <div class="form_group">
+                    <input
+                      type="email"
+                      class="form_control"
+                      placeholder="e-mail"
+                    />
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="education padd_15">
-                    <h3 class="title">Education</h3>
-                    <div class="row">
-                      <div class="timeline_box padd_15">
-                        <div class="timeline shadow_dark">
-                          <div class="timeline_item">
-                            <div class="circle_dot"></div>
-                            <h3 class="timeline_date">
-                              <i class="fa fa-calendar"></i> 2018 - 2022
-                            </h3>
-                            <h4 class="timeline_title">Bachelor's in ECE</h4>
-                            <p class="timeline_text">
-                              Despite being in ECE, I learned and developed
-                              various skills in the field of Computer Science.
-                            </p>
-                          </div>
-
-                          <div class="timeline_item">
-                            <div class="circle_dot"></div>
-                            <h3 class="timeline_date">
-                              <i class="fa fa-calendar"></i> 2016 - 2018
-                            </h3>
-                            <h4 class="timeline_title">12th Intermediate</h4>
-                            <p class="timeline_text">MPC with a 94.5%</p>
-                          </div>
-
-                          <div class="timeline_item">
-                            <div class="circle_dot"></div>
-                            <h3 class="timeline_date">
-                              <i class="fa fa-calendar"></i> 2016
-                            </h3>
-                            <h4 class="timeline_title">10th SCC</h4>
-                            <p class="timeline_text">SSC with 9.5GPA</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                <div class="form_item col_6 padd_15">
+                  <div class="form_group">
+                    <input
+                      type="text"
+                      class="form_control"
+                      placeholder="Subject"
+                    />
                   </div>
+                </div>
 
-                  <div class="experience padd_15">
-                    <h3 class="title">Experience</h3>
-                    <div class="row">
-                      <div class="timeline_box padd_15">
-                        <div class="timeline shadow_dark">
-                          <div class="timeline_item">
-                            <div class="circle_dot"></div>
-                            <h3 class="timeline_date">
-                              <i class="fa fa-calendar"></i> September-2022 to
-                              Present
-                            </h3>
-                            <h4 class="timeline_title">
-                              Wipro Project Engineer
-                            </h4>
-                            <p class="timeline_text">
-                              Front-end and back-end technologies were learned.
-                              Worked on HTML, CSS, Angular, Hibernate, and
-                              Springboot. Built an online bus reservation system
-                              as a group project.
-                              <br /><br />
-                              Learned the basics of Google Cloud: hosting
-                              WebApp, GKE cluster, load balancing, and cloud
-                              storage. and used GCP to host and deploy cloud
-                              applications for different projects.
-                            </p>
-                          </div>
+                <div class="form_item col_12 padd_15">
+                  <div class="form_group">
+                    <textarea
+                      name=""
+                      class="form_control text_area"
+                      id=""
+                      placeholder="Message"
+                    ></textarea>
+                  </div>
+                </div>
 
-                          <div class="timeline_item">
-                            <div class="circle_dot"></div>
-                            <h3 class="timeline_date">
-                              <i class="fa fa-calendar"></i> August-2022 to
-                              September-2022
-                            </h3>
-                            <h4 class="timeline_title">
-                              Olive Crypto System - Java Developer
-                            </h4>
-                            <p class="timeline_text">
-                              Developed a desktop application for a banking
-                              management system using Java and RDBMS.
-                              Implemented the SpringBoot, SpringBootJPA, and
-                              Hibernate frameworks. Learned about different
-                              payment methods and payment gateways.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                <div class="form_item col_12 padd_15">
+                  <div class="form_group">
+                    <button type="submit" class="btn">Send Message</button>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-
-        <section class="service section" id="services">
-          <div class="container">
-            <div class="row">
-              <div class="section_title padd_15">
-                <h2>Services</h2>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="service_item padd_15">
-                <div class="service_item_inner">
-                  <div class="icon">
-                    <i class="fa fa-mobile-alt"></i>
-                  </div>
-                  <h4>Responsive WebDesign</h4>
-                </div>
-              </div>
-
-              <div class="service_item padd_15">
-                <div class="service_item_inner">
-                  <div class="icon">
-                    <i class="fa fa-laptop-code"></i>
-                  </div>
-                  <h4>Java Developer</h4>
-                </div>
-              </div>
-
-              <div class="service_item padd_15">
-                <div class="service_item_inner">
-                  <div class="icon">
-                    <i class="fa fa-code"></i>
-                  </div>
-                  <h4>Web Development</h4>
-                </div>
-              </div>
-
-              <div class="service_item padd_15">
-                <div class="service_item_inner">
-                  <div class="icon">
-                    <i class="fa fa-solid fa-keyboard"></i>
-                  </div>
-                  <h4>Technical Content Writer</h4>
-                </div>
-              </div>
-
-              <div class="service_item padd_15">
-                <div class="service_item_inner">
-                  <div class="icon">
-                    <i class="fa fa-solid fa-camera-retro"></i>
-                  </div>
-                  <h4>Photography</h4>
-                </div>
-              </div>
-
-              <div class="service_item padd_15">
-                <div class="service_item_inner">
-                  <div class="icon">
-                    <i class="fa fa-palette"></i>
-                  </div>
-                  <h4>Photo Editing</h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="portfolio section" id="portfolio">
-          <div class="container">
-            <div class="row">
-              <div class="section_title padd_15">
-                <h2>Portfolio</h2>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="portfolio_heading padd_15">
-                <h2>My Projects</h2>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="portfolio_item padd_15">
-                <div class="portfolio_item_inner shadow_dark">
-                  <h4 class="padd_15">Bus Reservation System</h4>
-                  <p class="padd_15">
-                    In today's bus transportation industry, many private bus
-                    transportation companies use the old method of handling work
-                    on paper, which seems to be costly and time-consuming. It is
-                    also not assured that all transactions will be error-free,
-                    which may result in many computation errors in bill
-                    production and pricing. The solution to this challenge is to
-                    develop an online bus ticket booking system. Customers may
-                    purchase tickets online and the bus ticket cannot be lost,
-                    stolen, or left behind. Furthermore, the online system
-                    allows clients to verify the availability of bus tickets
-                    before purchasing them and clients do not need to pay cash
-                    for bus tickets since they may pay for them while going.
-                  </p>
-                  <p class="padd_15">
-                    <br />
-                    <span>Programming Languages Used:</span> Springboot,
-                    Angular13, CSS3, HTML5, JSP, JPA.
-                  </p>
-                </div>
-              </div>
-
-              <div class="portfolio_item padd_15">
-                <div class="portfolio_item_inner shadow_dark">
-                  <h4 class="padd_15">Bank Management System</h4>
-                  <p class="padd_15">
-                    Bank Management System is a desktop-based Java application
-                    that functions similarly to an ATM. For new users, it can
-                    create an ATM card number and PIN, while existing users may
-                    deposit and withdraw money utilising options such as quick
-                    fast-cash and withdraw. Clients may also review their
-                    transactions and get a mini-statement.
-                  </p>
-                  <p class="padd_15">
-                    <br />
-                    <span>Programming Languages Used:</span> Java, MySQL
-                  </p>
-                </div>
-                <br />
-
-                <div class="portfolio_item_inner shadow_dark">
-                  <h4 class="padd_15">Simple Website</h4>
-                  <p class="padd_15">
-                    It is a simple website designed using HTML, CSS, and JS. It
-                    displays information about a company and lets the user to
-                    get in contact with them via different social media
-                    platforms.
-                  </p>
-                  <p class="padd_15">
-                    <br />
-                    <span>Programming Languages Used:</span> HTML5, CSS3, JS
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="contact section" id="contact">
-          <div class="container">
-            <div class="row">
-              <div class="section_title padd_15">
-                <h2>Contact Me</h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="contact_text padd_15">
-                <p>Feel Free to Reach Out to Me</p>
-              </div>
-            </div>
-            <div class="row">
-              <div class="contact_item padd_15">
-                <div class="contact_item_inner shadow_dark">
-                  <div class="icon"><i class="fa fa-phone"></i></div>
-                  <h4>Call me at:</h4>
-                  <p>9492661973</p>
-                </div>
-              </div>
-
-              <div class="contact_item padd_15">
-                <div class="contact_item_inner shadow_dark">
-                  <div class="icon"><i class="fa fa-envelope"></i></div>
-                  <h4>Email me at:</h4>
-                  <p>karapaanilkumar005@gmail.com</p>
-                </div>
-              </div>
-
-              <div class="contact_item padd_15 flex_100">
-                <div class="contact_item_inner shadow_dark">
-                  <div class="icon">
-                    <i class="fa fa-brands fa-linkedin"></i>
-                  </div>
-                  <h4>
-                    <a
-                      href="https://www.linkedin.com/in/anil-kumar-karapa/"
-                      target="_blank"
-                      >LinkedIn:</a
-                    >
-                  </h4>
-                  <p>
-                    <a
-                      href="https://www.linkedin.com/in/anil-kumar-karapa/"
-                      target="_blank"
-                      >https://www.linkedin.com/in/anil-kumar-karapa/</a
-                    >
-                  </p>
-                </div>
-              </div>
-
-              <div class="contact_item padd_15 flex_100">
-                <div class="contact_item_inner shadow_dark">
-                  <div class="icon">
-                    <i class="fa fa-brands fa-whatsapp"></i>
-                  </div>
-                  <h4>
-                    <a href="https://wa.me/qr/BIQYYQQNSQUDN1" target="_blank"
-                      >WhatsApp:</a
-                    >
-                  </h4>
-                  <p>
-                    <a href="https://wa.me/qr/BIQYYQQNSQUDN1" target="_blank"
-                      >https://wa.me/qr/BIQYYQQNSQUDN1</a
-                    >
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="reach_out padd_15">
-                <h2>Send Your Thoughts</h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="contact_form padd_15">
-                <div class="row">
-                  <div class="form_item col_6 padd_15">
-                    <div class="form_group">
-                      <input
-                        type="text"
-                        class="form_control"
-                        placeholder="Name"
-                      />
-                    </div>
-                  </div>
-
-                  <div class="form_item col_6 padd_15">
-                    <div class="form_group">
-                      <input
-                        type="email"
-                        class="form_control"
-                        placeholder="e-mail"
-                      />
-                    </div>
-                  </div>
-
-                  <div class="form_item col_6 padd_15">
-                    <div class="form_group">
-                      <input
-                        type="text"
-                        class="form_control"
-                        placeholder="Subject"
-                      />
-                    </div>
-                  </div>
-
-                  <div class="form_item col_12 padd_15">
-                    <div class="form_group">
-                      <textarea
-                        name=""
-                        class="form_control text_area"
-                        id=""
-                        placeholder="Message"
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <div class="form_item col_12 padd_15">
-                    <div class="form_group">
-                      <button type="submit" class="btn">Send Message</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
 
     <div class="style_switcher">
