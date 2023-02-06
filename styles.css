@@ -535,13 +535,21 @@ h3.my_profession {
 
 .portfolio .portfolio_item {
   display: grid;
+  padding-inline: 1rem;
   margin-bottom: 1rem;
+}
+.portfolio .portfolio_item .portfolio_item_inner .link {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  cursor: pointer;
 }
 .portfolio .portfolio_item .portfolio_item_inner {
   border: 2px solid var(--bg-black-50);
   background-color: var(--bg-black-100);
   padding: 20px 0;
   border-radius: 10px;
+  position: relative;
   overflow: hidden;
   cursor: pointer;
 }
