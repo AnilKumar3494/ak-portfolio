@@ -79,6 +79,12 @@
   width: 30px;
   border-radius: 50%;
   border: 1px solid var(--bg-black-50);
+
+  transition: all 0.2s ease-in-out;
+}
+.style_switcher .colors span:hover {
+  cursor: pointer;
+  transform: scale(1.2);
 }
 .style_switcher .colors .color_1 {
   background: #ec1839;

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta name="author" content="Anil Kumar" />
     <meta name="description" content="Anil Kumar Portfolio" />
     <meta name="keywords" content="Web Developer, Content Writer" />
 
@@ -12,6 +13,7 @@
 
     <link rel="stylesheet" href="color-1.css" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
 
     <link rel="stylesheet" href="style_switcher.css" />
     <link
@@ -69,293 +71,387 @@
       </div>
       <ul class="nav" id="nav_list">
         <li>
-          <a href="#home"><i class="fa fa-home"></i> Home</a>
+          <a id="nav_btns" href="#home"><i class="fa fa-home"></i> Home</a>
         </li>
         <li>
-          <a href="#about"><i class="fa fa-user"></i> About</a>
+          <a id="nav_btns" href="#about"><i class="fa fa-user"></i> About</a>
         </li>
         <li>
-          <a href="#services"><i class="fa fa-list"></i> Services</a>
+          <a id="nav_btns" href="#services"
+            ><i class="fa fa-list"></i> Services</a
+          >
         </li>
         <li>
-          <a href="#portfolio"><i class="fa fa-briefcase"></i> Portfolio</a>
+          <a id="nav_btns" href="#portfolio"
+            ><i class="fa fa-briefcase"></i> Portfolio</a
+          >
         </li>
         <li>
-          <a href="#contact"><i class="fa fa-comments"></i> Contact</a>
+          <a id="nav_btns" href="#contact"
+            ><i class="fa fa-comments"></i> Contact</a
+          >
         </li>
       </ul>
     </div>
-    <main class="main_content">
+
+    <main class="main_content flex_col">
       <section class="home section" id="home">
         <div class="container">
-          <div class="row">
-            <div class="home_info padd_15">
-              <h3 class="hello">
-                Hello, my name is <span class="name">Anil Kumar</span>
-              </h3>
-              <h3 class="my_profession">
-                I'm a <span class="typing">Web Developer</span>
-              </h3>
-              <p>
-                As a professional web developer and content writer, I have
-                coupled web development expertise with the ability to generate
-                appealing, engaging, and instructive material for websites. My
-                expertise in HTML, CSS, and JavaScript enables me to design and
-                develop websites, while my writing talents enable me to generate
-                blog entries, product descriptions, and other material that
-                attracts and retains visitors. I ensure that the website is
-                aesthetically beautiful, user-friendly, and search engine
-                optimised, while simultaneously providing users with important
-                content.
-              </p>
-              <a href="#contact" class="btn hire_me">Hire Me</a>
-            </div>
+          <div class="home_info padd_15 flex_col">
+            <h3 class="hello">
+              Hello, my name is <span class="name">Anil Kumar</span>
+            </h3>
+            <h3 class="my_profession">
+              I'm a <span class="typing">Web Developer</span>
+            </h3>
+            <p>
+              As a professional web developer and content writer, I have coupled
+              web development expertise with the ability to generate appealing,
+              engaging, and instructive material for websites. My expertise in
+              HTML, CSS, and JavaScript enables me to design and develop
+              websites, while my writing talents enable me to generate blog
+              entries, product descriptions, and other material that attracts
+              and retains visitors. I ensure that the website is aesthetically
+              beautiful, user-friendly, and search engine optimised, while
+              simultaneously providing users with important content.
+            </p>
+            <a href="#contact" class="btn hire_me">Hire Me</a>
           </div>
         </div>
       </section>
 
       <section class="about section" id="about">
         <div class="container">
-          <div class="row">
-            <div class="section_title padd_15">
-              <h2>About Me</h2>
-            </div>
+          <div class="section_title padd_15">
+            <h2>About Me</h2>
           </div>
 
-          <div class="row">
-            <div class="about_content padd_15">
-              <div class="row">
-                <div class="about_text padd_15">
-                  <h3>I'm Anil kumar a <span>Web Developer</span></h3>
-                  <p>
-                    As a web developer, I have a solid grasp of web development
-                    technologies and markup languages, covering HTML, CSS,
-                    JavaScript, and associated frameworks. I have expertise
-                    in designing and maintaining websites, and I can design and
-                    execute aesthetically appealing, search engine optimized,
-                    and user-friendly interfaces. I have a keen eye for detail
-                    and the ability to debug and troubleshoot programmes. In
-                    addition, I am adept at working in a team atmosphere and
-                    communicating well with clients and other stakeholders.
-                    <br /><br />
-                    In addition, I am a talented and creative content writer who
-                    has a strong interest in producing work that is both
-                    informative and entertaining for a wide range of platforms.
-                    Capable of doing research, creating, and editing pieces for
-                    blogs, websites, and social media platforms that are
-                    optimised for search engines. With a keen attention to
-                    detail, the ability to fulfil deadlines, and work
-                    collaboratively with cross-functional teams.
-                  </p>
-                </div>
-              </div>
+          <div class="about_content padd_15">
+            <div class="about_text padd_15">
+              <h3>I'm Anil kumar a <span>Web Developer</span></h3>
+              <p>
+                As a web developer, I have a solid grasp of web development
+                technologies and markup languages, covering HTML, CSS,
+                JavaScript, and associated frameworks. I have expertise
+                in designing and maintaining websites, and I can design and
+                execute aesthetically appealing, search engine optimized, and
+                user-friendly interfaces. I have a keen eye for detail and the
+                ability to debug and troubleshoot programmes. In addition, I am
+                adept at working in a team atmosphere and communicating well
+                with clients and other stakeholders.
+                <br /><br />
+                In addition, I am a talented and creative content writer who has
+                a strong interest in producing work that is both informative and
+                entertaining for a wide range of platforms. Capable of doing
+                research, creating, and editing pieces for blogs, websites, and
+                social media platforms that are optimised for search engines.
+                With a keen attention to detail, the ability to fulfil
+                deadlines, and work collaboratively with cross-functional teams.
+              </p>
+            </div>
 
-              <div class="row">
-                <div class="personal_info padd_15">
-                  <h3 class="title">Personal Information</h3>
-                  <div class="row">
-                    <div class="info_item padd_15">
-                      <p>Birthday <span>19 December 2000</span></p>
-                    </div>
-                    <div class="info_item padd_15">
-                      <p>Age <span>22</span></p>
-                    </div>
-                    <div class="info_item padd_15">
-                      <p>Email <span>karapaanilkumar005@gmail.com</span></p>
-                    </div>
-                    <div class="info_item padd_15">
-                      <p>Degree <span>B.Tech in ECE</span></p>
-                    </div>
-                    <div class="info_item padd_15">
-                      <p>Phone <span>+91 9492661973</span></p>
-                    </div>
-                    <div class="info_item padd_15">
-                      <p>City <span>Vizag</span></p>
-                    </div>
-                    <div class="info_item padd_15">
-                      <p>Open to new Jobs: <span>Yes</span></p>
-                    </div>
+            <!-- <div class="myinfo">
+              <div class="personal-info">
+                <h3 class="title">Personal Information</h3>
+                <div class="info-detials">
+                  <div class="info_item padd_15">
+                    <p>Birthday <span>19 December 2000</span></p>
                   </div>
-                  <div class="row">
-                    <div class="buttons padd_15">
-                      <a
-                        href="https://drive.google.com/file/d/1TewFE6EhNidSyAQrCZMpkfSo6Mnn0LDi/view?usp=share_link"
-                        target="_blank"
-                        class="btn"
-                        >Download CV</a
-                      >
-                      <a href="#contact" class="btn hire_me">Hire Me</a>
-                    </div>
+                  <div class="info_item padd_15">
+                    <p>Age <span>22</span></p>
                   </div>
-                </div>
-
-                <div class="skills padd_15">
-                  <h3 class="title">Skills</h3>
-                  <div class="row">
-                    <div class="skill_items padd_15">
-                      <h5>HTML</h5>
-                      <div class="progress">
-                        <div class="progress_in" style="width: 95%"></div>
-                        <div class="skill_percent">95%</div>
-                      </div>
-                    </div>
-
-                    <div class="skill_items padd_15">
-                      <h5>Java</h5>
-                      <div class="progress">
-                        <div class="progress_in" style="width: 80%"></div>
-                        <div class="skill_percent">80%</div>
-                      </div>
-                    </div>
-
-                    <div class="skill_items padd_15">
-                      <h5>CSS</h5>
-                      <div class="progress">
-                        <div class="progress_in" style="width: 76%"></div>
-                        <div class="skill_percent">76%</div>
-                      </div>
-                    </div>
-
-                    <div class="skill_items padd_15">
-                      <h5>MySQL</h5>
-                      <div class="progress">
-                        <div class="progress_in" style="width: 70%"></div>
-                        <div class="skill_percent">70%</div>
-                      </div>
-                    </div>
-
-                    <div class="skill_items padd_15">
-                      <h5>Js</h5>
-                      <div class="progress">
-                        <div class="progress_in" style="width: 70%"></div>
-                        <div class="skill_percent">70%</div>
-                      </div>
-                    </div>
-
-                    <div class="skill_items padd_15">
-                      <h5>GCP</h5>
-                      <div class="progress">
-                        <div class="progress_in" style="width: 40%"></div>
-                        <div class="skill_percent">40%</div>
-                      </div>
-                    </div>
-
-                    <div class="skill_items padd_15">
-                      <h5>Angular</h5>
-                      <div class="progress">
-                        <div class="progress_in" style="width: 50%"></div>
-                        <div class="skill_percent">50%</div>
-                      </div>
-                    </div>
-
-                    <div class="skill_items padd_15">
-                      <h5>Writing</h5>
-                      <div class="progress">
-                        <div class="progress_in" style="width: 95%"></div>
-                        <div class="skill_percent">95%</div>
-                      </div>
-                    </div>
+                  <div class="info_item padd_15">
+                    <p>Email <span>karapaanilkumar005@gmail.com</span></p>
+                  </div>
+                  <div class="info_item padd_15">
+                    <p>Degree <span>B.Tech in ECE</span></p>
+                  </div>
+                  <div class="info_item padd_15">
+                    <p>Phone <span>+91 9492661973</span></p>
+                  </div>
+                  <div class="info_item padd_15">
+                    <p>City <span>Vizag</span></p>
+                  </div>
+                  <div class="info_item padd_15">
+                    <p>Open to new Jobs: <span>Yes</span></p>
                   </div>
                 </div>
               </div>
+              <div class="skills-info">
+                <h3 class="title">Skills</h3>
+                <div class="skill_items padd_15">
+                  <h5>HTML</h5>
+                  <div class="progress">
+                    <div class="progress_in" style="width: 95%"></div>
+                    <div class="skill_percent">95%</div>
+                  </div>
+                </div>
 
-              <div class="row">
-                <div class="education padd_15">
-                  <h3 class="title">Education</h3>
-                  <div class="row">
-                    <div class="timeline_box padd_15">
-                      <div class="timeline shadow_dark">
-                        <div class="timeline_item">
-                          <div class="circle_dot"></div>
-                          <h3 class="timeline_date">
-                            <i class="fa fa-calendar"></i> 2018 - 2022
-                          </h3>
-                          <h4 class="timeline_title">Bachelor's in ECE</h4>
-                          <p class="timeline_text">
-                            Despite being in ECE, I learned and developed
-                            various skills in the field of Computer Science.
-                          </p>
-                        </div>
+                <div class="skill_items padd_15">
+                  <h5>Java</h5>
+                  <div class="progress">
+                    <div class="progress_in" style="width: 80%"></div>
+                    <div class="skill_percent">80%</div>
+                  </div>
+                </div>
 
-                        <div class="timeline_item">
-                          <div class="circle_dot"></div>
-                          <h3 class="timeline_date">
-                            <i class="fa fa-calendar"></i> 2016 - 2018
-                          </h3>
-                          <h4 class="timeline_title">12th Intermediate</h4>
-                          <p class="timeline_text">MPC with a 94.5%</p>
-                        </div>
+                <div class="skill_items padd_15">
+                  <h5>CSS</h5>
+                  <div class="progress">
+                    <div class="progress_in" style="width: 76%"></div>
+                    <div class="skill_percent">76%</div>
+                  </div>
+                </div>
 
-                        <div class="timeline_item">
-                          <div class="circle_dot"></div>
-                          <h3 class="timeline_date">
-                            <i class="fa fa-calendar"></i> 2016
-                          </h3>
-                          <h4 class="timeline_title">10th SCC</h4>
-                          <p class="timeline_text">SSC with 9.5GPA</p>
-                        </div>
+                <div class="skill_items padd_15">
+                  <h5>MySQL</h5>
+                  <div class="progress">
+                    <div class="progress_in" style="width: 70%"></div>
+                    <div class="skill_percent">70%</div>
+                  </div>
+                </div>
+
+                <div class="skill_items padd_15">
+                  <h5>Js</h5>
+                  <div class="progress">
+                    <div class="progress_in" style="width: 70%"></div>
+                    <div class="skill_percent">70%</div>
+                  </div>
+                </div>
+
+                <div class="skill_items padd_15">
+                  <h5>GCP</h5>
+                  <div class="progress">
+                    <div class="progress_in" style="width: 40%"></div>
+                    <div class="skill_percent">40%</div>
+                  </div>
+                </div>
+
+                <div class="skill_items padd_15">
+                  <h5>Angular</h5>
+                  <div class="progress">
+                    <div class="progress_in" style="width: 50%"></div>
+                    <div class="skill_percent">50%</div>
+                  </div>
+                </div>
+
+                <div class="skill_items padd_15">
+                  <h5>Writing</h5>
+                  <div class="progress">
+                    <div class="progress_in" style="width: 95%"></div>
+                    <div class="skill_percent">95%</div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+            <div class="row">
+              <div class="personal_info padd_15">
+                <h3 class="title">Personal Information</h3>
+                <div class="row">
+                  <div class="info_item padd_15">
+                    <p>Birthday <span>19 December 2000</span></p>
+                  </div>
+                  <div class="info_item padd_15">
+                    <p>Age <span>22</span></p>
+                  </div>
+                  <div class="info_item padd_15">
+                    <p>Email <span>karapaanilkumar005@gmail.com</span></p>
+                  </div>
+                  <div class="info_item padd_15">
+                    <p>Degree <span>B.Tech in ECE</span></p>
+                  </div>
+                  <div class="info_item padd_15">
+                    <p>Phone <span>+91 9492661973</span></p>
+                  </div>
+                  <div class="info_item padd_15">
+                    <p>City <span>Vizag</span></p>
+                  </div>
+                  <div class="info_item padd_15">
+                    <p>Open to new Jobs: <span>Yes</span></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="buttons padd_15">
+                    <a
+                      href="https://drive.google.com/file/d/1TewFE6EhNidSyAQrCZMpkfSo6Mnn0LDi/view?usp=share_link"
+                      target="_blank"
+                      class="btn"
+                      >Download CV</a
+                    >
+                    <a href="#contact" class="btn hire_me">Hire Me</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="skills padd_15">
+                <h3 class="title">Skills</h3>
+                <div class="row">
+                  <div class="skill_items padd_15">
+                    <h5>HTML</h5>
+                    <div class="progress">
+                      <div class="progress_in" style="width: 95%"></div>
+                      <div class="skill_percent">95%</div>
+                    </div>
+                  </div>
+
+                  <div class="skill_items padd_15">
+                    <h5>Java</h5>
+                    <div class="progress">
+                      <div class="progress_in" style="width: 80%"></div>
+                      <div class="skill_percent">80%</div>
+                    </div>
+                  </div>
+
+                  <div class="skill_items padd_15">
+                    <h5>CSS</h5>
+                    <div class="progress">
+                      <div class="progress_in" style="width: 76%"></div>
+                      <div class="skill_percent">76%</div>
+                    </div>
+                  </div>
+
+                  <div class="skill_items padd_15">
+                    <h5>MySQL</h5>
+                    <div class="progress">
+                      <div class="progress_in" style="width: 70%"></div>
+                      <div class="skill_percent">70%</div>
+                    </div>
+                  </div>
+
+                  <div class="skill_items padd_15">
+                    <h5>Js</h5>
+                    <div class="progress">
+                      <div class="progress_in" style="width: 70%"></div>
+                      <div class="skill_percent">70%</div>
+                    </div>
+                  </div>
+
+                  <div class="skill_items padd_15">
+                    <h5>GCP</h5>
+                    <div class="progress">
+                      <div class="progress_in" style="width: 40%"></div>
+                      <div class="skill_percent">40%</div>
+                    </div>
+                  </div>
+
+                  <div class="skill_items padd_15">
+                    <h5>Angular</h5>
+                    <div class="progress">
+                      <div class="progress_in" style="width: 50%"></div>
+                      <div class="skill_percent">50%</div>
+                    </div>
+                  </div>
+
+                  <div class="skill_items padd_15">
+                    <h5>Writing</h5>
+                    <div class="progress">
+                      <div class="progress_in" style="width: 95%"></div>
+                      <div class="skill_percent">95%</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="education padd_15">
+                <h3 class="title">Education</h3>
+                <div class="row">
+                  <div class="timeline_box padd_15">
+                    <div class="timeline shadow_dark">
+                      <div class="timeline_item">
+                        <div class="circle_dot"></div>
+                        <h3 class="timeline_date">
+                          <i class="fa fa-calendar"></i> 2018 - 2022
+                        </h3>
+                        <h4 class="timeline_title">Bachelor's in ECE</h4>
+                        <p class="timeline_text">
+                          Despite being in ECE, I learned and developed various
+                          skills in the field of Computer Science.
+                        </p>
+                      </div>
+
+                      <div class="timeline_item">
+                        <div class="circle_dot"></div>
+                        <h3 class="timeline_date">
+                          <i class="fa fa-calendar"></i> 2016 - 2018
+                        </h3>
+                        <h4 class="timeline_title">12th Intermediate</h4>
+                        <p class="timeline_text">MPC with a 94.5%</p>
+                      </div>
+
+                      <div class="timeline_item">
+                        <div class="circle_dot"></div>
+                        <h3 class="timeline_date">
+                          <i class="fa fa-calendar"></i> 2016
+                        </h3>
+                        <h4 class="timeline_title">10th SCC</h4>
+                        <p class="timeline_text">SSC with 9.5GPA</p>
                       </div>
                     </div>
                   </div>
                 </div>
+              </div>
 
-                <div class="experience padd_15">
-                  <h3 class="title">Experience</h3>
-                  <div class="row">
-                    <div class="timeline_box padd_15">
-                      <div class="timeline shadow_dark">
-                        <div class="timeline_item">
-                          <div class="circle_dot"></div>
-                          <h3 class="timeline_date">
-                            <i class="fa fa-calendar"></i> December-2022 to
-                            Present
-                          </h3>
-                          <h4 class="timeline_title">
-                            WriteRight - Content Writing Intern
-                          </h4>
-                          <p class="timeline_text">
-                            I work on writing Artices, Blogs with SEO along with
-                            SOPs.
-                          </p>
-                        </div>
+              <div class="experience padd_15">
+                <h3 class="title">Experience</h3>
+                <div class="row">
+                  <div class="timeline_box padd_15">
+                    <div class="timeline shadow_dark">
+                      <div class="timeline_item">
+                        <div class="circle_dot"></div>
+                        <h3 class="timeline_date">
+                          <i class="fa fa-calendar"></i> December-2022 to
+                          Present
+                        </h3>
+                        <h4 class="timeline_title">
+                          WriteRight - Content Writing Intern
+                        </h4>
+                        <p class="timeline_text">
+                          I create strong, individualized university application
+                          statements and SEO-friendly content, write compelling
+                          web articles, conduct thorough research, and mentor
+                          interns to improve their skills.
+                        </p>
+                      </div>
 
-                        <div class="timeline_item">
-                          <div class="circle_dot"></div>
-                          <h3 class="timeline_date">
-                            <i class="fa fa-calendar"></i> September-2022 to
-                            December-2022
-                          </h3>
-                          <h4 class="timeline_title">Wipro Project Engineer</h4>
-                          <p class="timeline_text">
-                            Front-end and back-end technologies were learned.
-                            Worked on HTML, CSS, Angular, Hibernate, and
-                            Springboot. Built an online bus reservation system
-                            as a group project.
-                            <br /><br />
-                            Learned the basics of Google Cloud: hosting WebApp,
-                            GKE cluster, load balancing, and cloud storage. and
-                            used GCP to host and deploy cloud applications for
-                            different projects.
-                          </p>
-                        </div>
+                      <div class="timeline_item">
+                        <div class="circle_dot"></div>
+                        <h3 class="timeline_date">
+                          <i class="fa fa-calendar"></i> September-2022 to
+                          December-2022
+                        </h3>
+                        <h4 class="timeline_title">Wipro Project Engineer</h4>
+                        <p class="timeline_text">
+                          Front-end and back-end technologies were learned.
+                          Worked on HTML, CSS, Angular, Hibernate, and
+                          Springboot. Built an online bus reservation system as
+                          a group project.
+                          <br /><br />
+                          Learned the basics of Google Cloud: hosting WebApp,
+                          GKE cluster, load balancing, and cloud storage. and
+                          used GCP to host and deploy cloud applications for
+                          different projects.
+                        </p>
+                      </div>
 
-                        <div class="timeline_item">
-                          <div class="circle_dot"></div>
-                          <h3 class="timeline_date">
-                            <i class="fa fa-calendar"></i> August-2022 to
-                            September-2022
-                          </h3>
-                          <h4 class="timeline_title">
-                            Olive Crypto System - Java Developer
-                          </h4>
-                          <p class="timeline_text">
-                            Developed a desktop application for a banking
-                            management system using Java and RDBMS. Implemented
-                            the SpringBoot, SpringBootJPA, and Hibernate
-                            frameworks. Learned about different payment methods
-                            and payment gateways.
-                          </p>
-                        </div>
+                      <div class="timeline_item">
+                        <div class="circle_dot"></div>
+                        <h3 class="timeline_date">
+                          <i class="fa fa-calendar"></i> August-2022 to
+                          September-2022
+                        </h3>
+                        <h4 class="timeline_title">
+                          Olive Crypto System - Java Developer
+                        </h4>
+                        <p class="timeline_text">
+                          Developed a desktop application for a banking
+                          management system using Java and RDBMS. Implemented
+                          the SpringBoot, SpringBootJPA, and Hibernate
+                          frameworks. Learned about different payment methods
+                          and payment gateways.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -501,14 +597,16 @@
 
             <div class="portfolio_item">
               <div class="portfolio_item_inner shadow_dark">
-                <a href="https://www.google.com/" target="_blank">
+                <a
+                  href="https://github.com/AnilKumar3494/JS-DOM-Manipulation"
+                  target="_blank"
+                >
                   <span class="link"></span
                 ></a>
-                <h4 class="padd_15">Simple Website</h4>
+                <h4 class="padd_15">JS DOM Manipulaton</h4>
                 <p class="padd_15">
-                  It is a simple website designed using HTML, CSS, and JS. It
-                  displays information about a company and lets the user to get
-                  in contact with them via different social media platforms.
+                  Used JavaScript to do DOM Manipulation and designed efficent
+                  and Responsive Desgins.
                 </p>
                 <p class="padd_15">
                   <br />
