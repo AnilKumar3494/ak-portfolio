@@ -42,6 +42,7 @@ body {
   line-height: 1.5;
   font-size: 1rem;
   font-family: "Rubik";
+  position: relative;
 }
 
 .main_content {
@@ -70,6 +71,30 @@ body {
 .container {
   max-width: 2200px;
   scroll-snap-align: center;
+}
+
+#blob {
+  background: linear-gradient(to right, orange, orangered, var(--skin-color));
+  height: 25vmax;
+  aspect-ratio: 1;
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+  animation: rotate 20s infinite;
+
+  filter: blur(50px);
+  opacity: 0.3;
+  z-index: 1;
+}
+
+@keyframes rotate {
+  50% {
+    scale: 1 1.5;
+  }
 }
 
 /* section css */
@@ -123,6 +148,7 @@ body {
   background: var(--skin-color);
 
   transition: all 0.3s ease;
+  z-index: 2;
 }
 
 .btn:hover {
@@ -214,6 +240,10 @@ body {
   display: block;
   border-bottom: 2px solid var(--bg-black-50);
   padding: 5px 15px;
+  transition: all 0.3s ease-in-out;
+}
+.aside .nav li a:hover {
+  color: var(--skin-color);
 }
 
 a.active {
