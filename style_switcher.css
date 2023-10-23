@@ -87,7 +87,7 @@
   transform: scale(1.2);
 }
 .style_switcher .colors .color_1 {
-  background: #ec1839;
+  background: #dfa70a;
 }
 .style_switcher .colors .color_2 {
   background: #fa5b0f;
@@ -99,5 +99,5 @@
   background: #1854b4;
 }
 .style_switcher .colors .color_5 {
-  background: #f021b2;
+  background: red;
 }

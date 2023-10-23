@@ -73,7 +73,7 @@ body {
   scroll-snap-align: center;
 }
 
-#blob {
+/* #blob {
   background: linear-gradient(to right, orange, orangered, var(--skin-color));
   height: 25vmax;
   aspect-ratio: 1;
@@ -89,7 +89,7 @@ body {
   filter: blur(50px);
   opacity: 0.3;
   z-index: 1;
-}
+} */
 
 @keyframes rotate {
   50% {
