@@ -11,10 +11,12 @@
   --text-black-900: #302e4d;
   --text-black-700: #504e70;
 }
+
 html {
   color-scheme: dark light;
   scroll-behavior: smooth;
 }
+
 body.dark {
   --bg-black-900: #151515;
   --bg-black-100: #222222;
@@ -35,9 +37,11 @@ body.dark {
 ::after {
   box-sizing: border-box;
 }
+
 ul {
   list-style: none;
 }
+
 body {
   line-height: 1.5;
   font-size: 1rem;
@@ -54,20 +58,25 @@ body {
 
   gap: 3rem;
 }
+
 .section {
   padding: 0 2rem;
 }
+
 .hidden {
   display: none !important;
 }
+
 .padd_15 {
   padding-inline: 1rem;
 }
+
 .flex_col {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
 .container {
   max-width: 2200px;
   scroll-snap-align: center;
@@ -110,6 +119,7 @@ body {
   font-weight: 800;
   position: relative;
 }
+
 .section_title h2::before {
   content: "";
   height: 4px;
@@ -119,6 +129,7 @@ body {
   bottom: 0;
   /* left: 0; */
 }
+
 .section_title h2::after {
   content: "";
   height: 4px;
@@ -130,14 +141,16 @@ body {
   bottom: -8px;
   left: 0;
 }
+
 .row {
   display: flex;
   flex-wrap: wrap;
   position: relative;
 }
+
 .btn {
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 700;
   padding: 12px 35px;
   color: azure;
   border-radius: 40px;
@@ -146,6 +159,8 @@ body {
   border: none;
   outline: none;
   background: var(--skin-color);
+
+  cursor: pointer;
 
   transition: all 0.3s ease;
   z-index: 2;
@@ -183,6 +198,7 @@ body {
   text-transform: uppercase;
   padding: 8px 20px;
 }
+
 .aside .logo::before {
   content: "";
 
@@ -229,9 +245,11 @@ body {
 .aside .nav li {
   margin-bottom: 20px;
 }
+
 .aside .nav li:last-child {
   margin-bottom: 0px;
 }
+
 .aside .nav li a {
   font-size: 1.3rem;
   font-weight: 600;
@@ -242,6 +260,7 @@ body {
   padding: 5px 15px;
   transition: all 0.3s ease-in-out;
 }
+
 .aside .nav li a:hover {
   color: var(--skin-color);
 }
@@ -271,18 +290,22 @@ h3.hello {
   font-size: 2rem;
   font-weight: 600;
 }
+
 h3.hello span {
   font-family: "Clicker Script";
   font-size: 2.8rem;
   font-weight: 800;
   color: var(--skin-color);
 }
+
 h3.my_profession {
   font-size: 1.8rem;
 }
+
 .typing {
   color: var(--skin-color);
 }
+
 .home .home_info p {
   font-size: 1.3rem;
   padding-bottom: 1rem;
@@ -302,9 +325,11 @@ h3.my_profession {
   font-weight: 800;
   color: var(--text-black-900);
 }
+
 .about .about_content .about_text h3 span {
   color: var(--skin-color);
 }
+
 .about .about_content .about_text p {
   font-size: 1rem;
   text-align: justify;
@@ -317,10 +342,12 @@ h3.my_profession {
   width: 60%;
   margin-top: 60px;
 }
+
 .about .about_content .personal_info .info_item {
   flex: 0 0 50%;
   max-width: 50%;
 }
+
 .about .about_content .personal_info .info_item p {
   font-weight: 600;
   padding: 10px 0;
@@ -328,34 +355,41 @@ h3.my_profession {
   color: var(--text-black-900);
   border-bottom: 1px solid var(--bg-black-50);
 }
+
 .about .about_content .personal_info .info_item p span {
   font-weight: 500;
   color: var(--text-black-700);
   display: block;
 }
+
 .about .about_content .personal_info .buttons {
   margin-top: 30px;
 }
+
 .about .about_content .personal_info .buttons .btn {
   margin-right: 15px;
   margin-top: 10px;
 }
+
 .about .about_content .skills {
   flex: 0 0 40%;
   width: 40%;
   margin-top: 60px;
 }
+
 .about .about_content .skills .skill_items {
   flex: 0 0 50%;
   max-width: 50%;
   margin-bottom: 20px;
 }
+
 .about .about_content .skills .skill_items h5 {
   line-height: 1.5;
   font-weight: 600;
   font-size: 16px;
   color: var(--text-black-900);
 }
+
 .about .about_content .skills .skill_items .progress {
   background-color: var(--bg-black-50);
   height: 7px;
@@ -363,6 +397,7 @@ h3.my_profession {
   width: 100%;
   position: relative;
 }
+
 .about .about_content .skills .skill_items .progress .progress_in {
   position: absolute;
   left: 0;
@@ -387,16 +422,19 @@ h3.my_profession {
   max-width: 50%;
   margin-top: 30px;
 }
+
 .about .about_content h3.title {
   font-size: 24px;
   margin-bottom: 30px;
   font-weight: 700;
   color: var(--text-black-900);
 }
+
 .about .about_content .timeline_box {
   flex: 0 0 100%;
   max-width: 100%;
 }
+
 .about .about_content .timeline_box .timeline {
   background-color: var(--bg-black-100);
   padding: 30px 15px;
@@ -406,6 +444,7 @@ h3.my_profession {
   width: 100%;
   position: relative;
 }
+
 .about .about_content .timeline .timeline_item {
   position: relative;
   padding-left: 37px;
@@ -415,6 +454,7 @@ h3.my_profession {
 .about .about_content .timeline .timeline_item:last-child {
   padding-bottom: 0;
 }
+
 .about .about_content .timeline .timeline_item::before {
   content: "";
   width: 1px;
@@ -424,6 +464,7 @@ h3.my_profession {
   top: 0;
   background-color: var(--skin-color);
 }
+
 .about .about_content .timeline .timeline_item .circle_dot {
   position: absolute;
   left: 0;
@@ -433,15 +474,18 @@ h3.my_profession {
   border-radius: 50%;
   background-color: var(--skin-color);
 }
+
 .about .about_content .timeline .timeline_item .timeline_date {
   font-weight: 400;
   font-size: 14px;
   margin-bottom: 12px;
   color: var(--text-black-700);
 }
+
 .about .about_content .timeline .timeline_item .timeline_date .fa {
   margin-right: 5px;
 }
+
 .about .about_content .timeline .timeline_item .timeline_title {
   font-weight: 800;
   font-size: 1.3rem;
@@ -449,6 +493,7 @@ h3.my_profession {
   text-transform: capitalize;
   color: var(--text-black-900);
 }
+
 .about .about_content .timeline .timeline_item .timeline_text {
   line-height: 1.5;
   font-size: 1rem;
@@ -484,23 +529,28 @@ h3.my_profession {
   margin: 0 auto 30px;
   transition: all 0.3s ease;
 }
+
 .service .service_item .service_item_inner .icon .fa {
   font-size: 2.5rem;
   line-height: 60px;
   color: var(--skin-color);
 }
+
 .service .service_item .service_item_inner:hover .icon {
   background: var(--skin-color);
 }
+
 .service .service_item .service_item_inner:hover .icon .fa {
   color: azure;
 }
+
 .service .service_item .service_item_inner h4 {
   margin-bottom: 1rem;
   font-size: 1.6rem;
   color: var(--text-black-900);
   font-weight: 600;
 }
+
 .service .service_item .service_item_inner p {
   font-size: 1rem;
   color: var(--text-black-700);
@@ -513,6 +563,7 @@ h3.my_profession {
   max-width: 100%;
   margin-bottom: 40px;
 }
+
 .portfolio .portfolio_heading h2 {
   color: var(--text-black-900);
   font-weight: 800;
@@ -523,12 +574,14 @@ h3.my_profession {
   padding-inline: 1rem;
   margin-bottom: 1rem;
 }
+
 .portfolio .portfolio_item .portfolio_item_inner .link {
   position: absolute;
   inset: 0;
   z-index: 2;
   cursor: pointer;
 }
+
 .portfolio .portfolio_item .portfolio_item_inner {
   border: 2px solid var(--bg-black-50);
   background-color: var(--bg-black-100);
@@ -540,9 +593,11 @@ h3.my_profession {
   cursor: pointer;
   transition: all 0.3s ease-in;
 }
+
 .portfolio .portfolio_item .portfolio_item_inner:hover {
   border: 2px solid var(--skin-color);
 }
+
 .portfolio .portfolio_item .portfolio_item_inner h4 {
   font-size: 1.8rem;
   font-weight: 600;
@@ -573,8 +628,8 @@ h3.my_profession {
 }
 
 .contact .contact_item {
-  flex: 0 0 50%;
-  max-width: 50%;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
 .contact .contact_item .contact_item_inner {
@@ -586,6 +641,7 @@ h3.my_profession {
 
   transition: all 0.3s ease-in;
 }
+
 .contact .contact_item .contact_item_inner:hover {
   border: 1px solid var(--skin-color);
 }
@@ -596,6 +652,7 @@ h3.my_profession {
   margin-bottom: 20px;
   cursor: pointer;
 }
+
 .contact .contact_item .contact_item_inner h4,
 .contact .contact_item .contact_item_inner h4 a {
   color: var(--text-black-900);
@@ -624,6 +681,7 @@ h3.my_profession {
   flex: 0 0 100%;
   max-width: 100%;
 }
+
 .contact .reach_out h2 {
   color: var(--text-black-900);
   font-weight: 800;
@@ -640,6 +698,7 @@ h3.my_profession {
   flex: 0 0 50%;
   max-width: 50%;
 }
+
 .contact .contact_form .col_12 {
   flex: 0 0 100%;
   max-width: 100%;
@@ -695,16 +754,19 @@ h3.my_profession {
     justify-content: space-between;
     align-items: center;
   }
+
   .aside .logo {
     position: relative;
     top: 5px;
     text-transform: uppercase;
     padding: 8px 20px;
   }
+
   .aside .logo::before,
   .aside .logo::after {
     display: none;
   }
+
   .aside .logo a {
     position: relative;
 
@@ -718,9 +780,11 @@ h3.my_profession {
 
     margin-top: 0px;
   }
+
   .aside .nav li {
     margin-bottom: 0px;
   }
+
   .aside .nav li a {
     font-size: 1.3rem;
     font-weight: 600;
@@ -730,15 +794,18 @@ h3.my_profession {
     border-bottom: 0px;
     padding: 5px 15px;
   }
+
   .main_content {
     margin-left: 0px;
   }
+
   .section {
     padding-inline: 0.5rem;
   }
 }
 
 @media (max-width: 1080px) {
+
   .about .about_content .skills,
   .about .about_content .personal_info {
     flex: 0 0 100%;
@@ -764,6 +831,7 @@ h3.my_profession {
 
     transition: all 0.3s linear;
   }
+
   .aside .nav_transform {
     position: absolute;
     top: 12vh;
@@ -781,6 +849,7 @@ h3.my_profession {
 
     transition: all 0.3s linear;
   }
+
   .aside .nav li a {
     font-size: 1rem;
     font-weight: 600;
@@ -804,6 +873,7 @@ h3.my_profession {
     align-items: center;
     justify-content: center;
   }
+
   .aside .nav_toggler span {
     height: 2px;
     width: 18px;
@@ -811,6 +881,7 @@ h3.my_profession {
     display: inline-block;
     position: relative;
   }
+
   .aside .nav_toggler span::before {
     content: "";
     height: 2px;
@@ -820,6 +891,7 @@ h3.my_profession {
     position: absolute;
     top: -6px;
   }
+
   .aside .nav_toggler span::after {
     content: "";
     height: 2px;
@@ -842,6 +914,7 @@ h3.my_profession {
 }
 
 @media (max-width: 624px) {
+
   .home .home_info p,
   .about .about_content .about_text p {
     font-size: 1rem;
@@ -851,6 +924,7 @@ h3.my_profession {
     flex: 0 0 100%;
     max-width: 100%;
   }
+
   .about .about_content .personal_info .info_item {
     flex: 0 0 70%;
     max-width: 70%;
@@ -861,21 +935,26 @@ h3.my_profession {
   .padd_15 {
     padding-inline: 0.2rem;
   }
+
   .aside .nav li a {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--text-black-900);
     padding-block: 1rem;
   }
+
   .home {
     padding-top: 12vh;
   }
+
   h3.hello {
     font-size: 1.8rem;
   }
+
   h3.hello span {
     font-size: 2.5rem;
   }
+
   h3.my_profession {
     font-size: 1.2rem;
   }
