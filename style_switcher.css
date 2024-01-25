@@ -52,6 +52,7 @@
 .style_switcher .s_icon i {
   line-height: 40px;
 }
+
 .style_switcher .style_switcher_toggler {
   top: 0;
 }
@@ -67,6 +68,7 @@
   font-weight: 800;
   text-transform: capitalize;
 }
+
 .style_switcher .colors {
   display: flex;
   flex-wrap: wrap;
@@ -79,19 +81,31 @@
   width: 30px;
   border-radius: 50%;
   border: 1px solid var(--bg-black-50);
+
+  transition: all 0.2s ease-in-out;
 }
+
+.style_switcher .colors span:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
 .style_switcher .colors .color_1 {
-  background: #ec1839;
+  background: #dfa70a;
 }
+
 .style_switcher .colors .color_2 {
   background: #fa5b0f;
 }
+
 .style_switcher .colors .color_3 {
   background: #37b182;
 }
+
 .style_switcher .colors .color_4 {
   background: #1854b4;
 }
+
 .style_switcher .colors .color_5 {
-  background: #f021b2;
+  background: red;
 }

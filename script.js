@@ -10,16 +10,17 @@ function asideNavBar() {
   nav_listEl.classList.toggle("nav_transform");
 }
 
-let nav_itemEL = document.querySelector("#nav_item");
-function selected() {
-  nav_itemEL.classList.toggle("active");
-}
+const blob = document.getElementById("blob");
 
-const activePage = window.location.pathname;
-const navLinksEl = document
-  .querySelectorAll(".aside .nav li a")
-  .forEach((link) => {
-    if (link.href.includes(`${activePage}`)) {
-      link.classList.add("active");
-    }
-  });
+window.onpointermove = (event) => {
+  const { clientX, clientY } = event;
+
+  blob.animate(
+    {
+      left: `${clientX}px`,
+      top: `${clientY}px`,
+    },
+    { duration: 300, fill: "forwards" }
+  );
+};
+
