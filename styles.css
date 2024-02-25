@@ -47,20 +47,17 @@ body {
   font-size: 1rem;
   font-family: "Rubik";
   position: relative;
+
+  background: var(--bg-black-900);
 }
 
 .main_content {
-  margin: 0 auto 0 18%;
-  background: var(--bg-black-900);
+  margin: 0 0 0 20%;
 
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
 
-  gap: 3rem;
-}
-
-.section {
-  padding: 0 2rem;
+  gap: 2rem;
 }
 
 .hidden {
@@ -109,8 +106,8 @@ body {
 /* section css */
 
 .section_title {
+  padding-bottom: 1rem;
   flex: 0 0 100%;
-  margin-bottom: 4rem;
 }
 
 .section_title h2 {
@@ -151,8 +148,12 @@ body {
 .btn {
   font-size: 1rem;
   font-weight: 700;
-  padding: 12px 35px;
   color: azure;
+  text-align: center;
+
+  padding: 12px 35px;
+  max-width: 100%;
+
   border-radius: 40px;
   display: inline-block;
   white-space: nowrap;
@@ -278,7 +279,6 @@ a.active {
   color: var(--text-black-900);
   text-align: justify;
   line-height: 1.5;
-  padding-top: 10vh;
 }
 
 .home .home_info {
@@ -314,14 +314,15 @@ h3.my_profession {
 }
 
 /* About */
-/* .about .about_content {
-  flex: 0 0 100%;
-  max-width: 100%;
-} */
+.about_text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
 
 .about .about_content .about_text h3 {
   font-size: 1.5rem;
-  margin-bottom: 15px;
+
   font-weight: 800;
   color: var(--text-black-900);
 }
@@ -502,7 +503,6 @@ h3.my_profession {
 }
 
 /* Service */
-
 .service .service_item {
   margin-bottom: 20px;
   flex: 0 0 50%;
@@ -558,6 +558,7 @@ h3.my_profession {
 }
 
 /* portfolio */
+
 .portfolio .portfolio_heading {
   flex: 0 0 100%;
   max-width: 100%;
@@ -805,7 +806,6 @@ h3.my_profession {
 }
 
 @media (max-width: 1080px) {
-
   .about .about_content .skills,
   .about .about_content .personal_info {
     flex: 0 0 100%;
@@ -814,6 +814,9 @@ h3.my_profession {
 }
 
 @media (max-width: 860px) {
+  .portfolio {
+    padding-top: 18vh;
+  }
   .aside .nav {
     position: absolute;
 
@@ -914,7 +917,6 @@ h3.my_profession {
 }
 
 @media (max-width: 624px) {
-
   .home .home_info p,
   .about .about_content .about_text p {
     font-size: 1rem;
@@ -943,7 +945,7 @@ h3.my_profession {
     padding-block: 1rem;
   }
 
-  .home {
+  .portfolio {
     padding-top: 12vh;
   }
 
