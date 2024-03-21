@@ -103,6 +103,30 @@ body {
   }
 }
 
+/* scroll_watcher */
+.scroll_watcher {
+  height: 5px;
+  width: 100%;
+
+  position: fixed;
+  top: 0;
+  transform-origin: left;
+
+  z-index: 1000;
+  background-color: var(--skin-color);
+
+  scale: 1% 1;
+
+  animation: scroll_watcher linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll_watcher {
+  to {
+    scale: 1 1;
+  }
+}
+
 /* section css */
 
 .section_title {
