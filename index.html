@@ -51,6 +51,7 @@
       title="color-5"
       disabled
     />
+    <link rel="stylesheet" href="eagles-form.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -106,6 +107,60 @@
           <div class="row">
             <div class="portfolio_heading padd_15">
               <h2>My Projects</h2>
+            </div>
+          </div>
+
+          <div class="invite-card row">
+            <div class="padd_15">
+              <div class="card-header">
+                <img
+                  src="./philadelphia-eagles-logo/philadelphia-eagles-helmet-logo.png"
+                  alt=""
+                  class="eagles_logo"
+                />
+                <h2>Eagles 2025-26 Game Invites</h2>
+                <img
+                  src="./philadelphia-eagles-logo/philadelphia-eagles-helmet-logo.png"
+                  alt=""
+                  class="eagles_logo"
+                  style="transform: rotateY(180deg)"
+                />
+              </div>
+
+              <div class="card-body">
+                <p>
+                  Enter your email to get every game added directly to your
+                  calendar. Never miss a snap!
+                  <span class="birds_accent">GO BIRDS! 🦅</span>
+                </p>
+
+                <form id="inviteForm" class="invite_form">
+                  <div class="form-group" id="formGroup">
+                    <div class="marquee-text">
+                      <span>Fly Eagles Fly</span>
+                    </div>
+
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="youremail@example.com"
+                      required
+                    />
+                  </div>
+
+                  <button type="submit" id="submitButton" class="btn">
+                    <span class="button-text">Send Invites</span>
+                    <i class="fa-solid fa-football spinner-icon"></i>
+                    <div class="spinner"></div>
+                  </button>
+
+                  <div id="responseMessage">
+                    <i id="responseIcon" class="fa-solid"></i>
+                    <span id="responseText"></span>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
 
@@ -531,6 +586,9 @@
 
     <!-- JS for Contat Items -->
     <script src="contactItems.js"></script>
+
+    <!-- JS for Calendar Invites -->
+    <script src="calendarInvite.js"></script>
 
     <script src="script.js"></script>
     <script src="style-switcher.js"></script>
