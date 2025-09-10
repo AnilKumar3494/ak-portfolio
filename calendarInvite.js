@@ -13,12 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // 1. Start the loading state
+
         submitButton.disabled = true;
         submitButton.classList.add('loading');
         formGroup.classList.add('loading');
 
-        // Hide previous messages
+        emailInput.disabled = true;
+
         responseMessageDiv.classList.remove('visible', 'success', 'error');
 
         // 2. Make the fetch request to the Google Apps Script
@@ -52,10 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 responseText.textContent = 'An unexpected error occurred. Please try again.';
             })
             .finally(() => {
-                // 3. Reset the UI state
                 submitButton.disabled = false;
                 submitButton.classList.remove('loading');
                 formGroup.classList.remove('loading');
+                emailInput.disabled = false
                 responseMessageDiv.classList.add('visible');
             });
     });

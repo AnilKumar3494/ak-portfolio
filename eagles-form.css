@@ -84,9 +84,10 @@
   display: flex;
 }
 
+/* This is the key part to hide the email input and show the marquee */
 .form-group.loading #email {
-  color: transparent;
-  user-select: none;
+  pointer-events: none;
+  opacity: 0.09;
 }
 
 .marquee-text {
@@ -159,11 +160,11 @@
 #responseMessage {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 15px;
-  padding: 12px 15px;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 1rem 1.2rem;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.9rem;
   opacity: 0;
   transform: translateY(-10px);
   transition: opacity 0.4s ease, transform 0.4s ease;
@@ -179,6 +180,7 @@
 #responseMessage.success {
   background-color: rgba(30, 190, 125, 0.15);
   color: #28a745;
+  line-height: 1.4;
   border: 1px solid #28a745;
 }
 
