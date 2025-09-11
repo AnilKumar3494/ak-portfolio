@@ -30,6 +30,12 @@
   transition: all 0.4s ease-in-out;
 }
 
+@media (max-width: 624px) {
+  .skill-description-panel {
+    min-height: 8dvh;
+  }
+}
+
 .skill-description-panel .skill-name {
   font-weight: 700;
   display: block;
