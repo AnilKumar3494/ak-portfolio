@@ -51,9 +51,6 @@ body {
 
   background: var(--bg-black-900);
 }
-h3 {
-  color: var(--text-black-900);
-}
 
 .main_content {
   margin: 0 0 0 20%;
@@ -325,7 +322,7 @@ a.active {
 
 h3 {
   font-size: 1.4rem !important;
-  font-weight: 700;
+  font-weight: 700 !important;
 }
 h3.hello {
   font-size: 2rem;
@@ -636,7 +633,6 @@ p {
 
   .aside .logo a {
     position: relative;
-
     color: var(--skin-color);
   }
 
@@ -677,12 +673,36 @@ p {
     flex: 0 0 100%;
     max-width: 100%;
   }
+
+  .aside .aside_links {
+    display: none;
+  }
 }
 
 @media (max-width: 860px) {
+  .mobile_contact {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+    color: var(--skin-color);
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding-bottom: 1rem;
+  }
   .portfolio {
     padding-top: 18vh;
   }
+
+  h3 {
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+  }
+  .aside .aside_links {
+    display: none;
+  }
+
   .aside .nav {
     position: absolute;
 
@@ -788,6 +808,16 @@ p {
     font-size: 1rem;
   }
 
+  h3 {
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+  }
+  p,
+  input,
+  span,
+  a {
+    font-size: 0.9rem;
+  }
   .contact .contact_item {
     flex: 0 0 100%;
     max-width: 100%;
