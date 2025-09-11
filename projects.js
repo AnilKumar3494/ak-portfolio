@@ -1,4 +1,4 @@
-// Array of portfolio items data
+// nned to update this sucker
 const portfolioItems = [
     {
         title: "Auth App",

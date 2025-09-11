@@ -1,6 +1,6 @@
 .cypher-text {
   font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
-  font-size: 1.2em;
+  font-size: 1.2rem;
   color: var(--skin-color);
   font-weight: 600;
   cursor: pointer;
@@ -72,11 +72,31 @@
   font-weight: bold;
   cursor: pointer;
   transition: transform 0.2s ease-in-out;
+  color: var(--skin-color);
+  user-select: none;
 }
 
 .action-verb:hover {
   transform: scale(1.1) rotate(-5deg);
-  color: var(--skin-color);
+  /* color: #ff69b4; */
+}
+
+.action-verb-1:hover {
+  transform: scale(1.1) rotate(-5deg);
+  color: #ff69e4;
+}
+
+.target-word {
+  display: inline-block;
+  position: relative; /* Needed for letter positioning */
+  font-weight: bold;
+}
+
+/* Styling for the individual letters when broken */
+.target-word .letter {
+  display: inline-block;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    opacity 0.6s ease;
 }
 
 /* --- The Bloody Div Easter Egg --- */
@@ -150,33 +170,10 @@
 }
 
 /* --- Typing Effect --- */
+/* --- Typing Effect --- */
 .typing {
   font-weight: bold;
-
-  border-right: 2px solid;
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 3.5s steps(40, end) infinite,
-    blink-caret 0.75s step-end infinite;
-}
-
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #00bfff;
-  }
+  color: var(--skin-color);
 }
 
 /* --- Email Link --- */
@@ -190,8 +187,7 @@
   transform: skewX(-15deg);
   color: #ff69b4; /* Hot Pink */
 }
-
-/* --- Lego & Emoji Micro-interactions --- */
+/* --- Lego Click Animation --- */
 .lego-text {
   font-weight: bold;
   cursor: pointer;
@@ -201,20 +197,122 @@
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.lego-text:hover {
-  transform: scale(1.15) rotate(-3deg);
+.lego-text:hover,
+.lego-text:active {
+  /* Animation on hover (desktop) or tap (mobile) */
+  animation: lego-click 0.5s ease-in-out;
 }
 
-.shy-emoji {
+@keyframes lego-click {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  40% {
+    transform: scale(1.15) rotate(-5deg) translateY(-5px);
+  }
+  60% {
+    transform: scale(0.95) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* --- hiring Glow Animation --- */
+.hiring-text {
+  font-weight: bold;
+  cursor: pointer;
   display: inline-block;
-  transition: transform 0.3s ease;
+  color: #33ff99; /* A vibrant green */
+  position: relative;
+}
+
+.hiring-text:hover,
+.hiring-text:active {
+  animation: text-glow 1.5s infinite alternate;
+}
+
+@keyframes text-glow {
+  from {
+    text-shadow: 0 0 3px #fff, 0 0 5px #fff, 0 0 7px #33ff99, 0 0 10px #33ff99;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 8px #33ff99, 0 0 12px #33ff99,
+      0 0 15px #33ff99;
+  }
+}
+
+/* --- "hi" Pop Animation --- */
+.hi-text {
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+  color: var(--skin-color);
+}
+
+.hi-text:hover,
+.hi-text:active {
+  animation: text-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes text-pop {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+}
+
+/* --- Emoji Animations --- */
+.shy-emoji,
+.wave-emoji {
+  display: inline-block;
   cursor: default;
 }
 
-.contact-section:hover .shy-emoji {
-  transform: scale(1.3);
+.shy-emoji {
+  /* This animation runs constantly but subtly */
+  animation: shy-wiggle 2.5s infinite;
+  transform-origin: center;
 }
 
+@keyframes shy-wiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+}
+
+.wave-emoji {
+  animation: wave-hand 2s infinite;
+  transform-origin: bottom center;
+}
+
+@keyframes wave-hand {
+  0%,
+  60%,
+  100% {
+    transform: rotate(0deg);
+  }
+  10%,
+  30% {
+    transform: rotate(14deg);
+  }
+  20%,
+  40% {
+    transform: rotate(-8deg);
+  }
+}
+
+/* email styles */
 .email-container {
   position: relative;
   display: inline-block;
@@ -253,7 +351,7 @@
 }
 
 .email-link:hover {
-  color: #ff69b4; /* Hot Pink on hover */
+  color: var(--skin-color);
 }
 
 .copy-tooltip {

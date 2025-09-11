@@ -1,26 +1,36 @@
-var Typed = new Typed(".typing", {
-  strings: ["Build Mobile Apps", "Vibe Code", "I guess do Software Engineering??", "ohhh .. you still waiting😏😏 ", "then do Rubber Duck 🦆 Debugging as well!"],
-  typeSpeed: 50,
-  backSpeed: 40,
-  loop: true,
+document.addEventListener("DOMContentLoaded", function () {
+  const typingElement = document.querySelector(".typing");
+
+  if (typingElement) {
+
+    const restartTypingAnimation = (instance) => {
+
+      if (!instance.typing) {
+        instance.reset();
+      }
+    };
+
+    // Initialize Typed.js
+    const typedInstance = new Typed(".typing", {
+      strings: [
+        "Build Mobile Apps",
+        "Vibe Code",
+        "do Software Engineering??",
+        "ohhh .. you still waiting😏😏 ",
+        "Join your team!",
+        "Build Software and Products!",
+      ],
+      typeSpeed: 50,
+      backSpeed: 40,
+      loop: true,
+      loopCount: 2,
+
+
+      onComplete: (self) => {
+
+        typingElement.addEventListener("mouseover", () => restartTypingAnimation(self));
+        typingElement.addEventListener("click", () => restartTypingAnimation(self));
+      },
+    });
+  }
 });
-
-let nav_listEl = document.querySelector("#nav_list");
-function asideNavBar() {
-  nav_listEl.classList.toggle("nav_transform");
-}
-
-const blob = document.getElementById("blob");
-
-window.onpointermove = (event) => {
-  const { clientX, clientY } = event;
-
-  blob.animate(
-    {
-      left: `${clientX}px`,
-      top: `${clientY}px`,
-    },
-    { duration: 300, fill: "forwards" }
-  );
-};
-
