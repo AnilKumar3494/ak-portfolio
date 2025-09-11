@@ -165,6 +165,9 @@ body {
   bottom: -8px;
   left: 0;
 }
+h3 {
+  color: var(--text-black-900);
+}
 
 .row {
   display: flex;
@@ -301,18 +304,6 @@ a.active {
   margin-right: 0.5rem;
 }
 
-/* home page */
-.home {
-  color: var(--text-black-900);
-  text-align: justify;
-  line-height: 1.5;
-}
-
-.home .home_info {
-  align-items: flex-start;
-  gap: 1rem;
-}
-
 h3.hello {
   font-size: 2rem;
   font-weight: 600;
@@ -333,7 +324,7 @@ h3.my_profession {
   color: var(--skin-color);
 }
 
-.home .home_info p {
+p {
   font-size: 1.3rem;
   padding-bottom: 1rem;
 
@@ -529,61 +520,6 @@ h3.my_profession {
   color: var(--text-black-700);
 }
 
-/* Service */
-.service .service_item {
-  margin-bottom: 20px;
-  flex: 0 0 50%;
-  max-width: 50%;
-}
-
-.service .service_item .service_item_inner {
-  background-color: var(--bg-black-100);
-  border: 1px solid var(--bg-black-50);
-  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-  border-radius: 10px;
-  padding: 30px 15px;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.service .service_item .service_item_inner .icon {
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-  /* background: rebeccapurple; */
-  text-align: center;
-
-  margin: 0 auto 30px;
-  transition: all 0.3s ease;
-}
-
-.service .service_item .service_item_inner .icon .fa {
-  font-size: 2.5rem;
-  line-height: 60px;
-  color: var(--skin-color);
-}
-
-.service .service_item .service_item_inner:hover .icon {
-  background: var(--skin-color);
-}
-
-.service .service_item .service_item_inner:hover .icon .fa {
-  color: azure;
-}
-
-.service .service_item .service_item_inner h4 {
-  margin-bottom: 1rem;
-  font-size: 1.6rem;
-  color: var(--text-black-900);
-  font-weight: 600;
-}
-
-.service .service_item .service_item_inner p {
-  font-size: 1rem;
-  color: var(--text-black-700);
-  line-height: 1.5;
-}
-
 /* portfolio */
 
 .portfolio .portfolio_heading {
@@ -642,123 +578,6 @@ h3.my_profession {
   color: var(--text-black-700);
   text-align: justify;
   line-height: 25px;
-}
-
-/* contact me */
-
-.contact .contact_text {
-  flex: 0 0 100%;
-  max-width: 100%;
-  font-size: 1.7rem;
-  font-weight: 600;
-  color: var(--text-black-900);
-  margin-bottom: 30px;
-}
-
-.contact .contact_item {
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.contact .contact_item .contact_item_inner {
-  background-color: var(--bg-black-100);
-  margin-bottom: 25px;
-  border: 1px solid var(--bg-black-50);
-  border-radius: 10px;
-  padding: 30px 15px;
-
-  transition: all 0.3s ease-in;
-}
-
-.contact .contact_item .contact_item_inner:hover {
-  border: 1px solid var(--skin-color);
-}
-
-.contact .contact_item .contact_item_inner .fa {
-  font-size: 2rem;
-  color: var(--skin-color);
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-.contact .contact_item .contact_item_inner h4,
-.contact .contact_item .contact_item_inner h4 a {
-  color: var(--text-black-900);
-  font-size: 1.6rem;
-  font-weight: 800;
-  margin-bottom: 10px;
-}
-
-.contact .contact_item .contact_item_inner p,
-.contact .contact_item .contact_item_inner p a {
-  color: var(--text-black-700);
-  font-size: 1rem;
-  line-height: 1.5;
-  transition: all 0.2s ease;
-  overflow: hidden;
-}
-
-.contact .contact_item .contact_item_inner p:hover,
-.contact .contact_item .contact_item_inner p a:hover {
-  color: var(--skin-color);
-  cursor: pointer;
-}
-
-.contact .reach_out {
-  margin-top: 30px;
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.contact .reach_out h2 {
-  color: var(--text-black-900);
-  font-weight: 800;
-  font-size: 1.7rem;
-  margin-bottom: 20px;
-}
-
-.contact .contact_form {
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.contact .contact_form .col_6 {
-  flex: 0 0 50%;
-  max-width: 50%;
-}
-
-.contact .contact_form .col_12 {
-  flex: 0 0 100%;
-  max-width: 100%;
-}
-
-.contact .contact_form .form_item {
-  margin-bottom: 20px;
-}
-
-.contact .contact_form .form_item .form_control,
-input {
-  width: 100%;
-  height: 50px;
-  border-radius: 10px;
-  background: var(--bg-black-100);
-  border: 2px solid var(--bg-black-50);
-  padding: 10px 15px;
-  font-size: 1rem;
-  color: var(--text-black-700);
-  transition: all 0.3s ease;
-}
-
-.contact .contact_form .form_item .form_control:focus {
-  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
-  border: 1px solid var(--skin-color);
-}
-
-.contact .contact_form .form_item .text_area {
-  height: 140px;
-  padding: 10px 15px;
-  font-size: 1rem;
-  color: var(--text-black-700);
 }
 
 /* responsive */

@@ -9,7 +9,7 @@
     <meta name="description" content="Anil Kumar Portfolio" />
     <meta name="keywords" content="Web Developer, Content Writer" />
 
-    <title>AK Profile</title>
+    <title>AK - 127.0.0.1</title>
 
     <link rel="stylesheet" href="color-1.css" />
     <link rel="stylesheet" href="styles.css" />
@@ -52,6 +52,7 @@
       disabled
     />
     <link rel="stylesheet" href="eagles-form.css" />
+    <link rel="stylesheet" href="about_styles.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
@@ -81,7 +82,7 @@
         <li>
           <a id="nav_btns" href="#about"><i class="fa fa-user"></i> About</a>
         </li>
-        <li>
+        <!-- <li>
           <a id="nav_btns" href="#services"
             ><i class="fa fa-list"></i> Services</a
           >
@@ -91,7 +92,7 @@
           <a id="nav_btns" href="#contact"
             ><i class="fa fa-comments"></i> Contact</a
           >
-        </li>
+        </li> -->
       </ul>
     </div>
 
@@ -100,28 +101,22 @@
         <div class="container">
           <div class="row">
             <div class="section_title padd_15">
-              <h2>Portfolio</h2>
+              <h2>Some Stuff I did</h2>
             </div>
           </div>
 
-          <div class="row">
-            <div class="portfolio_heading padd_15">
-              <h2>My Projects</h2>
-            </div>
-          </div>
-
-          <div class="invite-card row">
-            <div class="padd_15">
+          <div class="eagles invite-card row">
+            <div class="padd_15 card-container">
               <div class="card-header">
                 <img
                   src="./philadelphia-eagles-logo/philadelphia-eagles-helmet-logo.png"
-                  alt=""
+                  alt="Philadelphia Eagles helmet logo"
                   class="eagles_logo"
                 />
-                <h2>Eagles 2025-26 Game Invites</h2>
+                <h3>Add All Eagles 2025-26 Games to Calendar</h3>
                 <img
                   src="./philadelphia-eagles-logo/philadelphia-eagles-helmet-logo.png"
-                  alt=""
+                  alt="Philadelphia Eagles helmet logo mirrored"
                   class="eagles_logo"
                   style="transform: rotateY(180deg)"
                 />
@@ -131,13 +126,14 @@
                 <p>
                   Enter your email to get every game added directly to your
                   calendar. Never miss a snap!
+                  <br />
                   <span class="birds_accent">GO BIRDS! 🦅</span>
                 </p>
 
                 <form id="inviteForm" class="invite_form">
                   <div class="form-group" id="formGroup">
                     <div class="marquee-text">
-                      <span>Fly Eagles Fly</span>
+                      <span>"Fly Eagles Fly!" 🦅🏈</span>
                     </div>
 
                     <input
@@ -164,396 +160,88 @@
             </div>
           </div>
 
+          <!-- adding throuhg js -->
           <div class="row" id="portfolioRow"></div>
         </div>
       </section>
 
-      <section class="about section" id="about">
-        <div class="container">
-          <div class="section_title padd_15">
-            <h2>About Me</h2>
-          </div>
+      <div class="about_content padd_15">
+        <div class="about_text padd_15">
+          <!-- <p>Noicee you are here! I guess I can introduce myself</p> -->
 
-          <div class="about_content padd_15">
-            <div class="about_text padd_15">
-              <h3 class="hello">
-                Hello, my name is <span class="name">Anil Kumar</span>
-              </h3>
-
-              <h3 class="my_profession">
-                I'm a <span class="typing">Web Developer</span>
-              </h3>
-
-              <p>
-                As a web developer, I have a solid grasp of web development
-                technologies and markup languages, covering HTML, CSS,
-                JavaScript, and associated frameworks. I have expertise in
-                designing and maintaining websites, and I can design and execute
-                aesthetically appealing, search engine optimized, and
-                user-friendly interfaces. I have a keen eye for detail and the
-                ability to debug and troubleshoot programmes. In addition, I am
-                adept at working in a team atmosphere and communicating well
-                with clients and other stakeholders.
-              </p>
-
-              <p>
-                In addition, I am a talented and creative content writer who has
-                a strong interest in producing work that is both informative and
-                entertaining for a wide range of platforms. Capable of doing
-                research, creating, and editing pieces for blogs, websites, and
-                social media platforms that are optimised for search engines.
-                With a keen attention to detail, the ability to fulfil
-                deadlines, and work collaboratively with cross-functional teams.
-              </p>
-
-              <a href="#contact" class="btn hire_me">Hire Me</a>
-            </div>
-
-            <div class="row">
-              <div class="personal_info padd_15">
-                <h3 class="title">Personal Information</h3>
-
-                <div class="row">
-                  <div class="info_item padd_15">
-                    <p>Email <span>karapaanilkumar005@gmail.com</span></p>
-                  </div>
-                  <div class="info_item padd_15">
-                    <p>School - Email <span>ak4448@drexel.edu</span></p>
-                  </div>
-                  <div class="info_item padd_15">
-                    <p>Degree <span>MS, B.Tech</span></p>
-                  </div>
-
-                  <div class="info_item padd_15">
-                    <p>City <span>Philadelphia, PA</span></p>
-                  </div>
-                  <div class="info_item padd_15">
-                    <p>Open to new Jobs: <span>Yes</span></p>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="buttons padd_15">
-                    <as
-                      href="https://drive.google.com/file/d/1YwjmX-zyZWeAfL7VSUbYA_Aww3qUleuM/view?usp=drive_link"
-                      target="_blank"
-                      class="btn"
-                      >My Resume</as
-                    >
-                  </div>
-                </div>
-              </div>
-
-              <div class="skills padd_15">
-                <h3 class="title">Skills</h3>
-                <div class="row">
-                  <div class="skill_items padd_15">
-                    <h5>HTML</h5>
-                    <div class="progress">
-                      <div class="progress_in" style="width: 95%"></div>
-                      <div class="skill_percent">95%</div>
-                    </div>
-                  </div>
-
-                  <div class="skill_items padd_15">
-                    <h5>Java</h5>
-                    <div class="progress">
-                      <div class="progress_in" style="width: 80%"></div>
-                      <div class="skill_percent">80%</div>
-                    </div>
-                  </div>
-
-                  <div class="skill_items padd_15">
-                    <h5>CSS</h5>
-                    <div class="progress">
-                      <div class="progress_in" style="width: 85%"></div>
-                      <div class="skill_percent">85%</div>
-                    </div>
-                  </div>
-
-                  <div class="skill_items padd_15">
-                    <h5>MySQL</h5>
-                    <div class="progress">
-                      <div class="progress_in" style="width: 70%"></div>
-                      <div class="skill_percent">70%</div>
-                    </div>
-                  </div>
-
-                  <div class="skill_items padd_15">
-                    <h5>JavaScript</h5>
-                    <div class="progress">
-                      <div class="progress_in" style="width: 85%"></div>
-                      <div class="skill_percent">85%</div>
-                    </div>
-                  </div>
-
-                  <div class="skill_items padd_15">
-                    <h5>Node.js</h5>
-                    <div class="progress">
-                      <div class="progress_in" style="width: 80%"></div>
-                      <div class="skill_percent">80%</div>
-                    </div>
-                  </div>
-
-                  <div class="skill_items padd_15">
-                    <h5>React</h5>
-                    <div class="progress">
-                      <div class="progress_in" style="width: 75%"></div>
-                      <div class="skill_percent">75%</div>
-                    </div>
-                  </div>
-
-                  <div class="skill_items padd_15">
-                    <h5>Writing</h5>
-                    <div class="progress">
-                      <div class="progress_in" style="width: 95%"></div>
-                      <div class="skill_percent">95%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="education padd_15">
-                <h3 class="title">Education</h3>
-                <div class="row">
-                  <div class="timeline_box padd_15">
-                    <div class="timeline shadow_dark">
-                      <div class="timeline_item">
-                        <div class="circle_dot"></div>
-                        <h3 class="timeline_date">
-                          <i class="fa fa-calendar"></i> Spetember 2023 - June
-                          2025
-                        </h3>
-                        <h4 class="timeline_title">
-                          Master of Science in Computer Science & Engineering at
-                          Drexel University
-                        </h4>
-                        <div class="timeline_text">
-                          <h4>Courses:</h4>
-                          <ul>
-                            <li>Software Development</li>
-                            <li>Web Progamming</li>
-                            <li>Security Engineering</li>
-                            <li>Data and Organization</li>
-                            <li>Information Policy and Ethics</li>
-                            <li>
-                              <strong>Programming:</strong> JavaScript, React,
-                              Python
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-
-                      <div class="timeline_item">
-                        <div class="circle_dot"></div>
-                        <h3 class="timeline_date">
-                          <i class="fa fa-calendar"></i> 2018 - 2022
-                        </h3>
-                        <h4 class="timeline_title">
-                          Bachelor of Technology in Electronics and
-                          Communication from ANITS
-                        </h4>
-                        <div class="timeline_text">
-                          <h4>Relevant Courses:</h4>
-                          <ul>
-                            <li>Data Structures & Algorithms</li>
-                            <li>Computer Organization & Networks</li>
-                            <li>
-                              <strong>Programming:</strong> Python, Java, C, C++
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="experience padd_15">
-                <h3 class="title">Experience</h3>
-                <div class="row">
-                  <div class="timeline_box padd_15">
-                    <div class="timeline shadow_dark">
-                      <div class="timeline_item">
-                        <div class="circle_dot"></div>
-                        <h3 class="timeline_date">
-                          <i class="fa fa-calendar"></i> March 2022 - Present
-                        </h3>
-                        <h4 class="timeline_title">
-                          TheWriters’Bay - Cofounder
-                        </h4>
-                        <p class="timeline_text">
-                          Making websites for clients, portfolios for students,
-                          and guiding students in higher education and academic
-                          writing
-                        </p>
-                      </div>
-
-                      <div class="timeline_item">
-                        <div class="circle_dot"></div>
-                        <h3 class="timeline_date">
-                          <i class="fa fa-calendar"></i> November 2022 -
-                          Spetember 2023
-                        </h3>
-                        <h4 class="timeline_title">
-                          WriteRight - Web Developer & Academic Content Writer
-                        </h4>
-                        <p class="timeline_text">
-                          I mentored a 4-member intern team, providing guidance
-                          on front-end technologies, SEO strategies, and
-                          analytical tools. Collaborated with editors and
-                          operations, enhancing workflow efficiency and
-                          optimizing task-tracking systems for heightened
-                          productivity and quality output.
-                        </p>
-                      </div>
-
-                      <div class="timeline_item">
-                        <div class="circle_dot"></div>
-                        <h3 class="timeline_date">
-                          <i class="fa fa-calendar"></i> August 2022 to
-                          Spetember 2022
-                        </h3>
-                        <h4 class="timeline_title">
-                          Olive Crypto Systems Pvt Ltd - Java Developer Contract
-                        </h4>
-                        <p class="timeline_text">
-                          Collaborated with the seniors to learn and optimize
-                          payment processes, enhancing operational efficiency
-                          through clean, efficient, and scalable code.
-                          Engineered a Java-based Banking Management System with
-                          MySQL, Java GUI, and the Spring framework, along with
-                          unit testing and database management.
-                        </p>
-                      </div>
-
-                      <div class="timeline_item">
-                        <div class="circle_dot"></div>
-                        <h3 class="timeline_date">
-                          <i class="fa fa-calendar"></i> May 2022 to July 2022
-                        </h3>
-                        <h4 class="timeline_title">
-                          Wipro Technologies - Full-Stack Developer Intern
-                          Training
-                        </h4>
-                        <p class="timeline_text">
-                          Learned front-end technologies and developed
-                          component-based responsive, accessible, and
-                          interactive web applications for optimal user
-                          experiences. Led a team of five to implement and
-                          deploy a dynamic online bus reservation system using
-                          frameworks and front-end libraries along with the
-                          CI/CD tools.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="service section" id="services">
-        <div class="container" id="servicesContainer">
-          <div class="row">
-            <div class="section_title padd_15">
-              <h2>Services</h2>
-            </div>
-          </div>
-
-          <div class="row" id="servicesRow">
-            <!-- Service items will be dynamically added here -->
-          </div>
-        </div>
-      </section>
-
-      <section class="contact section" id="contact">
-        <div class="container">
-          <div class="row">
-            <div class="section_title padd_15">
-              <h2>Contact Me</h2>
-            </div>
-          </div>
-          <div class="row">
-            <div class="contact_text padd_15">
-              <p>Feel Free to Reach Out to Me</p>
-            </div>
-          </div>
-
-          <div class="row" id="contactRow"></div>
-
-          <div class="row">
-            <div class="reach_out padd_15">
-              <h2>Send Your Thoughts</h2>
-            </div>
-          </div>
-          <form
-            class="row"
-            action="https://formsubmit.co/karapaanilkumar3494@gmail.com"
-            method="post"
-            target="_blank"
+          <p
+            class="cypher-text"
+            id="intro"
+            data-value="Noicee you are here! I guess I can introduce myself"
           >
-            <div class="contact_form padd_15">
-              <div class="row">
-                <div class="form_item col_6 padd_15">
-                  <div class="form_group">
-                    <input
-                      type="text"
-                      class="form_control"
-                      placeholder="Name"
-                      name="name"
-                    />
-                  </div>
-                </div>
+            &gt; Initialize Introduction...
+          </p>
 
-                <div class="form_item col_6 padd_15">
-                  <div class="form_group">
-                    <input
-                      type="email"
-                      class="form_control"
-                      placeholder="e-mail"
-                      name="email"
-                      required
-                    />
-                  </div>
-                </div>
+          <h3 class="hello">
+            My name is
+            <span class="name" data-text="Anil Kumar">Anil Kumar</span>
+            <br />
+          </h3>
+          <p class="info-line">
+            I'm based in
+            <span class="location-text"
+              >Philadelphia, USA
+              <span class="location-pin"></span>
+            </span>
+            and uh I also have a
+            <span class="degree-text" id="degreeInteraction">
+              Master's Degree
+              <span class="grad-cap">🎓</span>
+            </span>
+          </p>
+          <p>
+            I'm probably trying to <span class="action-verb">build</span> or
+            <span class="action-verb">break</span> stuff on the Web! 🚀
+          </p>
 
-                <div class="form_item col_6 padd_15">
-                  <div class="form_group">
-                    <input
-                      type="text"
-                      class="form_control"
-                      placeholder="Subject"
-                      name="subject"
-                    />
-                  </div>
-                </div>
+          <!-- <p class="div-joke">
+            ...or <i>Perhaps</i> Trying to figure out why I cannot center a
+            <span class="bloody-div-text"
+              >blooody div
+              <div class="div-box" id="theDivBox">
+                ----click to save me---
+              </div></span
+            >
+          </p> -->
 
-                <div class="form_item col_12 padd_15">
-                  <div class="form_group">
-                    <textarea
-                      class="form_control text_area"
-                      id=""
-                      placeholder="Message"
-                      name="message"
-                    ></textarea>
-                  </div>
-                </div>
+          <p class="div-joke">
+            ...or <i>Perhaps</i> Trying to figure out why I cannot center a
+            <span class="bloody-div-text"
+              >blooody div
+              <div class="div-box" id="theDivBox">----click to save me---</div>
+            </span>
+            <span id="centerSuccessMsg" class="success-message"></span>
+          </p>
 
-                <div class="form_item col_12 padd_15">
-                  <div class="form_group">
-                    <input type="submit" class="btn" Send Message />
-                  </div>
-                </div>
-              </div>
+          <p>
+            I mean, I can
+            <span class="typing">Build Full-Stack Web Applications, duh.</span>
+          </p>
+
+          <div class="contact-section">
+            <p>
+              I could click into any team like a
+              <span class="lego-text">Lego</span>, so umm email me
+              <span class="shy-emoji">👉👈</span> if you are hiring:
+            </p>
+            <div class="email-container">
+              <a
+                href="mailto:karapaanilkumar@gmail.com"
+                class="email-link"
+                id="emailLink"
+                data-email="karapaanilkumar@gmail.com"
+                >karapaanilkumar@gmail.com</a
+              >
+              <span class="copy-tooltip" id="copyTooltip">Copied! 👍</span>
             </div>
-          </form>
+          </div>
         </div>
-      </section>
+      </div>
     </main>
 
     <div class="style_switcher">
@@ -579,7 +267,9 @@
     ></script>
 
     <!-- JS for services -->
-    <script src="servicesItems.js"></script>
+    <!-- <script src="servicesItems.js"></script> -->
+
+    <script src="about.js"></script>
 
     <!-- JS for projects -->
     <script src="projects.js"></script>

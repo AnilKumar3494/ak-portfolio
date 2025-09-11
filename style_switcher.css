@@ -61,7 +61,8 @@
   top: 55px;
 }
 
-.style_switcher h4 {
+.style_switcher h4,
+.style_switcher p {
   margin: 0 0 10px;
   color: var(--text-black-700);
   font-size: 16px;
