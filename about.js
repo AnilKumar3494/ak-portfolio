@@ -40,12 +40,65 @@ document.addEventListener("DOMContentLoaded", () => {
     introElement.addEventListener("click", runAnimation);
 });
 
+// words
+document.addEventListener("DOMContentLoaded", function () {
+    const buildButton = document.getElementById("buildButton");
+    const breakButton = document.getElementById("breakButton");
+    const targetWord = document.getElementById("targetWord");
+
+    if (!buildButton || !breakButton || !targetWord) return;
+
+    const originalWord = targetWord.textContent;
+    let isBroken = false;
+
+    // Function to break the word apart
+    breakButton.addEventListener("click", () => {
+        if (isBroken) return; // Don't break it if it's already broken
+        isBroken = true;
+
+        let lettersHTML = "";
+        // Wrap each letter in a span
+        for (const letter of originalWord) {
+            lettersHTML += `<span class="letter">${letter}</span>`;
+        }
+        targetWord.innerHTML = lettersHTML;
+
+        // Animate each letter to a random position
+        const letters = targetWord.querySelectorAll(".letter");
+        letters.forEach((letter) => {
+            const x = (Math.random() - 0.5) * 80;
+            const y = (Math.random() - 0.5) * 80;
+            const rot = (Math.random() - 0.5) * 360;
+
+            // Use a short delay to ensure the DOM has updated before transforming
+            setTimeout(() => {
+                letter.style.transform = `translate(${x}px, ${y}px) rotate(${rot}deg)`;
+                letter.style.opacity = "0";
+            }, 10);
+        });
+    });
+
+    buildButton.addEventListener("click", () => {
+        if (!isBroken) return;
+        isBroken = false;
+
+        const letters = targetWord.querySelectorAll(".letter");
+        letters.forEach((letter) => {
+            letter.style.transform = "translate(0, 0) rotate(0deg)";
+            letter.style.opacity = "1";
+        });
+        setTimeout(() => {
+            targetWord.innerHTML = originalWord;
+        }, 600);
+    });
+});
+
 
 // center a div
 document.addEventListener("DOMContentLoaded", function () {
     const theDiv = document.getElementById("theDivBox");
     const divJokeContainer = document.querySelector(".div-joke");
-    // Get the new message element
+
     const successMsg = document.getElementById("centerSuccessMsg");
 
     if (theDiv && divJokeContainer && successMsg) {
@@ -55,13 +108,13 @@ document.addEventListener("DOMContentLoaded", function () {
             theDiv.classList.toggle("centered");
 
             if (theDiv.classList.contains("centered")) {
-                theDiv.textContent = "WOW Centered!";
+                theDiv.textContent = "WOW Centered! or is it?";
 
                 successMsg.textContent = "Woooah, you did it!";
                 successMsg.classList.add("visible");
             } else {
                 theDiv.textContent = "----click to save me---";
-                // Clear the text and remove the visible class
+
                 successMsg.textContent = "";
                 successMsg.classList.remove("visible");
             }
@@ -86,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
             navigator.clipboard
                 .writeText(emailAddress)
                 .then(() => {
-                    // On success, show the tooltip
+
                     copyTooltip.classList.add("show");
 
 
@@ -103,6 +156,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// grad cap interation
 document.addEventListener("DOMContentLoaded", function () {
     const degreeInteraction = document.getElementById("degreeInteraction");
     const infoLine = document.querySelector(".info-line");
@@ -138,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const translateX = Math.cos(angle) * distance;
             const translateY = Math.sin(angle) * distance;
 
-            // Apply animation transform
+
             particle.style.setProperty("--translateX", `${translateX}px`);
             particle.style.setProperty("--translateY", `${translateY}px`);
 

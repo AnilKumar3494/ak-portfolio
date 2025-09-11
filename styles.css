@@ -38,7 +38,8 @@ body.dark {
   box-sizing: border-box;
 }
 
-ul {
+ul,
+li {
   list-style: none;
 }
 
@@ -49,6 +50,9 @@ body {
   position: relative;
 
   background: var(--bg-black-900);
+}
+h3 {
+  color: var(--text-black-900);
 }
 
 .main_content {
@@ -164,9 +168,6 @@ body {
   /* left: 0; */
   bottom: -8px;
   left: 0;
-}
-h3 {
-  color: var(--text-black-900);
 }
 
 .row {
@@ -304,6 +305,28 @@ a.active {
   margin-right: 0.5rem;
 }
 
+.aside .aside_links {
+  position: absolute;
+  bottom: 3.2rem;
+
+  display: flex;
+  flex-direction: row;
+  gap: 0.8rem;
+}
+
+.aside a {
+  color: var(--skin-color);
+}
+.aside a:hover {
+  /* font-size: 1.2rem; */
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+
+h3 {
+  font-size: 1.4rem !important;
+  font-weight: 700;
+}
 h3.hello {
   font-size: 2rem;
   font-weight: 600;
@@ -316,16 +339,12 @@ h3.hello span {
   color: var(--skin-color);
 }
 
-h3.my_profession {
-  font-size: 1.8rem;
-}
-
 .typing {
   color: var(--skin-color);
 }
 
 p {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   padding-bottom: 1rem;
 
   color: var(--text-black-700);
