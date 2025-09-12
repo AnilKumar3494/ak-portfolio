@@ -1,31 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
     const skillsData = {
         "Frontend Development": [
-            { name: "React", desc: "A library for building modern, interactive user interfaces, much like the dynamic parts of this page." },
-            { name: "JavaScript", desc: "The core programming language of the web, making websites interactive and functional." },
-            { name: "TypeScript", desc: "A superset of JavaScript that adds types, helping to write more robust and error-free code." },
+            { name: "JavaScript", desc: "The core programming language of the web, making websites interactive and functional. I 💖 JS" },
+            { name: "TypeScript", desc: "More lines of JavaScript that adds types, to write more errors non breakble code iykyk!" }, { name: "React", desc: "A library for building modern, interactive user interfaces, much like the dynamic parts of this page." },
             { name: "Next.js", desc: "A React framework for building fast, server-rendered websites and applications." },
-            { name: "HTML5", desc: "The standard language for creating the structure and content of web pages." },
-            { name: "CSS3", desc: "The language used to style and design web pages, from colors and fonts to complex layouts." },
-            { name: "TailwindCSS", desc: "A utility-first CSS framework that allows for rapid and custom user interface design." },
+            { name: "HTML5", desc: "A bunch of standard characters for creating the structure and content of web pages." },
+            { name: "CSS3", desc: "The language? maybe but it is used to style and design web pages into complex layouts." },
+            { name: "TailwindCSS", desc: "A utility-first CSS framework that allows for rapid and not so custom user interface design." },
         ],
         "Backend & APIs": [
-            { name: "Node.js", desc: "Allows running JavaScript on the server, perfect for building fast and scalable network applications." },
-            { name: "Python", desc: "A versatile language used for web development, data analysis, and automation." },
-            { name: "Express.js", desc: "A minimal and flexible Node.js web application framework that provides a robust set of features." },
-            { name: "Java", desc: "A robust, object-oriented programming language widely used for backend development and enterprise applications." },
+            { name: "Node.js", desc: "Allows running JavaScript on the server, it is NOT perfect for that case but we use it anyways." },
+            { name: "Python", desc: "A language used that can be used for everything .. even speaking!" },
+            { name: "Express.js", desc: "A flexible Node.js framework that provides some features." },
+            { name: "Java", desc: "Got mad because JS took the fame but a object-oriented programming language widely used for backend development and enterprise applications." },
             { name: "Spring Boot", desc: "A Java-based framework used for creating stand-alone, production-grade applications." },
-            { name: "REST APIs", desc: "A standard way for different software applications to communicate with each other over the internet." },
+            { name: "REST APIs", desc: "An OG way for software applications to communicate with each other over the internet." },
 
 
         ],
         "Databases & DevOps": [
-            { name: "PostgreSQL", desc: "A powerful, open-source object-relational database system known for its reliability." },
-            { name: "MongoDB", desc: "A NoSQL database that stores data in flexible, JSON-like documents, ideal for a variety of applications." },
-            { name: "Redis", desc: "An in-memory data store used as a database, cache, and message broker for high-speed operations." },
-            { name: "Docker", desc: "A platform for developing, shipping, and running applications in containers, ensuring consistency across environments." },
+            { name: "PostgreSQL", desc: "An open-source object-relational database system known for its reliability." },
+            { name: "MongoDB", desc: "A NoSQL database that stores data with a nice stock price increase!" },
+            { name: "Redis", desc: "RAM for databases might result in high-speed operations." },
+            { name: "Docker", desc: "A big whale that can store eveything and can be passed on for other to use and test." },
             { name: "AWS", desc: "Amazon Web Services, a cloud computing platform providing a wide range of services like hosting and storage." },
-            { name: "Git", desc: "A version control system for tracking changes in code, essential for collaborative software development." },
+            { name: "Git", desc: "An other OG - a version control system, a place where all the code lives." },
         ],
         "Testing": [
             { name: "Unit Testing", desc: "The practice of testing individual components of an application to ensure they work correctly." },
