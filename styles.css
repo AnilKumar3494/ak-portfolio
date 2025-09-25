@@ -598,6 +598,17 @@ p {
 
 /* responsive */
 @media (max-width: 2400px) {
+  .mobile_contact {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    text-decoration: underline;
+    color: var(--skin-color);
+    font-weight: 900;
+    letter-spacing: 1px;
+    padding-bottom: 1rem;
+  }
   .portfolio .portfolio_item {
     flex: 0 0 50%;
     max-width: 50%;
@@ -658,6 +669,10 @@ p {
     padding: 5px 15px;
   }
 
+  .aside .aside_links {
+    display: none;
+  }
+
   .main_content {
     margin-left: 0px;
   }
@@ -673,24 +688,9 @@ p {
     flex: 0 0 100%;
     max-width: 100%;
   }
-
-  .aside .aside_links {
-    display: none;
-  }
 }
 
 @media (max-width: 860px) {
-  .mobile_contact {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
-    text-decoration: underline;
-    color: var(--skin-color);
-    font-weight: 900;
-    letter-spacing: 1px;
-    padding-bottom: 1rem;
-  }
   .portfolio {
     padding-top: 18vh;
   }
