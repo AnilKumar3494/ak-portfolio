@@ -1,0 +1,16 @@
+.music_section {
+  margin: 0 auto;
+  height: 65dvh;
+  max-width: 65dvw;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.music_section iframe {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
