@@ -22,13 +22,6 @@ const portfolioItems = [
         languages: "Java, MySQL",
     },
     {
-        title: "JS DOM Manipulation",
-        link: "https://github.com/AnilKumar3494/JS-DOM-Manipulation",
-        description:
-            "Used JavaScript to do DOM Manipulation and designed efficent and Responsive Desgins.",
-        languages: "HTML5, CSS3, JS",
-    },
-    {
         title: "Imaginnovate Home Page",
         link: "https://anilkumar3494.github.io/Imaginnovate/",
         description:

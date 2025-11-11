@@ -56,6 +56,7 @@
     <link rel="stylesheet" href="skills_Styles.css" />
     <link rel="stylesheet" href="musicSection.css" />
     <link rel="stylesheet" href="projects.css" />
+    <link rel="stylesheet" href="projects/projectStyles.css" />
 
     <link
       rel="stylesheet"
@@ -166,8 +167,39 @@
             </div>
           </div>
 
-          <!-- adding through js -->
-          <div class="row" id="portfolioRow"></div>
+          <!-- Projects added through js
+          <div class="row" id="portfolioRow"></div> -->
+
+          <!-- new projects -->
+          <section id="projects">
+            <div id="filter-container" class="filter-container">
+              <div id="filter-main-group" class="filter-group"></div>
+              <div id="filter-tags-group" class="filter-group"></div>
+            </div>
+
+            <div class="projects-grid" id="projects-grid"></div>
+          </section>
+
+          <div class="modal-overlay" id="modal-overlay">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="modal-title">Loading Project...</h3>
+                <button class="modal-close-btn" id="modal-close-btn">
+                  &times;
+                </button>
+              </div>
+              <div class="modal-body">
+                <div class="modal-loader" id="modal-loader"></div>
+                <iframe
+                  class="modal-iframe"
+                  id="modal-iframe"
+                  src=""
+                  frameborder="0"
+                  title="Project Quick Look"
+                ></iframe>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -276,10 +308,10 @@
     </main>
 
     <div class="style_switcher">
-      <div class="style_switcher_toggler s_icon" title="theme colors">
+      <div class="style_switcher_toggler s_icon" title="Skin Colors">
         <i class="fas fa-cog fa-spin"></i>
       </div>
-      <div class="day_night s_icon" title="theme switcher">
+      <div class="day_night s_icon" title="Flash Banger">
         <i class="fas"></i>
       </div>
       <h4>Theme Colors</h4>
@@ -307,6 +339,7 @@
 
     <!-- JS for projects -->
     <script src="projects.js"></script>
+    <script src="updatedProjects.js"></script>
 
     <!-- JS for Contat Items -->
     <script src="contactItems.js"></script>
