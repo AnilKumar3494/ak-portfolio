@@ -692,6 +692,9 @@ p {
 }
 
 @media (max-width: 860px) {
+  #filter-tags-group {
+    display: none;
+  }
   .portfolio {
     padding-top: 18vh;
   }
