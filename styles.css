@@ -138,7 +138,8 @@ body {
   flex: 0 0 100%;
 }
 
-.section_title h2 {
+.section_title h2,
+h2 {
   font-size: 2.5rem;
   color: var(--text-black-900);
   font-weight: 800;

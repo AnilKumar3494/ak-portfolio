@@ -1,0 +1,112 @@
+[
+  {
+    "title": "Philly Shooting Analysis",
+    "description": "In-depth data analysis and visualization of shooting victims in Philadelphia to identify patterns and hotspots.",
+    "image": "./projects/shooting_analysis.png",
+    "tags": [
+      "Data Analysis",
+      "Maps",
+      "Data Cleaning & Visualization",
+      "Open Source",
+      "Pinned"
+    ],
+    "links": {
+      "github": "https://github.com/AnilKumar3494/Philadelphia_Shooting_Victims_Analysis",
+      "live": "https://anilkumar3494.github.io/Philadelphia_Shooting_Victims_Analysis/"
+    }
+  },
+  {
+    "title": "PHLASK Map",
+    "description": "Contributing to the open-source Phlask map, helping users find free water and resources in Philly.",
+    "image": "./projects/phlask_map.png",
+    "tags": [
+      "Web App",
+      "JavaScript",
+      "TypeScript",
+      "UI/UX",
+      "Open Source",
+      "Pinned"
+    ],
+    "links": {
+      "github": "https://github.com/AnilKumar3494/phlask-map-ak-fork",
+      "live": "https://phlask.me/"
+    }
+  },
+  {
+    "title": "ILCC Philly Website",
+    "description": "Developed the official website for the International Language & Culture Center of Philadelphia.",
+    "image": "./projects/ilcc_philly.png",
+    "tags": ["Web App", "React", "JavaScript", "RESTful APIs", "Pinned"],
+    "links": {
+      "github": "https://github.com/AnilKumar3494/ILCC-Project",
+      "live": "https://www.ilccphilly.org/"
+    }
+  },
+  {
+    "title": "Raindrop Restaurant",
+    "description": "A modern, responsive website for Raindrops Indian Restaurant, showcasing their menu and services.",
+    "image": "./projects/raindrops_site.png",
+    "tags": [
+      "JavaScript",
+      "RESTful APIs",
+      "MongoDB",
+      "CI/CD Jenkins",
+      "Docker",
+      "Pinned"
+    ],
+    "links": {
+      "github": "https://github.com/AnilKumar3494/raindrop-restaurant",
+      "live": "https://raindropsindianrestaurant.com/"
+    }
+  },
+  {
+    "title": "Auth App",
+    "description": "Developing a MERN stack application implementing Hooks, State Management, OAuth, and Tailwind CSS",
+    "image": "./assets/images/project-auth-app.jpg",
+    "tags": ["MERN", "React", "Tailwind CSS", "OAuth", "Node.js"],
+    "links": {
+      "github": "https://github.com/AnilKumar3494/auth-app",
+      "live": ""
+    }
+  },
+  {
+    "title": "Bus Reservation System",
+    "description": "Worked on a Full Stack application as a team lead that has admin and user modules, business implementation, live tracking, and updates.",
+    "image": "./assets/images/project-bus-system.jpg",
+    "tags": ["Full Stack", "JavaScript", "CI/CD GitHub Actions"],
+    "links": {
+      "github": "https://github.com/veerendra3/brs-frontend",
+      "live": ""
+    }
+  },
+  {
+    "title": "Bank Management System",
+    "description": "A desktop-based Java application that functions similarly to an ATM. Users can create accounts, deposit, withdraw, and review transactions.",
+    "image": "./projects/atm.png",
+    "tags": ["Java", "MySQL", "Desktop App", "Pinned"],
+    "links": {
+      "github": "https://github.com/AnilKumar3494/ATM",
+      "live": ""
+    }
+  },
+  {
+    "title": "Imaginnovate Home Page",
+    "description": "A responsive home page designed for Imaginnovate, implementing modern HTML, CSS, and JavaScript.",
+    "image": "./projects/imag_innovate.png",
+    "tags": ["HTML/CSS", "JavaScript", "Responsive Design"],
+    "links": {
+      "github": "https://github.com/AnilKumar3494/Imaginnovate",
+      "live": "https://anilkumar3494.github.io/Imaginnovate/"
+    }
+  },
+  {
+    "title": "e-commerce website",
+    "description": "An online shopping platform where clients can order clothes. (Still in development).",
+    "image": "./projects/commerce.png",
+    "tags": ["HTML/CSS", "JavaScript", "Responsive Design"],
+    "links": {
+      "github": "https://github.com/AnilKumar3494/ak-ecommerce",
+      "live": "https://anilkumar3494.github.io/ak-ecommerce/"
+    }
+  }
+]
