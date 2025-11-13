@@ -19,14 +19,7 @@
     "title": "PHLASK Map",
     "description": "Contributing to the open-source Phlask map, helping users find free water and resources in Philly.",
     "image": "./projects/phlask_map.png",
-    "tags": [
-      "Web App",
-      "JavaScript",
-      "TypeScript",
-      "UI/UX",
-      "Open Source",
-      "Pinned"
-    ],
+    "tags": ["JavaScript", "TypeScript", "UI/UX", "Open Source", "Pinned"],
     "links": {
       "github": "https://github.com/AnilKumar3494/phlask-map-ak-fork",
       "live": "https://phlask.me/"
@@ -36,7 +29,7 @@
     "title": "ILCC Philly Website",
     "description": "Developed the official website for the International Language & Culture Center of Philadelphia.",
     "image": "./projects/ilcc_philly.png",
-    "tags": ["Web App", "React", "JavaScript", "RESTful APIs", "Pinned"],
+    "tags": ["React", "JavaScript", "TypeScript", "RESTful APIs", "Pinned"],
     "links": {
       "github": "https://github.com/AnilKumar3494/ILCC-Project",
       "live": "https://www.ilccphilly.org/"

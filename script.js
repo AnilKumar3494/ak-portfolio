@@ -2,9 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const typingElement = document.querySelector(".typing");
 
   if (typingElement) {
-
     const restartTypingAnimation = (instance) => {
-
       if (!instance.typing) {
         instance.reset();
       }
@@ -14,10 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const typedInstance = new Typed(".typing", {
       strings: [
         "Build Mobile Apps",
-        "Vibe Code",
         "do Software Engineering??",
         "ohhh .. you still waiting😏😏 ",
-        "Join your team!",
+        "Join your team! 🤩",
         "Build Software and Products!",
       ],
       typeSpeed: 50,
@@ -25,11 +22,13 @@ document.addEventListener("DOMContentLoaded", function () {
       loop: true,
       loopCount: 2,
 
-
       onComplete: (self) => {
-
-        typingElement.addEventListener("mouseover", () => restartTypingAnimation(self));
-        typingElement.addEventListener("click", () => restartTypingAnimation(self));
+        typingElement.addEventListener("mouseover", () =>
+          restartTypingAnimation(self)
+        );
+        typingElement.addEventListener("click", () =>
+          restartTypingAnimation(self)
+        );
       },
     });
   }

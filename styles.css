@@ -695,9 +695,6 @@ p {
   #filter-tags-group {
     display: none;
   }
-  .portfolio {
-    padding-top: 18vh;
-  }
 
   h3 {
     font-size: 1.4rem !important;
@@ -843,10 +840,6 @@ p {
     font-weight: 600;
     color: var(--text-black-900);
     padding-block: 1rem;
-  }
-
-  .portfolio {
-    padding-top: 12vh;
   }
 
   h3.hello {
