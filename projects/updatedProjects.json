@@ -17,7 +17,7 @@
   },
   {
     "title": "PHLASK Map",
-    "description": "Contributing to the open-source Phlask map, helping users find free water and resources in Philly.",
+    "description": "Contributing to the open-source Phlask map, helping community find free water and resources in Philly.",
     "image": "./projects/phlask_map.png",
     "tags": ["JavaScript", "TypeScript", "UI/UX", "Open Source", "Pinned"],
     "links": {
@@ -27,7 +27,7 @@
   },
   {
     "title": "ILCC Philly Website",
-    "description": "Developed the official website for the International Language & Culture Center of Philadelphia.",
+    "description": "Developed the official website for the Indian Latin Catholic Community of Philadelphia.",
     "image": "./projects/ilcc_philly.png",
     "tags": ["React", "JavaScript", "TypeScript", "RESTful APIs", "Pinned"],
     "links": {
@@ -37,7 +37,7 @@
   },
   {
     "title": "Raindrop Restaurant",
-    "description": "A modern, responsive website for Raindrops Indian Restaurant, showcasing their menu and services.",
+    "description": "Ohh food here is lit 🔥! Order some if you are around!",
     "image": "./projects/raindrops_site.png",
     "tags": [
       "JavaScript",
