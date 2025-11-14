@@ -11,11 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize Typed.js
     const typedInstance = new Typed(".typing", {
       strings: [
-        "Build Mobile Apps",
-        "do Software Engineering??",
-        "ohhh .. you still waiting😏😏 ",
-        "Join your team! 🤩",
-        "Build Software and Products!",
+        "working on CI/CD Pipelines with Jenkins and EKS",
+        "that ohhh .. you still here 🤩🤩 ",
+        "building products that  make a postive impact and I can work hard :-)",
       ],
       typeSpeed: 50,
       backSpeed: 40,

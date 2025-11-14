@@ -8,10 +8,26 @@
   cursor: help;
 }
 
+.white_heart {
+  animation: beat 0.7s infinite;
+  display: inline-block;
+  cursor: cell;
+}
+
+@keyframes beat {
+  0%,
+  100% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
 .cry_for_help {
   position: relative;
   display: inline-block;
-  margin-top: 12.5vh;
+  margin-top: 8vh;
 }
 
 .cry_for_help img {

@@ -692,6 +692,10 @@ p {
 }
 
 @media (max-width: 860px) {
+  .cry_for_help {
+    margin-top: 12vh;
+  }
+
   #filter-tags-group {
     display: none;
   }
