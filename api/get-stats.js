@@ -9,7 +9,7 @@ const app = express();
 
 app.use(cors());
 
-app.get("/api/get-stats", async (req, res) => {
+app.get("/", async (req, res) => {
   console.log("Received a request for Clash Royale stats!");
 
   const CLASH_API_KEY = process.env.CLASH_API_KEY;
