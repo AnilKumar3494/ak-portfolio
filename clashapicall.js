@@ -3,8 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // This is the function that will get your stats
   async function fetchClashStats() {
     // This is your live, working API URL!
-    const apiUrl =
-      "https://ak-portfolio-git-main-anilkumar3494s-projects.vercel.app/api/get-stats";
+    const apiUrl = "https://ak-portfolio-alpha.vercel.app/api/get-stats";
 
     // Select the HTML elements you want to update
     const nameEl = document.getElementById("crl-name");
