@@ -21,7 +21,7 @@ app.get("/api/get-stats", async (req, res) => {
 
   const playerTag = "#9GU2YQ0V"; // Change to your player tag
 
-  const apiUrl = `https://api.clashroyale.com/v1/players/%23${playerTag.substring(1)}`;
+  const apiUrl = `https://proxy.royaleapi.dev/v1/players/%23${playerTag.substring(1)}`;
 
   try {
     const apiResponse = await fetch(apiUrl, {
