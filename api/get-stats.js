@@ -7,7 +7,8 @@ const cors = require("cors");
 const app = express();
 // const port = 3300;
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({ origin: "*" }));
 
 app.get("/api/get-stats", async (req, res) => {
   console.log("Received a request for Clash Royale stats!");
@@ -21,7 +22,9 @@ app.get("/api/get-stats", async (req, res) => {
 
   const playerTag = "#9GU2YQ0V"; // Change to your player tag
 
-  const apiUrl = `https://proxy.royaleapi.dev/v1/players/%23${playerTag.substring(1)}`;
+  const apiUrl = `https://proxy.royaleapi.dev/v1/players/%23${playerTag.substring(
+    1
+  )}`;
 
   try {
     const apiResponse = await fetch(apiUrl, {
@@ -30,7 +33,7 @@ app.get("/api/get-stats", async (req, res) => {
 
     if (!apiResponse.ok) {
       throw new Error(
-        `Clash Royale API responded with status: ${apiResponse.status}`,
+        `Clash Royale API responded with status: ${apiResponse.status}`
       );
     }
 
