@@ -3,3 +3,5 @@ node_modules
 
 # Ignore the file containing our secret API key
 .env
+
+# .dockerignore

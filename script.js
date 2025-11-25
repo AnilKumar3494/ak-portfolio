@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
       strings: [
         "working on CI/CD Pipelines with Jenkins and EKS",
         "that ohhh .. you still here 🤩🤩 ",
-        "building products that  make a postive impact and I can work hard :-)",
+        "building products that  make a postive impact :-)",
       ],
       typeSpeed: 50,
       backSpeed: 40,
