@@ -17,7 +17,7 @@
 .skill-description-panel {
   width: 90%;
   max-width: 800px;
-  min-height: 13dvh;
+  height: 15dvh;
   padding-top: 1.4rem;
   padding-bottom: 2.2rem;
   margin-bottom: 40px;

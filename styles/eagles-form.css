@@ -92,8 +92,8 @@
   padding: 1rem;
   border-radius: 0.3rem;
   outline: none;
-  border: 2px solid var(--skin-color);
-  background-color: transparent;
+  border: 3px solid var(--skin-color);
+  background-color: transparent !important;
   font-size: 1rem;
 }
 

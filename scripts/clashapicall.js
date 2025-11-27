@@ -1,12 +1,12 @@
-// Wait for the HTML document to be fully loaded before running code
 document.addEventListener("DOMContentLoaded", () => {
-  // This is the function that will get your stats
+  // function to will get your stats
   async function fetchClashStats() {
-    // This is your live, working API URL!
+    // API URL from vercel
     const apiUrl = "https://ak-portfolio-alpha.vercel.app/api/get-stats";
 
     // Select the HTML elements you want to update
-    const nameEl = document.getElementById("crl-name");
+    const tagEl = document.getElementById("crl-tag");
+    // const nameEl = document.getElementById("crl-name");
     const trophiesEl = document.getElementById("crl-trophies");
     const winsEl = document.getElementById("crl-wins");
     const arenaEl = document.getElementById("crl-arena");
@@ -24,7 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await response.json();
 
       // 3. Update the HTML elements with the data
-      nameEl.textContent = data.name;
+      tagEl.textContent = data.tag;
+      // nameEl.textContent = data.name;
       trophiesEl.textContent = data.trophies;
       winsEl.textContent = data.wins;
       arenaEl.textContent = data.arena.name; // Access nested data

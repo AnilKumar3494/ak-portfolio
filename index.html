@@ -9,7 +9,7 @@
     <meta name="description" content="Anil Kumar Portfolio" />
     <meta
       name="keywords"
-      content="Full Stack Developer, DevOps, Software Engineering and Product Development"
+      content="Anil Kumar, Anil Kumar Karapa, Anil Kumar Drexel,Anil Kumar Karapa Drexel, Anil Drexel, Anil Kumar Portfolio, Anil Portfolio, Full Stack Developer, DevOps, Software Engineering and Product Development"
     />
 
     <meta
@@ -18,54 +18,54 @@
     />
 
     <title>AK - 127.0.0.1</title>
-
-    <link rel="stylesheet" href="color-1.css" />
-    <link rel="stylesheet" href="styles.css" />
     <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
 
-    <link rel="stylesheet" href="style_switcher.css" />
+    <link rel="stylesheet" href="./styles/color-1.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+
+    <link rel="stylesheet" href="./styles/style_switcher.css" />
     <link
       rel="stylesheet"
-      href="color-1.css"
+      href="./styles/color-1.css"
       class="alternate_style"
       title="color-1"
       disabled
     />
     <link
       rel="stylesheet"
-      href="color-2.css"
+      href="./styles/color-2.css"
       class="alternate_style"
       title="color-2"
       disabled
     />
     <link
       rel="stylesheet"
-      href="color-3.css"
+      href="./styles/color-3.css"
       class="alternate_style"
       title="color-3"
       disabled
     />
     <link
       rel="stylesheet"
-      href="color-4.css"
+      href="./styles/color-4.css"
       class="alternate_style"
       title="color-4"
       disabled
     />
     <link
       rel="stylesheet"
-      href="color-5.css"
+      href="./styles/color-5.css"
       class="alternate_style"
       title="color-5"
       disabled
     />
-    <link rel="stylesheet" href="eagles-form.css" />
-    <link rel="stylesheet" href="about_styles.css" />
-    <link rel="stylesheet" href="skills_Styles.css" />
-    <link rel="stylesheet" href="musicSection.css" />
-    <link rel="stylesheet" href="projects.css" />
-    <link rel="stylesheet" href="projects/projectStyles.css" />
-    <link rel="stylesheet" href="cryforhelp.css" />
+    <link rel="stylesheet" href="./styles/eagles-form.css" />
+    <link rel="stylesheet" href="./styles/about_styles.css" />
+    <link rel="stylesheet" href="./styles/skills_Styles.css" />
+    <link rel="stylesheet" href="./styles/musicSection.css" />
+    <link rel="stylesheet" href="./styles/projects.css" />
+    <link rel="stylesheet" href="./styles/projectStyles.css" />
+    <link rel="stylesheet" href="./styles/cryforhelp.css" />
 
     <link
       rel="stylesheet"
@@ -131,18 +131,22 @@
             />
             <p>The man, the myth, the legend. (Steve Ballmer)</p>
           </div>
+          <p><i>ahhh...🥀🥀 The Holy Chant 🙏</i></p>
         </div>
 
-        <p><i>ahhh 🥀🥀 The Holy Chant 🙏</i></p>
-        <br />
-        <h1>I'm Looking for a New Role</h1>
-
-        <p>
-          I Love
-          <span class="typing"
-            >Building Full-Stack Web Applications and Products!</span
-          >
-        </p>
+        <div class="asking_job">
+          <!-- <br /> -->
+          <h1>Welp, I Need a Job 🧑‍💻</h1>
+          <p>
+            <i
+              ><strong
+                >I <span>enjoy</span> building Web application products and
+                efficient CI/CD pipelines!</strong
+              ></i
+            >
+          </p>
+          <p id="years_experience"></p>
+        </div>
 
         <div class="contact-section">
           <p>
@@ -197,13 +201,9 @@
               </div>
 
               <div class="card-body">
-                <p>
-                  Enter your email to get every game added directly to your
-                  calendar. Never miss a snap!
-                  <br />
+                <p class="birds_accent">
                   <span class="birds_accent">GO BIRDS! 🦅</span>
                 </p>
-
                 <form id="inviteForm" class="invite_form">
                   <div class="form-group" id="formGroup">
                     <div class="marquee-text">
@@ -270,24 +270,27 @@
         </div>
       </section>
 
-      <section>
-        <h3>My Clash Royale Stats</h3>
-        <p>
-          <strong>Player:</strong>
-          <span id="crl-name">Loading...</span>
-        </p>
-        <p>
-          <strong>Trophies:</strong>
-          <span id="crl-trophies">Loading...</span>
-        </p>
-        <p>
-          <strong>Wins:</strong>
-          <span id="crl-wins">Loading...</span>
-        </p>
-        <p>
-          <strong>Arena:</strong>
-          <span id="crl-arena">Loading...</span>
-        </p>
+      <section class="section padd_15">
+        <div class="crl_stats padd_15">
+          <h3>Clash Royale Stats (WIP .. API Working)</h3>
+          <p>
+            My Tag:
+            <span id="crl-tag">Loading...</span>
+          </p>
+
+          <p>
+            Trophies:
+            <span id="crl-trophies">Loading...</span>
+          </p>
+          <p>
+            Wins:
+            <span id="crl-wins">Loading...</span>
+          </p>
+          <p>
+            Arena:
+            <span id="crl-arena">Loading...</span>
+          </p>
+        </div>
       </section>
 
       <div class="about_content padd_15">
@@ -321,6 +324,13 @@
           </p>
 
           <p>
+            I Love
+            <span class="typing"
+              >Building Full-Stack Web Applications and Products!</span
+            >
+          </p>
+
+          <p>
             I'm probably
             <span class="action-verb" id="buildButton">building</span> or
             <span class="action-verb action-verb-1" id="breakButton"
@@ -342,7 +352,7 @@
       </div>
 
       <section class="skill-bookshelf-section">
-        <h3 class="skill-bookshelf-title">My Shelf of Expertise</h3>
+        <h3 class="skill-bookshelf-title">Tech I am familar with</h3>
         <div class="skill-description-panel" id="skill-description-panel">
           <p>Hover or Click a skill to learn more...</p>
         </div>
@@ -400,22 +410,24 @@
     <!-- <script src="servicesItems.js"></script> -->
 
     <!-- about scripts imports -->
-    <script src="about.js"></script>
+    <script src="./scripts/about.js"></script>
 
-    <script src="skills.js"></script>
+    <script src="./scripts/skills.js"></script>
 
     <!-- JS for projects -->
-    <script src="projects.js"></script>
-    <script src="updatedProjects.js"></script>
-    <script src="clashapicall.js"></script>
+    <script src="./scripts/projects.js"></script>
+    <script src="./scripts/updatedProjects.js"></script>
+    <script src="./scripts/clashapicall.js"></script>
 
     <!-- JS for Contat Items -->
-    <script src="contactItems.js"></script>
+    <script src="./scripts/contactItems.js"></script>
 
     <!-- JS for Calendar Invites -->
-    <script src="calendarInvite.js"></script>
+    <script src="./scripts/calendarInvite.js"></script>
 
-    <script src="script.js"></script>
-    <script src="style-switcher.js"></script>
+    <script src="./scripts/experienceCal.js"></script>
+
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/style-switcher.js"></script>
   </body>
 </html>
