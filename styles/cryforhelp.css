@@ -1,10 +1,13 @@
 .need_job {
   padding-inline: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .need_job h1 {
   font-size: 2rem;
-  font-style: italic;
+  /* font-style: italic; */
   cursor: help;
 }
 
@@ -27,18 +30,14 @@
 .cry_for_help {
   position: relative;
   display: inline-block;
-  margin-top: 8vh;
+  margin-top: 10dvh;
 }
 
 .cry_for_help img {
-  width: 4500px;
+  max-width: 40dvw;
+  /* max-height: 10vh; */
 }
 
-.cry_for_help p {
-  font-size: 0.8rem;
-  font-weight: bold;
-  font-style: italic;
-}
 #image-popup {
   display: none;
   position: absolute;

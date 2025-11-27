@@ -1,6 +1,16 @@
 [
   {
-    "title": "Philly Shooting Analysis",
+    "title": "PHLASK Map",
+    "description": "Contributing to the open-source Phlask map, helping community find free water and resources in Philly.",
+    "image": "./projects/phlask_map.png",
+    "tags": ["JavaScript", "TypeScript", "UI/UX", "Open Source", "Pinned"],
+    "links": {
+      "github": "https://github.com/AnilKumar3494/phlask-map-ak-fork",
+      "live": "https://phlask.me/"
+    }
+  },
+  {
+    "title": "Philly Shooting Study & Analysis",
     "description": "In-depth data analysis and visualization of shooting victims in Philadelphia to identify patterns and hotspots.",
     "image": "./projects/shooting_analysis.png",
     "tags": [
@@ -13,16 +23,6 @@
     "links": {
       "github": "https://github.com/AnilKumar3494/Philadelphia_Shooting_Victims_Analysis",
       "live": "https://anilkumar3494.github.io/Philadelphia_Shooting_Victims_Analysis/"
-    }
-  },
-  {
-    "title": "PHLASK Map",
-    "description": "Contributing to the open-source Phlask map, helping community find free water and resources in Philly.",
-    "image": "./projects/phlask_map.png",
-    "tags": ["JavaScript", "TypeScript", "UI/UX", "Open Source", "Pinned"],
-    "links": {
-      "github": "https://github.com/AnilKumar3494/phlask-map-ak-fork",
-      "live": "https://phlask.me/"
     }
   },
   {
