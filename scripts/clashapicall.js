@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Select the HTML elements you want to update
     const tagEl = document.getElementById("crl-tag");
+    const donationsEl = document.getElementById("crl-donations");
     // const nameEl = document.getElementById("crl-name");
     const trophiesEl = document.getElementById("crl-trophies");
     const winsEl = document.getElementById("crl-wins");
@@ -25,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // 3. Update the HTML elements with the data
       tagEl.textContent = data.tag;
+      donationsEl.textContent = data.totalDonations;
       // nameEl.textContent = data.name;
       trophiesEl.textContent = data.trophies;
       winsEl.textContent = data.wins;
