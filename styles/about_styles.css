@@ -71,13 +71,14 @@
   display: inline-block;
   font-weight: bold;
   cursor: pointer;
+  transform: rotate(-5deg);
   transition: transform 0.2s ease-in-out;
   color: var(--skin-color);
   user-select: none;
 }
 
 .action-verb:hover {
-  transform: scale(1.1) rotate(-5deg);
+  transform: scale(1.1);
   /* color: #ff69b4; */
 }
 
