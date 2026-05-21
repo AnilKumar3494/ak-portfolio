@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const introElement = document.getElementById("intro");
   if (!introElement) return;
 
-  const letters = "ANIL";
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let interval = null;
 
   const runAnimation = (event) => {
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return " ";
           }
 
-          return letters[Math.floor(Math.random() * 26)];
+          return letters[Math.floor(Math.random() * letters.length)];
         })
         .join("");
 

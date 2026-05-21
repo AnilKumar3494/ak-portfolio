@@ -74,13 +74,14 @@ document.addEventListener("DOMContentLoaded", () => {
     grid.innerHTML = "";
     if (projectsToRender.length === 0) {
       grid.innerHTML =
-        '<p style="color: #999; grid-column: 1 / -1;">No projects found for this filter.</p>';
+        '<p class="projects-empty-msg">No projects found for this filter.</p>';
       return;
     }
 
-    projectsToRender.forEach((project) => {
+    projectsToRender.forEach((project, index) => {
       const card = document.createElement("div");
       card.className = "project-card";
+      card.style.animationDelay = `${index * 0.07}s`;
 
       const tagsHtml = project.tags
         .filter((tag) => !NICHE_TAGS_TO_HIDE.has(tag))
@@ -121,41 +122,51 @@ document.addEventListener("DOMContentLoaded", () => {
       project.tags.forEach((tag) => allTags.add(tag));
     });
 
+    // Build a count map: tag → number of projects with that tag
+    const tagCounts = {};
+    allProjects.forEach((p) => {
+      p.tags.forEach((tag) => {
+        tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+      });
+    });
+
     const tagsToExclude = new Set([
       ...NICHE_TAGS_TO_HIDE,
       ...COMMON_TAGS_TO_HIDE,
     ]);
 
-    // This creates your sorted list of skill tags
     const filteredTags = [...allTags]
       .filter((tag) => !tagsToExclude.has(tag))
-      .sort(); // <-- Tags are sorted alphabetically here
+      .sort();
 
     const hasPinned = allProjects.some((p) => p.tags.includes("Pinned"));
     const defaultActive = hasPinned ? "Pinned" : "All";
+    const pinnedCount = tagCounts["Pinned"] || 0;
 
     // --- Generate Main Buttons (Pinned/All) ---
     let mainButtonsHtml = [];
     if (hasPinned) {
       mainButtonsHtml.push(`
-                <button class="filter-btn ${
-                  defaultActive === "Pinned" ? "active" : ""
-                }" data-filter="Pinned">Pinned</button>
-            `);
+        <button class="filter-btn ${defaultActive === "Pinned" ? "active" : ""}" data-filter="Pinned">
+          Pinned <span class="filter-count">${pinnedCount}</span>
+        </button>
+      `);
     }
     mainButtonsHtml.push(`
-            <button class="filter-btn ${
-              defaultActive === "All" ? "active" : ""
-            }" data-filter="All">All</button>
-        `);
+      <button class="filter-btn ${defaultActive === "All" ? "active" : ""}" data-filter="All">
+        All <span class="filter-count">${allProjects.length}</span>
+      </button>
+    `);
 
     filterMainContainer.innerHTML = mainButtonsHtml.join("");
 
-    // --- Generate Tag Buttons (Rest of the skills) ---
+    // --- Generate Tag Buttons (skill tags) ---
     const tagsHtml = filteredTags
       .map(
         (tag) => `
-            <button class="filter-btn" data-filter="${tag}">${tag}</button>
+          <button class="filter-btn" data-filter="${tag}">
+            ${tag} <span class="filter-count">${tagCounts[tag] || 0}</span>
+          </button>
         `
       )
       .join("");
