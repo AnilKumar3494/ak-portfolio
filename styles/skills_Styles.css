@@ -17,17 +17,23 @@
 .skill-description-panel {
   width: 90%;
   max-width: 800px;
-  height: 15dvh;
-  padding-top: 1.4rem;
-  padding-bottom: 2.2rem;
+  min-height: 15dvh;
+  padding: 1.4rem 2rem 1.6rem;
   margin-bottom: 40px;
-  /* background: rgba(0, 0, 0, 0.4); */
-  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
   border: 1px solid var(--skin-color);
   color: var(--text-black-700);
   text-align: center;
   font-weight: 400;
-  transition: all 0.4s ease-in-out;
+  font-size: 1rem;
+  line-height: 1.6;
+  transition: all 0.35s ease-in-out;
+  box-shadow: 0 0 0 0 transparent;
+}
+
+.skill-description-panel:has(.skill-name) {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 @media (max-width: 624px) {

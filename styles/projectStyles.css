@@ -41,6 +41,32 @@
   font-weight: 700;
 }
 
+.filter-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.18);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}
+
+.filter-btn.active .filter-count {
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.projects-empty-msg {
+  color: var(--text-black-700);
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2rem;
+  font-style: italic;
+}
+
 /* --- Project Grid --- */
 .projects-grid {
   display: grid;
@@ -53,22 +79,34 @@
 }
 
 /* --- Project Card --- */
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .project-card {
   background: var(--project-card-bg);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   text-align: left;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  animation: cardEntrance 0.45s ease both;
 }
 
 .project-card:hover {
   transform: translateY(-8px);
-  /* Brighter purple glow on hover */
-  box-shadow: 0 10px 30px rgba(173, 122, 255, 0.2);
+  border-color: var(--skin-color);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
 }
 
 .card-image-container {
@@ -150,12 +188,14 @@
 .btn-primary {
   background: var(--skin-color);
   color: var(--text-black-900);
+  font-weight: 700;
 }
 
-/* TODO: Add hover effect */
-/* .btn-primary:hover {
-  
-} */
+.btn-primary:hover {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
 
 /* Secondary Button (Code) */
 .btn-secondary {

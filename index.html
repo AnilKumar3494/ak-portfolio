@@ -17,14 +17,13 @@
       content="fRlc_04smTYncO6ea9A4y2n7Jy6FOgHKYj2u-QcX8Dw"
     />
 
-    <title>AK - 127.0.0.1</title>
+    <title>Anil Kumar | Full Stack Developer</title>
     <link
       rel="shortcut icon"
       href="./scripts/favicon.svg"
       type="image/x-icon"
     />
 
-    <link rel="stylesheet" href="./styles/color-1.css" />
     <link rel="stylesheet" href="./styles/styles.css" />
 
     <link rel="stylesheet" href="./styles/style_switcher.css" />
@@ -67,7 +66,6 @@
     <link rel="stylesheet" href="./styles/about_styles.css" />
     <link rel="stylesheet" href="./styles/skills_Styles.css" />
     <link rel="stylesheet" href="./styles/musicSection.css" />
-    <link rel="stylesheet" href="./styles/projects.css" />
     <link rel="stylesheet" href="./styles/projectStyles.css" />
     <link rel="stylesheet" href="./styles/cryforhelp.css" />
 
@@ -122,7 +120,7 @@
     </div>
 
     <main class="main_content flex_col">
-      <section class="need_job section">
+      <section class="need_job section" id="home">
         <div class="cry_for_help">
           <h3 id="hover-trigger">Developers! Developers Developers! 👏</h3>
 
@@ -274,34 +272,53 @@
       </section>
 
       <section class="section padd_15">
-        <div class="crl_stats padd_15">
-          <h3>Clash Royale Stats (WIP .. API Working)</h3>
-          <p>
-            My Tag:
-            <span id="crl-tag">Loading...</span>
-          </p>
-          <p>
-            Cards Donated:
-            <span id="crl-donations">Loading...</span>
-          </p>
-
-          <p>
-            Trophies:
-            <span id="crl-trophies">Loading...</span>
-          </p>
-          <p>
-            Wins:
-            <span id="crl-wins">Loading...</span>
-          </p>
-          <p>
-            Arena:
-            <span id="crl-arena">Loading...</span>
-          </p>
+        <div class="crl_card padd_15">
+          <div class="crl_card_header">
+            <h3>⚔️ Clash Royale Stats</h3>
+            <span class="api_badge api_badge_live">API Live</span>
+          </div>
+          <div class="crl_stats_grid">
+            <div class="crl_stat_item">
+              <i class="fas fa-tag crl_icon"></i>
+              <div>
+                <span class="crl_label">Player Tag</span>
+                <span id="crl-tag" class="crl_value">Loading...</span>
+              </div>
+            </div>
+            <div class="crl_stat_item">
+              <i class="fas fa-gift crl_icon"></i>
+              <div>
+                <span class="crl_label">Cards Donated</span>
+                <span id="crl-donations" class="crl_value">Loading...</span>
+              </div>
+            </div>
+            <div class="crl_stat_item">
+              <i class="fas fa-trophy crl_icon"></i>
+              <div>
+                <span class="crl_label">Trophies</span>
+                <span id="crl-trophies" class="crl_value">Loading...</span>
+              </div>
+            </div>
+            <div class="crl_stat_item">
+              <i class="fas fa-star crl_icon"></i>
+              <div>
+                <span class="crl_label">Wins</span>
+                <span id="crl-wins" class="crl_value">Loading...</span>
+              </div>
+            </div>
+            <div class="crl_stat_item">
+              <i class="fas fa-shield-halved crl_icon"></i>
+              <div>
+                <span class="crl_label">Arena</span>
+                <span id="crl-arena" class="crl_value">Loading...</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="about_content padd_15">
-        <div class="about_text padd_15" id="about">
+      <section class="about_content padd_15" id="about">
+        <div class="about_text padd_15">
           <!-- <p>Noicee you are here! I guess I can introduce myself</p> -->
 
           <p
@@ -359,7 +376,7 @@
       </section>
 
       <section class="skill-bookshelf-section">
-        <h3 class="skill-bookshelf-title">Tech I am familar with</h3>
+        <h3 class="skill-bookshelf-title">Tech I'm familiar with</h3>
         <div class="skill-description-panel" id="skill-description-panel">
           <p>Hover or Click a skill to learn more...</p>
         </div>
@@ -395,6 +412,10 @@
         </li>
       </section>
     </main>
+
+    <button class="scroll-top-btn" id="scrollTopBtn" title="Back to top" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
 
     <div class="style_switcher">
       <div class="style_switcher_toggler s_icon" title="Skin Colors">
