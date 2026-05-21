@@ -201,3 +201,122 @@
   color: #dc3545;
   border: 1px solid #dc3545;
 }
+
+/* ─── Direct ICS Download (primary path) ─────────────────────────────── */
+.eagles-direct-download {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.eagles-direct-label {
+  font-size: 0.9rem !important;
+  color: var(--text-black-700);
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.eagles-ics-btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--eagles-green);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.eagles-ics-btn:hover:not(:disabled) {
+  filter: brightness(1.15);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 76, 84, 0.4);
+}
+
+.eagles-ics-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.eagles-direct-note {
+  font-size: 0.78rem !important;
+  color: var(--text-black-700);
+  opacity: 0.8;
+  padding-bottom: 0;
+  margin: 0;
+}
+
+.eagles-direct-status {
+  font-size: 0.88rem;
+  font-weight: 500;
+  min-height: 1.2em;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.eagles-direct-status.status-loading { color: var(--text-black-700); }
+.eagles-direct-status.status-success {
+  color: #28a745;
+  background: rgba(40, 167, 69, 0.1);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(40, 167, 69, 0.3);
+}
+.eagles-direct-status.status-error {
+  color: #dc3545;
+  background: rgba(220, 53, 69, 0.1);
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(220, 53, 69, 0.3);
+}
+
+.eagles-import-guide {
+  background: rgba(0, 76, 84, 0.08);
+  border: 1px solid rgba(0, 76, 84, 0.25);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.83rem;
+  margin-top: 0.25rem;
+}
+
+.eagles-import-guide strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: var(--text-black-900);
+}
+
+.eagles-import-guide ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.eagles-import-guide li { color: var(--text-black-700); }
+
+/* ─── Divider between primary and email path ──────────────────────────── */
+.eagles-divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.75rem 0;
+  color: var(--text-black-700);
+}
+
+.eagles-divider::before,
+.eagles-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--bg-black-50);
+}
+
+.eagles-divider span {
+  font-size: 0.8rem;
+  white-space: nowrap;
+  opacity: 0.7;
+}

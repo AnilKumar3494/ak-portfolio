@@ -68,6 +68,8 @@
     <link rel="stylesheet" href="./styles/musicSection.css" />
     <link rel="stylesheet" href="./styles/projectStyles.css" />
     <link rel="stylesheet" href="./styles/cryforhelp.css" />
+    <link rel="stylesheet" href="./styles/nfl-calendar.css" />
+    <link rel="stylesheet" href="./styles/easter-eggs.css" />
 
     <link
       rel="stylesheet"
@@ -205,6 +207,27 @@
                 <p class="birds_accent">
                   <span class="birds_accent">GO BIRDS! 🦅</span>
                 </p>
+
+                <!-- Primary: direct ICS download powered by ESPN live data -->
+                <div class="eagles-direct-download">
+                  <p class="eagles-direct-label">📅 Add all games instantly — no email needed:</p>
+                  <button id="eagles-direct-ics" class="btn eagles-ics-btn">
+                    <i class="fas fa-download"></i> Download Eagles Schedule (.ics)
+                  </button>
+                  <p class="eagles-direct-note">Works with Apple Calendar, Google Calendar &amp; Outlook · Always up-to-date from ESPN</p>
+                  <div id="eagles-direct-status" class="eagles-direct-status"></div>
+                  <div id="eagles-import-guide" class="eagles-import-guide" hidden>
+                    <strong>How to import:</strong>
+                    <ul>
+                      <li>🍎 <b>Apple Calendar</b>: Double-click the downloaded file</li>
+                      <li>📅 <b>Google Calendar</b>: Settings → Import → Upload the file</li>
+                      <li>📧 <b>Outlook</b>: File → Open &amp; Export → Import/Export</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="eagles-divider"><span>or get calendar invites via email</span></div>
+
                 <form id="inviteForm" class="invite_form">
                   <div class="form-group" id="formGroup">
                     <div class="marquee-text">
@@ -231,6 +254,44 @@
                     <span id="responseText"></span>
                   </div>
                 </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- NFL Team Calendar Picker -->
+          <div class="nfl-calendar-wrapper row">
+            <div class="padd_15 nfl-calendar-section" style="width:100%">
+              <h3 class="nfl-section-title">🏈 Add Any NFL Team to Your Calendar</h3>
+              <p class="nfl-section-sub">
+                Pick one or more teams — schedules are fetched live from ESPN and exported as a standard .ics file that works everywhere.
+              </p>
+
+              <div class="nfl-toolbar">
+                <button class="nfl-toolbar-btn" id="nfl-select-all-btn">Select All 32</button>
+                <button class="nfl-toolbar-btn" id="nfl-clear-btn">Clear</button>
+                <span class="nfl-selected-count" id="nfl-selected-count">No teams selected</span>
+              </div>
+
+              <div class="nfl-teams-grid" id="nfl-teams-grid"></div>
+
+              <div class="nfl-actions">
+                <button class="nfl-btn nfl-btn-primary" id="nfl-download-ics" disabled>
+                  <i class="fas fa-download"></i> Download .ics
+                </button>
+                <button class="nfl-btn nfl-btn-ghost" id="nfl-clear-btn-2">
+                  <i class="fas fa-times"></i> Clear
+                </button>
+              </div>
+
+              <div id="nfl-status"></div>
+
+              <div id="nfl-import-guide" class="nfl-import-guide" hidden>
+                <p>How to import into your calendar:</p>
+                <ul>
+                  <li>🍎 <strong>Apple Calendar</strong>: Double-click the .ics file</li>
+                  <li>📅 <strong>Google Calendar</strong>: Settings ⚙️ → Import → Upload file</li>
+                  <li>📧 <strong>Outlook</strong>: File → Open &amp; Export → Import/Export</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -462,5 +523,8 @@
 
     <script src="./scripts/script.js"></script>
     <script src="./scripts/style-switcher.js"></script>
+    <script src="./scripts/nfl-calendar.js"></script>
+    <script src="./scripts/easter-eggs.js"></script>
+    <script src="./scripts/visitor-tracker.js"></script>
   </body>
 </html>
