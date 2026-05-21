@@ -40,6 +40,98 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", onScroll, { passive: true });
 });
 
+// ─── 3D tilt on project cards ──────────────────────────────────────────────
+// Runs after projects are injected into the DOM via MutationObserver
+(function initCardTilt() {
+  const MAX_TILT = 7;
+
+  function applyTilt(card) {
+    card.addEventListener("mousemove", (e) => {
+      const r   = card.getBoundingClientRect();
+      const x   = e.clientX - r.left;
+      const y   = e.clientY - r.top;
+      const rx  = ((y / r.height) - 0.5) * -MAX_TILT * 2;
+      const ry  = ((x / r.width)  - 0.5) *  MAX_TILT * 2;
+      card.style.transform = `translateY(-10px) perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+    });
+  }
+
+  // Apply to existing cards and any added later
+  function attachAll() {
+    document.querySelectorAll(".project-card:not([data-tilt])").forEach((c) => {
+      c.dataset.tilt = "1";
+      applyTilt(c);
+    });
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    attachAll();
+    const grid = document.getElementById("projects-grid");
+    if (grid) {
+      new MutationObserver(attachAll).observe(grid, { childList: true });
+    }
+  });
+})();
+
+// ─── IntersectionObserver scroll-reveal ────────────────────────────────────
+document.addEventListener("DOMContentLoaded", () => {
+  const revealEls = document.querySelectorAll(
+    ".section, .skill-bookshelf-section, .about_content, .crl_card, .nfl-calendar-section"
+  );
+  if (!("IntersectionObserver" in window)) {
+    revealEls.forEach((el) => el.classList.add("is-visible"));
+    return;
+  }
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) {
+          en.target.classList.add("is-visible");
+          io.unobserve(en.target);
+        }
+      });
+    },
+    { threshold: 0.08 }
+  );
+  revealEls.forEach((el) => {
+    el.classList.add("reveal");
+    io.observe(el);
+  });
+});
+
+// ─── Count-up animation for years of experience ────────────────────────────
+document.addEventListener("DOMContentLoaded", () => {
+  const el = document.getElementById("years_experience");
+  if (!el) return;
+
+  // Wait until experienceCal.js has set the text
+  const waitForText = setInterval(() => {
+    const raw = el.textContent;
+    const match = raw.match(/([\d.]+)/);
+    if (!match) return;
+    clearInterval(waitForText);
+
+    const target = parseFloat(match[1]);
+    const prefix = raw.slice(0, raw.indexOf(match[1]));
+    const suffix = raw.slice(raw.indexOf(match[1]) + match[1].length);
+    let start = null;
+    const DURATION = 1400;
+
+    function step(ts) {
+      if (!start) start = ts;
+      const progress = Math.min((ts - start) / DURATION, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = prefix + (eased * target).toFixed(1) + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }, 100);
+});
+
+// ─── Typed.js ───────────────────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", function () {
   const typingElement = document.querySelector(".typing");
 

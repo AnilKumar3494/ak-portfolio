@@ -137,3 +137,35 @@
     transform: translateY(0);
   }
 }
+
+/* ── Panel content pop animation when a new skill is hovered ── */
+@keyframes panel-content-pop {
+  0%   { opacity: 0; transform: translateY(6px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0)   scale(1);    }
+}
+
+.skill-description-panel.panel-pop {
+  animation: panel-content-pop 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ── Bigger, more readable book spines ── */
+.book {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+}
+
+/* ── Shelf title badge look ── */
+.shelf-title {
+  font-size: 0.7rem !important;
+  font-weight: 800 !important;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  padding: 0.2rem 0.5rem;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+body:not(.dark) .shelf-title {
+  background: rgba(0, 0, 0, 0.06);
+}

@@ -88,11 +88,15 @@ document.addEventListener("DOMContentLoaded", () => {
         .map((tag) => `<span class="card-tag">${tag}</span>`)
         .join("");
 
+      const isPinned = project.tags.includes("Pinned");
+      if (isPinned) card.classList.add("is-pinned");
+
       const quickLookBtn = project.links.live
-        ? `<button class="card-btn btn-primary btn-quick-look" data-url="${project.links.live}" data-title="${project.title}">Quick Look</button>`
+        ? `<button class="card-btn btn-primary btn-quick-look" data-url="${project.links.live}" data-title="${project.title}"><i class="fas fa-eye" style="margin-right:0.35rem;font-size:0.85em;"></i>Quick Look</button>`
         : "";
 
       card.innerHTML = `
+        ${isPinned ? '<span class="card-pinned-ribbon" title="Featured project">📌</span>' : ""}
         <div class="card-image-container">
           <img src="${project.image}" alt="${project.title} Preview" loading="lazy">
         </div>
@@ -103,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${tagsHtml}
           </div>
           <div class="card-links">
-            <a href="${project.links.github}" class="card-btn btn-secondary" target="_blank" rel="noopener noreferrer">View Code</a>
+            <a href="${project.links.github}" class="card-btn btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" style="margin-right:0.35rem;"></i>View Code</a>
             ${quickLookBtn}
           </div>
         </div>

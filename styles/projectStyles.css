@@ -23,12 +23,13 @@
   background: transparent;
   border: 2px solid var(--skin-color);
   color: var(--skin-color);
-  padding: 0.6rem 1.25rem;
-  border-radius: 999px; /* Pill shape */
-  font-size: 0.9rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
+  letter-spacing: 0.02em;
 }
 
 .filter-btn:hover {
@@ -318,3 +319,42 @@
 .modal-iframe.loaded {
   opacity: 1;
 }
+
+/* ── Pinned ribbon ─────────────────────────────────────────────────────────── */
+.project-card { position: relative; }
+
+.card-pinned-ribbon {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 1.1rem;
+  z-index: 3;
+  animation: pin-swing 3s ease-in-out infinite;
+  transform-origin: top center;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.4));
+}
+
+@keyframes pin-swing {
+  0%, 100% { transform: rotate(-4deg); }
+  50%       { transform: rotate(4deg); }
+}
+
+/* ── Card title hover underline ────────────────────────────────────────────── */
+.card-title {
+  position: relative;
+  display: inline-block;
+}
+
+.card-title::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--skin-color);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.project-card:hover .card-title::after { width: 100%; }

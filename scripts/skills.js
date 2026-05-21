@@ -132,6 +132,10 @@ document.addEventListener("DOMContentLoaded", () => {
       book.style.animationDelay = `${totalBookIndex * 0.05}s`;
 
       book.addEventListener("mouseover", () => {
+        // flash the panel so the new text feels alive
+        descriptionPanel.classList.remove("panel-pop");
+        void descriptionPanel.offsetWidth; // reflow to restart animation
+        descriptionPanel.classList.add("panel-pop");
         descriptionPanel.innerHTML = `<span class="skill-name">${skill.name}</span>${skill.desc}`;
       });
 

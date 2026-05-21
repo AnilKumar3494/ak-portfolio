@@ -1,18 +1,78 @@
 .need_job {
-  padding-inline: 0.5rem;
+  padding-inline: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-
-  margin-top: 10dvh;
+  gap: 2.25rem;
+  padding-top: 10dvh;
+  padding-bottom: 4rem;
 }
 
-.need_job h1 {
-  font-size: 2rem;
-  /* font-style: italic; */
-  cursor: help;
+/* h1 is now handled by fun-ui.css gradient, no override needed */
+.need_job h1 { cursor: help; }
+
+/* ── "Developers!" chant row ── */
+.cry_for_help {
+  position: relative;
+  display: inline-block;
 }
 
+.cry_for_help h3 {
+  font-size: 1.2rem !important;
+  color: var(--text-black-700);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.cry_for_help h3:hover { color: var(--skin-color); }
+
+/* blinking cursor after the chant */
+.cry_for_help h3::after {
+  content: "▋";
+  color: var(--skin-color);
+  animation: cursor-blink 1.1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.cry_for_help img { max-width: 40dvw; }
+
+/* ── Steve Ballmer popup ── */
+#image-popup {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 50%;
+  transform: translateX(50%);
+  margin-top: 10px;
+  border-radius: 12px;
+  padding: 12px;
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#image-popup p {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #aaa;
+  margin: 0;
+  padding: 6px 0 0;
+}
+
+.cry_for_help #hover-trigger:hover + #image-popup {
+  display: block;
+  opacity: 0.95;
+  transform: translateX(120%) scale(1.04);
+}
+
+/* ── Heartbeat ── */
 .white_heart {
   animation: beat 0.7s infinite;
   display: inline-block;
@@ -20,45 +80,6 @@
 }
 
 @keyframes beat {
-  0%,
-  100% {
-    transform: scale(1.2);
-  }
-  50% {
-    transform: scale(1);
-  }
-}
-
-.cry_for_help {
-  position: relative;
-  display: inline-block;
-}
-
-.cry_for_help img {
-  max-width: 40dvw;
-  /* max-height: 10vh; */
-}
-
-#image-popup {
-  display: none;
-  position: absolute;
-  /* max-width: 80dvw; */
-  top: 100%;
-  right: 50%;
-  transform: translateX(50%);
-  margin-top: 10px;
-
-  border-radius: 8px;
-  padding: 10px;
-  background-color: black;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 10;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-}
-
-.cry_for_help #hover-trigger:hover + #image-popup {
-  display: block;
-  opacity: 0.9;
-  transform: translateX(120%) scale(1.05);
+  0%, 100% { transform: scale(1.2); }
+  50%       { transform: scale(1);   }
 }
