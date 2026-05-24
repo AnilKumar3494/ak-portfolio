@@ -239,7 +239,14 @@
   transform: translateY(0);
 }
 
-/* ─── Mobile hide visitor badge ────────────────────────────────────────────── */
-@media (max-width: 600px) {
-  .visitor-badge { bottom: 0.6rem; left: 0.6rem; font-size: 0.72rem; }
+/* ─── Visitor badge desktop offset (clear the fixed 18%-wide sidebar) ──────── */
+@media (min-width: 1100px) {
+  .visitor-badge   { left: calc(18% + 1.2rem); }
+  .vb-welcome-tip  { left: calc(18% + 1.2rem); }
+}
+
+/* ─── Mobile: sidebar collapses to top bar, badge sits at bottom-left ───────── */
+@media (max-width: 1099px) {
+  .visitor-badge   { bottom: 0.6rem; left: 0.6rem; font-size: 0.75rem; }
+  .vb-welcome-tip  { left: 0.6rem; }
 }

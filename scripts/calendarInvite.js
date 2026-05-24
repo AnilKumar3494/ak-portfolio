@@ -5,13 +5,13 @@
  */
 document.addEventListener("DOMContentLoaded", () => {
   // ── Email-based invite (secondary path) ──────────────────────────────────
-  const form              = document.getElementById("inviteForm");
-  const emailInput        = document.getElementById("email");
-  const submitButton      = document.getElementById("submitButton");
-  const formGroup         = document.getElementById("formGroup");
+  const form               = document.getElementById("inviteForm");
+  const emailInput         = document.getElementById("email");
+  const submitButton       = document.getElementById("submitButton");
+  const formGroup          = document.getElementById("formGroup");
   const responseMessageDiv = document.getElementById("responseMessage");
-  const responseIcon      = document.getElementById("responseIcon");
-  const responseText      = document.getElementById("responseText");
+  const responseIcon       = document.getElementById("responseIcon");
+  const responseText       = document.getElementById("responseText");
 
   const SCRIPT_URL =
     "https://script.google.com/macros/s/AKfycbyYmu3bPV2n79YBC1uSPphErMxAGGrAmwLbR-QzqLtu71LrxemqDldZaj0K-w-FVciFVg/exec";
@@ -63,53 +63,113 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ── Direct ICS download (primary path) ───────────────────────────────────
-  const EAGLES_TEAM_ID = "21"; // ESPN team ID for Philadelphia Eagles
+  const EAGLES_TEAM_ID = "21";
 
-  const directBtn   = document.getElementById("eagles-direct-ics");
-  const directStatus = document.getElementById("eagles-direct-status");
+  const directBtn     = document.getElementById("eagles-direct-ics");
+  const btnLabel      = document.getElementById("eagles-btn-label");
+  const gameCountEl   = document.getElementById("eagles-game-count");
+  const statusMsg     = document.getElementById("eagles-direct-status");
+  const calShortcuts  = document.getElementById("eagles-cal-shortcuts");
+  const step1         = document.getElementById("estep-1");
+  const step2         = document.getElementById("estep-2");
+  const step3         = document.getElementById("estep-3");
 
   if (!directBtn) return;
 
-  directBtn.addEventListener("click", async () => {
-    directBtn.disabled = true;
-    directBtn.innerHTML = `<i class="fas fa-spinner fa-spin"></i> Fetching schedule…`;
-    setDirectStatus("Fetching live schedule from ESPN…", "loading");
+  // Cache fetched games so the download is instant on click
+  let cachedGames = null;
+  let fetchFailed = false;
 
+  // ── Pre-fetch on page load ────────────────────────────────────────────────
+  (async () => {
     try {
       const data  = await fetchEaglesSchedule();
-      const games = parseEaglesGames(data);
+      cachedGames = parseEaglesGames(data);
 
-      if (games.length === 0) {
-        setDirectStatus("No upcoming games found. Check back later!", "error");
+      if (cachedGames.length === 0) {
+        setBtnReady(0, true);
+        showStatus("No upcoming games found — check back closer to the season.", "error");
         return;
       }
 
-      const ics = buildICS(games);
-      triggerDownload(ics, "eagles-2025-schedule.ics");
-      setDirectStatus(
-        `✅ Downloaded ${games.length} Eagles games! Import the file into your calendar app.`,
-        "success"
-      );
-
-      // Show import guide
-      const guide = document.getElementById("eagles-import-guide");
-      if (guide) guide.hidden = false;
+      setBtnReady(cachedGames.length, false);
     } catch (err) {
-      console.error("Eagles ICS error:", err);
-      setDirectStatus(
-        "❌ Could not reach ESPN. Check your connection and try again.",
-        "error"
-      );
-    } finally {
-      directBtn.disabled = false;
-      directBtn.innerHTML = `<i class="fas fa-download"></i> Download Eagles Schedule (.ics)`;
+      console.error("Eagles pre-fetch error:", err);
+      fetchFailed = true;
+      setBtnReady(0, true);
+      showStatus("Couldn't reach ESPN. Click the button to retry.", "error");
     }
+  })();
+
+  // ── Click handler ─────────────────────────────────────────────────────────
+  directBtn.addEventListener("click", async () => {
+    // Retry fetch if it previously failed
+    if (fetchFailed || !cachedGames) {
+      directBtn.disabled = true;
+      setBtnLoading(true);
+      try {
+        const data  = await fetchEaglesSchedule();
+        cachedGames = parseEaglesGames(data);
+        fetchFailed = false;
+        setBtnReady(cachedGames.length, false);
+      } catch (err) {
+        showStatus("❌ Still can't reach ESPN. Check your connection.", "error");
+        setBtnReady(0, true);
+        return;
+      } finally {
+        directBtn.disabled = false;
+        setBtnLoading(false);
+      }
+    }
+
+    if (!cachedGames || cachedGames.length === 0) return;
+
+    // Trigger download
+    const ics = buildICS(cachedGames);
+    triggerDownload(ics, "eagles-2025-schedule.ics");
+
+    // Advance step 1 → step 2
+    if (step1) step1.classList.add("completed");
+    if (step2) step2.classList.add("active");
+
+    showStatus(`✅ ${cachedGames.length} Eagles games downloaded!`, "success");
+
+    // Reveal calendar import shortcuts
+    if (calShortcuts) calShortcuts.hidden = false;
+
+    // After a short delay, tick off step 2 and hint at step 3
+    setTimeout(() => {
+      if (step2) step2.classList.add("completed");
+      if (step3) step3.classList.add("active");
+    }, 2500);
   });
 
-  function setDirectStatus(msg, type) {
-    if (!directStatus) return;
-    directStatus.textContent = msg;
-    directStatus.className = `eagles-direct-status status-${type}`;
+  // ── UI helpers ────────────────────────────────────────────────────────────
+  function setBtnLoading(on) {
+    const spinner = directBtn.querySelector(".eagles-dl-spinner");
+    const icon    = directBtn.querySelector(".eagles-dl-icon");
+    if (spinner) spinner.style.display = on ? "" : "none";
+    if (icon)    icon.style.display    = on ? "none" : "";
+  }
+
+  function setBtnReady(count, disabled) {
+    directBtn.disabled = disabled;
+    setBtnLoading(false);
+
+    if (count > 0) {
+      if (btnLabel)    btnLabel.textContent = `Download ${count} Eagles Games (.ics)`;
+      if (gameCountEl) gameCountEl.textContent = "";
+    } else {
+      if (btnLabel)    btnLabel.textContent = "Download Eagles Schedule (.ics)";
+      if (gameCountEl) gameCountEl.textContent = "";
+    }
+  }
+
+  function showStatus(msg, type) {
+    if (!statusMsg) return;
+    statusMsg.textContent = msg;
+    statusMsg.className   = `eagles-status-msg status-${type}`;
+    statusMsg.hidden      = false;
   }
 
   // ── ESPN helpers ──────────────────────────────────────────────────────────
@@ -124,19 +184,19 @@ document.addEventListener("DOMContentLoaded", () => {
     return (data.events || [])
       .filter((e) => e.competitions?.[0])
       .map((e) => {
-        const comp    = e.competitions[0];
-        const home    = comp.competitors?.find((c) => c.homeAway === "home");
-        const away    = comp.competitors?.find((c) => c.homeAway === "away");
-        const venue   = comp.venue || {};
+        const comp     = e.competitions[0];
+        const home     = comp.competitors?.find((c) => c.homeAway === "home");
+        const away     = comp.competitors?.find((c) => c.homeAway === "away");
+        const venue    = comp.venue || {};
         const homeAbbr = home?.team?.abbreviation ?? "HOME";
         const awayAbbr = away?.team?.abbreviation ?? "AWAY";
-        const isHomeGame = home?.team?.id === EAGLES_TEAM_ID;
+        const isHomeGame = home?.team?.id === String(EAGLES_TEAM_ID);
         return {
-          uid:      e.id,
-          start:    new Date(e.date),
-          summary:  `🦅 Eagles: ${awayAbbr} @ ${homeAbbr}${isHomeGame ? " 🏟" : ""}`,
+          uid:         e.id,
+          start:       new Date(e.date),
+          summary:     `🦅 Eagles: ${awayAbbr} @ ${homeAbbr}${isHomeGame ? " 🏟" : ""}`,
           description: `Philadelphia Eagles — ${e.season?.year ?? "2025"} NFL Season\n${e.name ?? ""}`,
-          location: [venue.fullName, venue.address?.city, venue.address?.state]
+          location:    [venue.fullName, venue.address?.city, venue.address?.state]
             .filter(Boolean)
             .join(", "),
         };

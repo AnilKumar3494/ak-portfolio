@@ -209,36 +209,72 @@
               </div>
 
               <div class="card-body">
-                <p class="birds_accent">
-                  <span class="birds_accent">GO BIRDS! 🦅</span>
-                </p>
+                <p class="birds_accent">GO BIRDS! 🦅</p>
 
-                <!-- Primary: direct ICS download powered by ESPN live data -->
-                <div class="eagles-direct-download">
-                  <p class="eagles-direct-label">📅 Add all games instantly — no email needed:</p>
-                  <button id="eagles-direct-ics" class="btn eagles-ics-btn">
-                    <i class="fas fa-download"></i> Download Eagles Schedule (.ics)
+                <!-- Step guide -->
+                <ol class="eagles-steps" id="eagles-steps">
+                  <li class="eagles-step active" id="estep-1">
+                    <span class="estep-num">1</span>
+                    <span class="estep-label">Click <strong>Download</strong> below</span>
+                    <i class="fas fa-check estep-check"></i>
+                  </li>
+                  <li class="eagles-step" id="estep-2">
+                    <span class="estep-num">2</span>
+                    <span class="estep-label">Open the downloaded <code>.ics</code> file</span>
+                    <i class="fas fa-check estep-check"></i>
+                  </li>
+                  <li class="eagles-step" id="estep-3">
+                    <span class="estep-num">3</span>
+                    <span class="estep-label">All Eagles games on your calendar! 🎉</span>
+                    <i class="fas fa-check estep-check"></i>
+                  </li>
+                </ol>
+
+                <!-- Primary CTA -->
+                <div class="eagles-cta-wrap">
+                  <button id="eagles-direct-ics" class="eagles-download-btn" disabled>
+                    <span class="eagles-dl-left">
+                      <i class="fas fa-spinner fa-spin eagles-dl-spinner"></i>
+                      <i class="fas fa-download eagles-dl-icon"></i>
+                    </span>
+                    <span class="eagles-dl-center">
+                      <span id="eagles-btn-label">Fetching schedule…</span>
+                      <span id="eagles-game-count" class="eagles-game-count"></span>
+                    </span>
                   </button>
-                  <p class="eagles-direct-note">Works with Apple Calendar, Google Calendar &amp; Outlook · Always up-to-date from ESPN</p>
-                  <div id="eagles-direct-status" class="eagles-direct-status"></div>
-                  <div id="eagles-import-guide" class="eagles-import-guide" hidden>
-                    <strong>How to import:</strong>
-                    <ul>
-                      <li>🍎 <b>Apple Calendar</b>: Double-click the downloaded file</li>
-                      <li>📅 <b>Google Calendar</b>: Settings → Import → Upload the file</li>
-                      <li>📧 <b>Outlook</b>: File → Open &amp; Export → Import/Export</li>
-                    </ul>
+                  <p class="eagles-cta-note">Live from ESPN · No signup · Works with every calendar app</p>
+                  <div id="eagles-direct-status" class="eagles-status-msg" hidden></div>
+                </div>
+
+                <!-- Post-download calendar shortcuts -->
+                <div id="eagles-cal-shortcuts" class="eagles-cal-shortcuts" hidden>
+                  <p class="eagles-shortcuts-heading">Now import the file into your calendar:</p>
+                  <div class="eagles-shortcut-row">
+                    <a href="https://calendar.google.com/calendar/r/settings/import"
+                       target="_blank" rel="noopener noreferrer"
+                       class="eagles-shortcut-btn">
+                      <i class="fas fa-calendar"></i> Google Calendar
+                    </a>
+                    <span class="eagles-shortcut-btn eagles-shortcut-static">
+                      <i class="fab fa-apple"></i> Apple Cal — double-click the file
+                    </span>
+                    <a href="https://outlook.live.com/calendar/0/options/calendar/SharedCalendars"
+                       target="_blank" rel="noopener noreferrer"
+                       class="eagles-shortcut-btn">
+                      <i class="fas fa-envelope"></i> Outlook
+                    </a>
                   </div>
                 </div>
 
-                <div class="eagles-divider"><span>or get calendar invites via email</span></div>
+                <!-- Divider to secondary path -->
+                <div class="eagles-divider"><span>or get email invites</span></div>
 
+                <!-- Email invite form -->
                 <form id="inviteForm" class="invite_form">
                   <div class="form-group" id="formGroup">
                     <div class="marquee-text">
                       <span>"Fly Eagles Fly!" 🦅🏈</span>
                     </div>
-
                     <input
                       type="email"
                       id="email"
@@ -247,13 +283,11 @@
                       required
                     />
                   </div>
-
                   <button type="submit" id="submitButton" class="btn">
                     <span class="button-text">Get Invites</span>
                     <i class="fa-solid fa-football spinner-icon"></i>
                     <div class="spinner"></div>
                   </button>
-
                   <div id="responseMessage">
                     <i id="responseIcon" class="fa-solid"></i>
                     <span id="responseText"></span>
