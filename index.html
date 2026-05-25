@@ -72,6 +72,7 @@
     <link rel="stylesheet" href="./styles/nfl-calendar.css" />
     <link rel="stylesheet" href="./styles/easter-eggs.css" />
     <link rel="stylesheet" href="./styles/fun-ui.css" />
+    <link rel="stylesheet" href="./styles/animations.css" />
 
     <link
       rel="stylesheet"
@@ -84,6 +85,9 @@
   </head>
 
   <body class="dark">
+    <div id="cursor-dot" class="cursor-dot"></div>
+    <div id="cursor-ring" class="cursor-ring"></div>
+    <div id="section-dots" class="section-dots"></div>
     <div class="scroll_watcher"></div>
     <!-- <div id="blob"></div> -->
     <div class="aside">
@@ -125,6 +129,7 @@
 
     <main class="main_content flex_col">
       <section class="need_job section" id="home">
+        <canvas id="hero-particles"></canvas>
         <div class="cry_for_help">
           <h3 id="hover-trigger">Developers! Developers Developers! 👏</h3>
 
@@ -565,5 +570,6 @@
     <script src="./scripts/nfl-calendar.js"></script>
     <script src="./scripts/easter-eggs.js"></script>
     <script src="./scripts/visitor-tracker.js"></script>
+    <script src="./scripts/animations.js" defer></script>
   </body>
 </html>
