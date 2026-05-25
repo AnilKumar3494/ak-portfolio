@@ -137,9 +137,10 @@ body:not(.dark) .prof-badge {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.need_job .cry_for_help  { animation: hero-slide-up 0.65s ease both 0.05s; }
-.need_job .asking_job    { animation: hero-slide-up 0.65s ease both 0.18s; }
-.need_job .contact-section { animation: hero-slide-up 0.65s ease both 0.32s; }
+.need_job .asking_job      { animation: hero-slide-up 0.65s ease both 0.08s; }
+.need_job .contact-section { animation: hero-slide-up 0.65s ease both 0.22s; }
+/* Fun chant moved below; lower opacity so it reads as secondary content */
+.need_job .cry_for_help    { animation: hero-slide-up 0.55s ease both 0.38s; opacity: 0.72; }
 
 /* ─── Section headings ─────────────────────────────────────────────────────
 

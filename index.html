@@ -99,49 +99,25 @@
       </div>
       <ul class="nav" id="nav_list">
         <li>
-          <a id="nav_btns" href="#portfolio"
-            ><i class="fa fa-computer"></i>Projects</a
-          >
+          <a href="#home"><i class="fa fa-house"></i> Home</a>
         </li>
-
         <li>
-          <a id="nav_btns" href="#about"><i class="fa fa-user"></i> About</a>
+          <a href="#portfolio"><i class="fa fa-computer"></i> Projects</a>
+        </li>
+        <li>
+          <a href="#about"><i class="fa fa-user"></i> About</a>
         </li>
       </ul>
-      <div class="aside_links">
-        <li>
-          <a href="https://anilkumar3494.github.io/resume/" target="_blank"
-            >Resume</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/anil-kumar-karapa/"
-            target="_blank"
-            >LinkedIn</a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/AnilKumar3494" target="_blank">GitHub</a>
-        </li>
-      </div>
+      <ul class="aside_links">
+        <li><a href="https://anilkumar3494.github.io/resume/" target="_blank" rel="noopener">Resume</a></li>
+        <li><a href="https://www.linkedin.com/in/anil-kumar-karapa/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/AnilKumar3494" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
     </div>
 
     <main class="main_content flex_col">
       <section class="need_job section" id="home">
         <canvas id="hero-particles"></canvas>
-        <div class="cry_for_help">
-          <h3 id="hover-trigger">Developers! Developers Developers! 👏</h3>
-
-          <div id="image-popup">
-            <img
-              src="projects/8ufpld.gif"
-              alt="Steve Ballmer chanting 'Developers'"
-            />
-            <p>The man, the myth, the legend. (Steve Ballmer)</p>
-          </div>
-          <p><i>ahhh...🥀🥀 The Holy Chant 🙏</i></p>
-        </div>
 
         <div class="asking_job">
           <div class="open-to-work-badge">
@@ -167,9 +143,6 @@
             <span class="white_heart">🤍</span>
           </p>
           <p>
-            <!-- Ready to click into the right team like a
-            <span class="lego-text">Lego</span>, so umm email me -->
-
             <span class="shy-emoji">🥺</span> If you are
             <span class="hiring-text">Hiring</span> or if you just wanted to say
             <span class="hi-text">Hi</span>
@@ -185,6 +158,18 @@
             >
             <span class="copy-tooltip" id="copyTooltip">Copied! 👍</span>
           </div>
+        </div>
+
+        <div class="cry_for_help">
+          <h3 id="hover-trigger">Developers! Developers Developers! 👏</h3>
+          <div id="image-popup">
+            <img
+              src="projects/8ufpld.gif"
+              alt="Steve Ballmer chanting 'Developers'"
+            />
+            <p>The man, the myth, the legend. (Steve Ballmer)</p>
+          </div>
+          <p><i>ahhh...🥀🥀 The Holy Chant 🙏</i></p>
         </div>
       </section>
 
@@ -422,7 +407,10 @@
         </div>
       </section>
 
-      <section class="about_content padd_15" id="about">
+      <section class="about_content padd_15 section" id="about">
+        <div class="section_title padd_15" style="padding-bottom:0">
+          <h2>About Me</h2>
+        </div>
         <div class="about_text padd_15">
           <!-- <p>Noicee you are here! I guess I can introduce myself</p> -->
 
@@ -469,14 +457,12 @@
             on the Web! 🧑‍💻🤓
           </p>
 
-          <p class="div-joke">
-            ...or <i>Perhaps</i> Trying to figure out why I cannot center a
-            <span class="bloody-div-text"
-              >blooody 'div'
-              <div class="div-box" id="theDivBox">----click to save me---</div>
-            </span>
+          <div class="div-joke">
+            <p>...or <i>Perhaps</i> Trying to figure out why I cannot center a
+            <span class="bloody-div-text">blooody 'div'</span></p>
+            <div class="div-box" id="theDivBox">----click to save me---</div>
             <span id="centerSuccessMsg" class="success-message"></span>
-          </p>
+          </div>
         </div>
       </section>
 
@@ -499,23 +485,14 @@
         </div>
       </section> -->
 
-      <section class="mobile_contact">
-        <li>
-          <a
-            href="https://www.linkedin.com/in/anil-kumar-karapa/"
-            target="_blank"
-            >LinkedIn</a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/AnilKumar3494" target="_blank">GitHub</a>
-        </li>
-        <li>
-          <a href="https://anilkumar3494.github.io/resume/" target="_blank"
-            >Resume</a
-          >
-        </li>
-      </section>
+      <footer class="site-footer">
+        <ul class="mobile_contact">
+          <li><a href="https://www.linkedin.com/in/anil-kumar-karapa/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://github.com/AnilKumar3494" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
+          <li><a href="https://anilkumar3494.github.io/resume/" target="_blank" rel="noopener"><i class="fas fa-file-alt"></i> Resume</a></li>
+        </ul>
+        <p class="footer-copy">Built by Anil Kumar &middot; <span id="footer-year"></span></p>
+      </footer>
     </main>
 
     <button class="scroll-top-btn" id="scrollTopBtn" title="Back to top" aria-label="Scroll to top">

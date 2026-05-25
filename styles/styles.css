@@ -56,10 +56,7 @@ body {
 
 .main_content {
   margin: 0 0 0 20%;
-
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-
   gap: 2rem;
 }
 
@@ -92,7 +89,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  scroll-snap-align: center;
 }
 
 /* #blob {
@@ -609,19 +605,63 @@ p {
   line-height: 25px;
 }
 
+/* ─── Site footer ── */
+.site-footer {
+  padding: 2rem 1.5rem 3rem;
+  border-top: 1px solid var(--bg-black-50);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mobile_contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile_contact li a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--skin-color);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.mobile_contact li a:hover {
+  opacity: 0.8;
+  transform: translateY(-2px);
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: var(--text-black-700);
+  opacity: 0.55;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── div-joke layout fix ── */
+.div-joke {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.div-joke p { margin: 0; padding: 0; }
+
 /* responsive */
 @media (max-width: 2400px) {
-  .mobile_contact {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    justify-content: center;
-    text-decoration: underline;
-    color: var(--skin-color);
-    font-weight: 900;
-    letter-spacing: 1px;
-    padding-bottom: 1rem;
-  }
   .portfolio .portfolio_item {
     flex: 0 0 50%;
     max-width: 50%;
@@ -688,6 +728,7 @@ p {
 
   .main_content {
     margin-left: 0px;
+    padding-top: 9dvh;
   }
 
   .section {
@@ -758,9 +799,13 @@ p {
     color: var(--text-black-900);
   }
 
-  /* nav_toggler */
+  /* nav_toggler: show hamburger on mobile */
   .aside .nav_toggler {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     height: 40px;
     width: 45px;
     border: 1px solid var(--bg-black-50);

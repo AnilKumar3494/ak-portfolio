@@ -1,3 +1,30 @@
+// Footer year
+document.addEventListener("DOMContentLoaded", () => {
+  const yr = document.getElementById("footer-year");
+  if (yr) yr.textContent = new Date().getFullYear();
+});
+
+// Mobile nav toggle — opens/closes the slide-down nav at <860px
+function asideNavBar() {
+  const nav     = document.querySelector(".aside .nav");
+  const toggler = document.querySelector(".aside .nav_toggler");
+  if (!nav) return;
+  nav.classList.toggle("nav_transform");
+  if (toggler) toggler.classList.toggle("is-open");
+}
+
+// Close nav when a link is clicked (mobile)
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".aside .nav li a").forEach((link) => {
+    link.addEventListener("click", () => {
+      const nav = document.querySelector(".aside .nav");
+      const toggler = document.querySelector(".aside .nav_toggler");
+      if (nav) nav.classList.remove("nav_transform");
+      if (toggler) toggler.classList.remove("is-open");
+    });
+  });
+});
+
 // Scroll-to-top button
 document.addEventListener("DOMContentLoaded", function () {
   const scrollTopBtn = document.getElementById("scrollTopBtn");

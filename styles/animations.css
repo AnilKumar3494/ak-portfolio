@@ -347,6 +347,39 @@
   to   { opacity: 1; transform: translateX(0); }
 }
 
+/* ─── Hamburger → X animation ───────────────────────────────────────────── */
+.aside .nav_toggler span,
+.aside .nav_toggler span::before,
+.aside .nav_toggler span::after {
+  transition: transform 0.28s ease, opacity 0.28s ease, background 0.28s ease;
+}
+
+.aside .nav_toggler.is-open span        { background: transparent; }
+.aside .nav_toggler.is-open span::before { transform: rotate(45deg) translate(4px, 4px); }
+.aside .nav_toggler.is-open span::after  { transform: rotate(-45deg) translate(4px, -4px); }
+
+/* ─── Mobile nav slide-down styling ────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .aside .nav {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    border-bottom: 1px solid var(--bg-black-50);
+    gap: 0;
+  }
+
+  .aside .nav li a {
+    border-bottom: 1px solid var(--bg-black-50) !important;
+    padding: 0.9rem 1.5rem !important;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .aside .nav li:last-child a {
+    border-bottom: none !important;
+  }
+}
+
 /* ─── CRL card stats grid responsive ────────────────────────────────────── */
 @media (max-width: 600px) {
   .crl_stats_grid {
