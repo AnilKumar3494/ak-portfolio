@@ -12,13 +12,23 @@
   const ring = document.getElementById("cursor-ring");
 
   if (!isTouch && !reduced && dot && ring) {
-    let mx = -100, my = -100, rx = -100, ry = -100;
-    let rafCursor;
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    let cursorReady = false;
 
     document.addEventListener("mousemove", (e) => {
       mx = e.clientX; my = e.clientY;
       dot.style.left = mx + "px";
       dot.style.top  = my + "px";
+
+      // First move: teleport ring to exact position, then reveal both
+      if (!cursorReady) {
+        rx = mx; ry = my;
+        ring.style.left = rx + "px";
+        ring.style.top  = ry + "px";
+        dot.classList.remove("cur-gone");
+        ring.classList.remove("cur-gone");
+        cursorReady = true;
+      }
     });
 
     function lerpRing() {
@@ -26,7 +36,7 @@
       ry += (my - ry) * 0.13;
       ring.style.left = rx + "px";
       ring.style.top  = ry + "px";
-      rafCursor = requestAnimationFrame(lerpRing);
+      requestAnimationFrame(lerpRing);
     }
     lerpRing();
 

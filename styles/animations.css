@@ -191,28 +191,7 @@
   100% { box-shadow: 0 4px 15px rgba(0, 76, 84, 0.35); }
 }
 
-/* ─── Glow scan line on section titles ──────────────────────────────────── */
-.section_title {
-  position: relative;
-  overflow: hidden;
-}
-
-.section_title::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
-  animation: title-scan 4s ease-in-out infinite;
-  pointer-events: none;
-}
-
-@keyframes title-scan {
-  0%   { left: -50%; }
-  100% { left: 150%; }
-}
+/* ─── Section title: just use existing underline bars from styles.css ────── */
 
 /* ─── Filter button group entrance ──────────────────────────────────────── */
 .filter-btn {
@@ -326,9 +305,8 @@
   }
 }
 
-/* ─── Scroll progress bar — gradient upgrade ────────────────────────────── */
+/* ─── Scroll progress bar ────────────────────────────────────────────────── */
 .scroll_watcher {
-  background: linear-gradient(90deg, var(--skin-color), #6c5ce7, #fd79a8) !important;
   height: 3px;
 }
 
