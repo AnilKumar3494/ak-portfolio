@@ -38,24 +38,32 @@
   50%       { opacity: 0; }
 }
 
-.cry_for_help img { max-width: 40dvw; }
-
 /* ── Steve Ballmer popup ── */
 #image-popup {
-  display: none;
   position: absolute;
   top: 100%;
-  right: 50%;
-  transform: translateX(50%);
-  margin-top: 10px;
+  left: 0;
+  margin-top: 12px;
+  width: min(340px, 86vw);
   border-radius: 12px;
   padding: 12px;
   background: #0a0a0a;
   border: 1px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  z-index: 10;
+  z-index: 20;
   opacity: 0;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  visibility: hidden;
+  transform: translateY(8px) scale(0.97);
+  transform-origin: top left;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+
+#image-popup img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 #image-popup p {
@@ -66,10 +74,26 @@
   padding: 6px 0 0;
 }
 
-.cry_for_help #hover-trigger:hover + #image-popup {
-  display: block;
-  opacity: 0.95;
-  transform: translateX(120%) scale(1.04);
+.cry_for_help:hover #image-popup,
+.cry_for_help #hover-trigger:focus + #image-popup {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* On touch screens hover is unreliable — show the GIF inline, always visible */
+@media (hover: none), (max-width: 860px) {
+  .cry_for_help { display: block; }
+  #image-popup {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    width: 100%;
+    max-width: 320px;
+    margin-top: 12px;
+    pointer-events: auto;
+  }
 }
 
 /* ── Heartbeat ── */

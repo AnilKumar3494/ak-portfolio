@@ -316,19 +316,8 @@ h3.hello span.name {
   letter-spacing: -0.01em;
 }
 
-/* ─── CRL stats grid: 3 cols on desktop ─────────────────────────────────────── */
-.crl_stats_grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 1.25rem;
-}
-
-.crl_stat_item {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.6rem 0;
-}
+/* CRL stats grid/items are fully styled in styles.css — no override needed here
+   (the previous override stripped the card padding & background). */
 
 /* ─── Eagles card full-width on mobile ────────────────────────────────────────── */
 @media (max-width: 860px) {

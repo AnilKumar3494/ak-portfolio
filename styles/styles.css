@@ -745,10 +745,6 @@ p {
 }
 
 @media (max-width: 860px) {
-  #filter-tags-group {
-    display: none;
-  }
-
   h3 {
     font-size: 1.4rem !important;
     font-weight: 600 !important;

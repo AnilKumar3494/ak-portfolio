@@ -53,9 +53,9 @@
 
 /* ─── Division Groups ─────────────────────────────────────────────────────── */
 .nfl-teams-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
   margin-bottom: 2rem;
 }
 
@@ -63,7 +63,12 @@
   background: var(--bg-black-100);
   border: 1px solid var(--bg-black-50);
   border-radius: 12px;
-  padding: 1rem 1rem 0.75rem;
+  padding: 1rem 1rem 1.1rem;
+  transition: border-color 0.2s ease;
+}
+
+.nfl-division-group:hover {
+  border-color: var(--bg-black-50);
 }
 
 .nfl-division-title {
@@ -76,8 +81,8 @@
 }
 
 .nfl-division-teams {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
   gap: 0.6rem;
 }
 
@@ -89,8 +94,8 @@
   align-items: center;
   gap: 0.3rem;
 
-  width: 70px;
-  padding: 0.5rem 0.4rem 0.4rem;
+  width: 100%;
+  padding: 0.55rem 0.4rem 0.45rem;
   border-radius: 10px;
   border: 2px solid var(--bg-black-50);
   background: var(--bg-black-900);
@@ -260,6 +265,8 @@
 
 /* ─── Responsive ──────────────────────────────────────────────────────────── */
 @media (max-width: 600px) {
-  .nfl-team-card { width: 60px; }
+  .nfl-teams-grid { grid-template-columns: 1fr; }
+  .nfl-division-teams { grid-template-columns: repeat(auto-fill, minmax(58px, 1fr)); }
   .nfl-logo { width: 32px; height: 32px; }
+  .nfl-selected-count { margin-left: 0; width: 100%; }
 }

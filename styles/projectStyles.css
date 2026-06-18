@@ -7,6 +7,11 @@
   /* border: 2px solid red; */
 }
 
+/* Skill/tech tag filter pills hidden site-wide — only Pinned/All remain */
+#filter-tags-group {
+  display: none;
+}
+
 .filter-group {
   display: flex;
   flex-wrap: wrap;
