@@ -337,11 +337,19 @@
           </section>
 
           <div class="modal-overlay" id="modal-overlay">
+            <button
+              class="modal-close-float"
+              id="modal-close-float"
+              title="Close preview (Esc)"
+              aria-label="Close preview"
+            >
+              <i class="fas fa-times"></i>
+            </button>
             <div class="modal-content">
               <div class="modal-header">
                 <h3 class="modal-title" id="modal-title">Loading Project...</h3>
-                <button class="modal-close-btn" id="modal-close-btn">
-                  &times;
+                <button class="modal-close-btn" id="modal-close-btn" aria-label="Close preview">
+                  <i class="fas fa-times"></i> Close
                 </button>
               </div>
               <div class="modal-body">

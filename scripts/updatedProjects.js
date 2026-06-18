@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalOverlay = document.getElementById("modal-overlay");
   const modalTitle = document.getElementById("modal-title");
   const modalCloseBtn = document.getElementById("modal-close-btn");
+  const modalCloseFloat = document.getElementById("modal-close-float");
   const modalLoader = document.getElementById("modal-loader");
   const modalIframe = document.getElementById("modal-iframe");
 
@@ -265,6 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   modalCloseBtn.addEventListener("click", closeModal);
+  modalCloseFloat?.addEventListener("click", closeModal);
   modalOverlay.addEventListener("click", (e) => {
     if (e.target === modalOverlay) {
       closeModal();

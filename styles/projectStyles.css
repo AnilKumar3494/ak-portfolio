@@ -239,9 +239,9 @@
 .modal-content {
   background: #1e1e1e;
   border-radius: 12px;
-  width: 90%;
-  height: 85%;
-  max-width: 1400px;
+  width: 78%;
+  height: 78%;
+  max-width: 1080px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
@@ -258,34 +258,76 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
 }
 
 .modal-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-black-900);
+  color: #f3f3f3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* Header "Close" pill */
 .modal-close-btn {
-  font-family: sans-serif;
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--text-black-900);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: "Poppins", sans-serif;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
   border: none;
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  line-height: 30px;
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
 }
 .modal-close-btn:hover {
   background: var(--skin-color);
-  color: var(--project-dark-bg);
+  color: #111;
+}
+
+/* Floating close button — sits in the dark overlay above the modal */
+.modal-close-float {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.3rem;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1002;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background 0.25s ease,
+    transform 0.25s ease, border-color 0.25s ease;
+}
+
+.modal-overlay.show .modal-close-float {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-close-float:hover {
+  background: var(--skin-color);
+  border-color: var(--skin-color);
+  color: #111;
+  transform: rotate(90deg) scale(1.08);
 }
 
 .modal-body {
@@ -323,6 +365,17 @@
 
 .modal-iframe.loaded {
   opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .modal-content { width: 94%; height: 88%; }
+  .modal-close-float {
+    top: 0.6rem;
+    right: 0.6rem;
+    width: 42px;
+    height: 42px;
+    font-size: 1.1rem;
+  }
 }
 
 /* ── Pinned ribbon ─────────────────────────────────────────────────────────── */
