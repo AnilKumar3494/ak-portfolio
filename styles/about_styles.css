@@ -16,12 +16,12 @@
 .name {
   display: inline-block;
   font-weight: 900;
+  font-size: 3rem;
   position: relative;
   color: #ff8c00;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
   cursor: vertical-text;
+  transition: all 0.3s ease;
+  letter-spacing: -0.02em;
 }
 
 .name::before {

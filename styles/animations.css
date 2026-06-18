@@ -1,0 +1,369 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   animations.css — cursor, particles, section dots, ripple, mobile polish
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── Reduced motion: disable everything ─────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+  #hero-particles { display: none !important; }
+  .ripple { display: none !important; }
+  .tl-slide { transition: none !important; }
+}
+
+/* ─── Custom cursor (desktop/fine-pointer only) ───────────────────────────── */
+@media (pointer: fine) {
+  body { cursor: none; }
+  a, button, [role="button"], .card-btn, .filter-btn,
+  .project-card, .nav li a, input, .style-switcher-toggler {
+    cursor: none;
+  }
+}
+
+.cursor-dot {
+  position: fixed;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--skin-color);
+  pointer-events: none;
+  z-index: 99999;
+  top: 0; left: 0;
+  transform: translate(-50%, -50%);
+  transition: width 0.18s ease, height 0.18s ease, opacity 0.3s ease;
+  will-change: transform;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--skin-color);
+  pointer-events: none;
+  z-index: 99998;
+  top: 0; left: 0;
+  transform: translate(-50%, -50%);
+  transition: width 0.25s ease, height 0.25s ease, border-color 0.2s ease, opacity 0.3s ease;
+  opacity: 0.55;
+  will-change: transform;
+}
+
+.cursor-dot.cur-hover  { width: 14px; height: 14px; }
+.cursor-ring.cur-hover { width: 56px; height: 56px; opacity: 0.85; }
+
+.cursor-dot.cur-gone, .cursor-ring.cur-gone { opacity: 0; }
+
+/* Hide on touch devices */
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-ring { display: none !important; }
+}
+
+/* ─── Hero particle canvas ────────────────────────────────────────────────── */
+#hero-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ─── Section navigation dots ────────────────────────────────────────────── */
+.section-dots {
+  position: fixed;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  z-index: 800;
+}
+
+.section-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid var(--text-black-700);
+  cursor: pointer;
+  opacity: 0.45;
+  transition: all 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+}
+
+.section-dot::after {
+  content: attr(data-label);
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg-black-100);
+  color: var(--text-black-900);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--bg-black-50);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.section-dot:hover::after { opacity: 1; }
+
+.section-dot:hover {
+  opacity: 0.85;
+  border-color: var(--skin-color);
+}
+
+.section-dot.sd-active {
+  background: var(--skin-color);
+  border-color: var(--skin-color);
+  transform: scale(1.6);
+  opacity: 1;
+  box-shadow: 0 0 10px var(--skin-color);
+}
+
+@media (max-width: 1260px) { .section-dots { display: none; } }
+
+/* ─── Button click ripple ─────────────────────────────────────────────────── */
+.btn, .card-btn, .filter-btn, .eagles-download-btn, .nfl-btn, .card-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(0);
+  animation: ripple-out 0.55s linear forwards;
+  pointer-events: none;
+}
+
+@keyframes ripple-out {
+  to { transform: scale(5); opacity: 0; }
+}
+
+/* ─── Timeline item slide-in ─────────────────────────────────────────────── */
+.timeline_item {
+  opacity: 0;
+  transform: translateX(-18px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.timeline_item.tl-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* stagger */
+.timeline_item:nth-child(1) { transition-delay: 0.05s; }
+.timeline_item:nth-child(2) { transition-delay: 0.15s; }
+.timeline_item:nth-child(3) { transition-delay: 0.25s; }
+.timeline_item:nth-child(4) { transition-delay: 0.35s; }
+
+/* ─── Timeline dot pop ───────────────────────────────────────────────────── */
+.timeline_item.tl-visible .circle_dot {
+  animation: dot-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes dot-pop {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+/* ─── CRL stat count-up highlight ───────────────────────────────────────── */
+.crl_value.crl-counting {
+  color: var(--skin-color);
+}
+
+/* ─── Eagles card sparkle on button ready ────────────────────────────────── */
+.eagles-download-btn:not(:disabled) {
+  animation: btn-ready-pulse 2.5s ease-in-out 1;
+}
+
+@keyframes btn-ready-pulse {
+  0%   { box-shadow: 0 4px 15px rgba(0, 76, 84, 0.35); }
+  50%  { box-shadow: 0 4px 30px rgba(0, 76, 84, 0.7), 0 0 0 4px rgba(0, 76, 84, 0.15); }
+  100% { box-shadow: 0 4px 15px rgba(0, 76, 84, 0.35); }
+}
+
+/* ─── Section title: just use existing underline bars from styles.css ────── */
+
+/* ─── Filter button group entrance ──────────────────────────────────────── */
+.filter-btn {
+  animation: filter-pop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.filter-btn:nth-child(1) { animation-delay: 0.05s; }
+.filter-btn:nth-child(2) { animation-delay: 0.10s; }
+.filter-btn:nth-child(3) { animation-delay: 0.15s; }
+.filter-btn:nth-child(4) { animation-delay: 0.20s; }
+.filter-btn:nth-child(5) { animation-delay: 0.25s; }
+.filter-btn:nth-child(6) { animation-delay: 0.30s; }
+.filter-btn:nth-child(7) { animation-delay: 0.35s; }
+
+@keyframes filter-pop {
+  from { opacity: 0; transform: scale(0.75) translateY(8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ─── Active filter button: animated border ──────────────────────────────── */
+.filter-btn.active {
+  background: var(--skin-color);
+  color: var(--text-black-900);
+  animation: none;
+  box-shadow: 0 0 0 3px rgba(223, 167, 10, 0.2), 0 4px 14px rgba(0,0,0,0.25);
+}
+
+/* ─── Project card entrance stagger ────────────────────────────────────── */
+@keyframes card-in {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ─── Magnetic button wrapper ────────────────────────────────────────────── */
+.mag-wrap {
+  display: inline-block;
+  will-change: transform;
+  transition: transform 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* ─── Skills shelf item hover pop ───────────────────────────────────────── */
+.shelf_item {
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+
+.shelf_item:hover {
+  transform: translateY(-6px) scale(1.06);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  z-index: 2;
+}
+
+/* ─── Mobile improvements ────────────────────────────────────────────────── */
+@media (max-width: 1260px) {
+  .main_content {
+    padding-top: 9dvh;
+  }
+}
+
+@media (max-width: 860px) {
+  /* Bigger touch targets */
+  .card-btn     { min-height: 48px; }
+  .filter-btn   { min-height: 40px; padding: 0.5rem 1rem; }
+  .nav li a     { min-height: 44px; }
+
+  /* Hero */
+  .need_job {
+    min-height: unset;
+    padding: 2.5rem 1rem 3rem;
+  }
+
+  /* Project card stagger resets on mobile to avoid long waits */
+  .project-card { animation-delay: 0s !important; }
+
+  /* Eagles card */
+  .eagles-download-btn { font-size: 0.9rem; padding: 0.75rem 1.1rem; }
+  .eagles-cal-shortcuts .eagles-shortcut-row { flex-direction: column; }
+
+  /* NFL team grid */
+  .nfl-teams-grid { grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)) !important; }
+}
+
+@media (max-width: 600px) {
+  /* Smaller filter row, horizontal scroll */
+  .filter-group { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 0.4rem; }
+  .filter-group::-webkit-scrollbar { height: 3px; }
+  .filter-group::-webkit-scrollbar-thumb { background: var(--skin-color); border-radius: 99px; }
+  .filter-btn { white-space: nowrap; flex-shrink: 0; }
+
+  /* Hero name */
+  .asking_job h1 { font-size: clamp(1.5rem, 7vw, 2rem); }
+
+  /* Better card layout: single column on very small screens */
+  .projects-grid { grid-template-columns: 1fr !important; }
+
+  /* Profession badges: wrap nicely */
+  .profession-badges { gap: 0.3rem; }
+  .prof-badge { font-size: 0.7rem; padding: 0.2rem 0.5rem; }
+}
+
+/* ─── Aside sidebar — glassmorphism touch on desktop ───────────────────── */
+@media (min-width: 1261px) {
+  .aside {
+    background: rgba(var(--bg-black-100-raw, 253, 249, 255), 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+
+  body.dark .aside {
+    background: rgba(34, 34, 34, 0.92);
+  }
+}
+
+/* ─── Scroll progress bar ────────────────────────────────────────────────── */
+.scroll_watcher {
+  height: 3px;
+}
+
+/* ─── Soft glow on hovered social links ─────────────────────────────────── */
+.aside .aside_links a:hover {
+  text-shadow: 0 0 12px var(--skin-color);
+}
+
+/* ─── Skill description panel entrance ──────────────────────────────────── */
+.skill-description-panel {
+  animation: panel-in 0.4s ease both;
+}
+
+@keyframes panel-in {
+  from { opacity: 0; transform: translateX(8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ─── Hamburger → X animation ───────────────────────────────────────────── */
+.aside .nav_toggler span,
+.aside .nav_toggler span::before,
+.aside .nav_toggler span::after {
+  transition: transform 0.28s ease, opacity 0.28s ease, background 0.28s ease;
+}
+
+.aside .nav_toggler.is-open span        { background: transparent; }
+.aside .nav_toggler.is-open span::before { transform: rotate(45deg) translate(4px, 4px); }
+.aside .nav_toggler.is-open span::after  { transform: rotate(-45deg) translate(4px, -4px); }
+
+/* ─── Mobile nav slide-down styling ────────────────────────────────────────── */
+@media (max-width: 860px) {
+  .aside .nav {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    border-bottom: 1px solid var(--bg-black-50);
+    gap: 0;
+  }
+
+  .aside .nav li a {
+    border-bottom: 1px solid var(--bg-black-50) !important;
+    padding: 0.9rem 1.5rem !important;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .aside .nav li:last-child a {
+    border-bottom: none !important;
+  }
+}
+
+/* ─── CRL card stats grid responsive ────────────────────────────────────── */
+@media (max-width: 600px) {
+  .crl_stats_grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .crl_stat_item:last-child {
+    grid-column: 1 / -1;
+  }
+}

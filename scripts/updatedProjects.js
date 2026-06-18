@@ -24,11 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const filterMainContainer = document.getElementById("filter-main-group");
   const filterTagsContainer = document.getElementById("filter-tags-group");
 
-  const modalOverlay = document.getElementById("modal-overlay");
-  const modalTitle = document.getElementById("modal-title");
-  const modalCloseBtn = document.getElementById("modal-close-btn");
-  const modalLoader = document.getElementById("modal-loader");
-  const modalIframe = document.getElementById("modal-iframe");
+  const qlPreview   = document.getElementById("ql-preview");
+  const qlTitle     = document.getElementById("ql-preview-title");
+  const qlBackBtn   = document.getElementById("ql-back-btn");
+  const qlOpenNew   = document.getElementById("ql-open-new");
+  const qlLoader    = document.getElementById("ql-preview-loader");
+  const qlIframe    = document.getElementById("ql-preview-frame");
 
   let allProjects = [];
 
@@ -88,11 +89,15 @@ document.addEventListener("DOMContentLoaded", () => {
         .map((tag) => `<span class="card-tag">${tag}</span>`)
         .join("");
 
+      const isPinned = project.tags.includes("Pinned");
+      if (isPinned) card.classList.add("is-pinned");
+
       const quickLookBtn = project.links.live
-        ? `<button class="card-btn btn-primary btn-quick-look" data-url="${project.links.live}" data-title="${project.title}">Quick Look</button>`
+        ? `<button class="card-btn btn-primary btn-quick-look" data-url="${project.links.live}" data-title="${project.title}"><i class="fas fa-eye" style="margin-right:0.35rem;font-size:0.85em;"></i>Quick Look</button>`
         : "";
 
       card.innerHTML = `
+        ${isPinned ? '<span class="card-pinned-ribbon" title="Featured project">📌</span>' : ""}
         <div class="card-image-container">
           <img src="${project.image}" alt="${project.title} Preview" loading="lazy">
         </div>
@@ -103,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ${tagsHtml}
           </div>
           <div class="card-links">
-            <a href="${project.links.github}" class="card-btn btn-secondary" target="_blank" rel="noopener noreferrer">View Code</a>
+            <a href="${project.links.github}" class="card-btn btn-secondary" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" style="margin-right:0.35rem;"></i>View Code</a>
             ${quickLookBtn}
           </div>
         </div>
@@ -174,41 +179,48 @@ document.addEventListener("DOMContentLoaded", () => {
     filterTagsContainer.innerHTML = tagsHtml;
   }
 
-  // --- 5. MODAL FUNCTIONS ---
+  // --- 5. INLINE QUICK LOOK PREVIEW ---
+  // The preview takes the grid's place in the page instead of a floating modal.
 
-  function openModal(url, title) {
-    modalTitle.textContent = title;
-    modalIframe.src = url;
-    modalIframe.classList.remove("loaded");
-    modalLoader.style.display = "block";
-    modalOverlay.classList.add("show");
+  function openPreview(url, title) {
+    qlTitle.textContent = title;
+    qlOpenNew.href = url;
 
-    modalIframe.onload = () => {
-      modalLoader.style.display = "none";
-      modalIframe.classList.add("loaded");
+    qlIframe.classList.remove("loaded");
+    qlLoader.style.display = "block";
+    const existingErr = qlIframe.parentElement.querySelector(".iframe-error");
+    if (existingErr) existingErr.remove();
+
+    qlIframe.src = url;
+
+    qlIframe.onload = () => {
+      qlLoader.style.display = "none";
+      qlIframe.classList.add("loaded");
     };
-
-    modalIframe.onerror = () => {
-      modalLoader.style.display = "none";
-      const errorP = document.createElement("p");
-      errorP.className = "iframe-error";
-      errorP.style.color = "#ff9a9a";
-      errorP.style.textAlign = "center";
-      errorP.textContent = "Sorry, this site cannot be previewed here.";
-      if (!modalIframe.parentElement.querySelector(".iframe-error")) {
-        modalIframe.parentElement.appendChild(errorP);
+    qlIframe.onerror = () => {
+      qlLoader.style.display = "none";
+      if (!qlIframe.parentElement.querySelector(".iframe-error")) {
+        const errorP = document.createElement("p");
+        errorP.className = "iframe-error";
+        errorP.textContent = "Sorry, this site can't be previewed here — use “Open site”.";
+        qlIframe.parentElement.appendChild(errorP);
       }
     };
+
+    // Hide the grid + filters, reveal the preview in their place
+    grid.hidden = true;
+    filterContainer.hidden = true;
+    qlPreview.hidden = false;
+
+    qlPreview.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  function closeModal() {
-    modalOverlay.classList.remove("show");
-    setTimeout(() => {
-      modalIframe.src = "about:blank";
-      modalTitle.textContent = "Loading Project...";
-      const errorMsg = modalIframe.parentElement.querySelector(".iframe-error");
-      if (errorMsg) errorMsg.remove();
-    }, 300);
+  function closePreview() {
+    qlPreview.hidden = true;
+    grid.hidden = false;
+    filterContainer.hidden = false;
+    qlIframe.src = "about:blank";
+    qlTitle.textContent = "";
   }
 
   // --- 6. EVENT LISTENERS ---
@@ -256,20 +268,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (quickLookBtn) {
       const url = quickLookBtn.dataset.url;
       const title = quickLookBtn.dataset.title;
-      openModal(url, title);
+      openPreview(url, title);
     }
   });
 
-  modalCloseBtn.addEventListener("click", closeModal);
-  modalOverlay.addEventListener("click", (e) => {
-    if (e.target === modalOverlay) {
-      closeModal();
-    }
-  });
+  qlBackBtn.addEventListener("click", closePreview);
 
   document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modalOverlay.classList.contains("show")) {
-      closeModal();
+    if (e.key === "Escape" && !qlPreview.hidden) {
+      closePreview();
     }
   });
 

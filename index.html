@@ -24,6 +24,7 @@
       type="image/x-icon"
     />
 
+    <link rel="stylesheet" href="./styles/color-1.css" />
     <link rel="stylesheet" href="./styles/styles.css" />
 
     <link rel="stylesheet" href="./styles/style_switcher.css" />
@@ -68,6 +69,10 @@
     <link rel="stylesheet" href="./styles/musicSection.css" />
     <link rel="stylesheet" href="./styles/projectStyles.css" />
     <link rel="stylesheet" href="./styles/cryforhelp.css" />
+    <link rel="stylesheet" href="./styles/nfl-calendar.css" />
+    <link rel="stylesheet" href="./styles/easter-eggs.css" />
+    <link rel="stylesheet" href="./styles/fun-ui.css" />
+    <link rel="stylesheet" href="./styles/animations.css" />
 
     <link
       rel="stylesheet"
@@ -80,6 +85,9 @@
   </head>
 
   <body class="dark">
+    <div id="cursor-dot" class="cursor-dot cur-gone"></div>
+    <div id="cursor-ring" class="cursor-ring cur-gone"></div>
+    <div id="section-dots" class="section-dots"></div>
     <div class="scroll_watcher"></div>
     <!-- <div id="blob"></div> -->
     <div class="aside">
@@ -91,62 +99,40 @@
       </div>
       <ul class="nav" id="nav_list">
         <li>
-          <a id="nav_btns" href="#portfolio"
-            ><i class="fa fa-computer"></i>Projects</a
-          >
+          <a href="#home"><i class="fa fa-house"></i> Home</a>
         </li>
-
         <li>
-          <a id="nav_btns" href="#about"><i class="fa fa-user"></i> About</a>
+          <a href="#portfolio"><i class="fa fa-computer"></i> Projects</a>
+        </li>
+        <li>
+          <a href="#about"><i class="fa fa-user"></i> About</a>
         </li>
       </ul>
-      <div class="aside_links">
-        <li>
-          <a href="https://anilkumar3494.github.io/resume/" target="_blank"
-            >Resume</a
-          >
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/anil-kumar-karapa/"
-            target="_blank"
-            >LinkedIn</a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/AnilKumar3494" target="_blank">GitHub</a>
-        </li>
-      </div>
+      <ul class="aside_links">
+        <li><a href="https://anilkumar3494.github.io/resume/" target="_blank" rel="noopener">Resume</a></li>
+        <li><a href="https://www.linkedin.com/in/anil-kumar-karapa/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://github.com/AnilKumar3494" target="_blank" rel="noopener">GitHub</a></li>
+      </ul>
     </div>
 
     <main class="main_content flex_col">
       <section class="need_job section" id="home">
-        <div class="cry_for_help">
-          <h3 id="hover-trigger">Developers! Developers Developers! 👏</h3>
-
-          <div id="image-popup">
-            <img
-              src="projects/8ufpld.gif"
-              alt="Steve Ballmer chanting 'Developers'"
-            />
-            <p>The man, the myth, the legend. (Steve Ballmer)</p>
-          </div>
-          <p><i>ahhh...🥀🥀 The Holy Chant 🙏</i></p>
-        </div>
+        <canvas id="hero-particles"></canvas>
 
         <div class="asking_job">
-          <!-- <br /> -->
+          <div class="open-to-work-badge">
+            <span class="otw-dot"></span>
+            Open to Work
+          </div>
           <h1>Welp, I Need a Job 🧑‍💻</h1>
-          <p>Full Stack & DevCloudOps Engineer</p>
+          <div class="profession-badges">
+            <span class="prof-badge"><i class="fas fa-code"></i> Full Stack Dev</span>
+            <span class="prof-badge"><i class="fas fa-cloud"></i> DevOps &amp; Cloud</span>
+            <span class="prof-badge"><i class="fas fa-layer-group"></i> CI/CD Pipelines</span>
+          </div>
           <p>
-            <i
-              ><strong
-                >I <span>enjoy</span> building Web application products and
-                efficient CI/CD pipelines!</strong
-              ></i
-            >
+            <i><strong>I <span>enjoy</span> building and breaking software!</strong></i>
           </p>
-          <p id="years_experience"></p>
         </div>
 
         <div class="contact-section">
@@ -155,9 +141,6 @@
             <span class="white_heart">🤍</span>
           </p>
           <p>
-            <!-- Ready to click into the right team like a
-            <span class="lego-text">Lego</span>, so umm email me -->
-
             <span class="shy-emoji">🥺</span> If you are
             <span class="hiring-text">Hiring</span> or if you just wanted to say
             <span class="hi-text">Hi</span>
@@ -173,6 +156,18 @@
             >
             <span class="copy-tooltip" id="copyTooltip">Copied! 👍</span>
           </div>
+        </div>
+
+        <div class="cry_for_help">
+          <h3 id="hover-trigger" tabindex="0">Developers! Developers Developers! 👏</h3>
+          <div id="image-popup">
+            <img
+              src="projects/8ufpld.gif"
+              alt="Steve Ballmer chanting 'Developers'"
+            />
+            <p>The man, the myth, the legend. (Steve Ballmer)</p>
+          </div>
+          <p><i>ahhh...🥀🥀 The Holy Chant 🙏</i></p>
         </div>
       </section>
 
@@ -202,15 +197,72 @@
               </div>
 
               <div class="card-body">
-                <p class="birds_accent">
-                  <span class="birds_accent">GO BIRDS! 🦅</span>
-                </p>
+                <p class="birds_accent">GO BIRDS! 🦅</p>
+
+                <!-- Step guide -->
+                <ol class="eagles-steps" id="eagles-steps">
+                  <li class="eagles-step active" id="estep-1">
+                    <span class="estep-num">1</span>
+                    <span class="estep-label">Click <strong>Download</strong> below</span>
+                    <i class="fas fa-check estep-check"></i>
+                  </li>
+                  <li class="eagles-step" id="estep-2">
+                    <span class="estep-num">2</span>
+                    <span class="estep-label">Open the downloaded <code>.ics</code> file</span>
+                    <i class="fas fa-check estep-check"></i>
+                  </li>
+                  <li class="eagles-step" id="estep-3">
+                    <span class="estep-num">3</span>
+                    <span class="estep-label">All Eagles games on your calendar! 🎉</span>
+                    <i class="fas fa-check estep-check"></i>
+                  </li>
+                </ol>
+
+                <!-- Primary CTA -->
+                <div class="eagles-cta-wrap">
+                  <button id="eagles-direct-ics" class="eagles-download-btn" disabled>
+                    <span class="eagles-dl-left">
+                      <i class="fas fa-spinner fa-spin eagles-dl-spinner"></i>
+                      <i class="fas fa-download eagles-dl-icon"></i>
+                    </span>
+                    <span class="eagles-dl-center">
+                      <span id="eagles-btn-label">Fetching schedule…</span>
+                      <span id="eagles-game-count" class="eagles-game-count"></span>
+                    </span>
+                  </button>
+                  <p class="eagles-cta-note">Live from ESPN · No signup · Works with every calendar app</p>
+                  <div id="eagles-direct-status" class="eagles-status-msg" hidden></div>
+                </div>
+
+                <!-- Post-download calendar shortcuts -->
+                <div id="eagles-cal-shortcuts" class="eagles-cal-shortcuts" hidden>
+                  <p class="eagles-shortcuts-heading">Now import the file into your calendar:</p>
+                  <div class="eagles-shortcut-row">
+                    <a href="https://calendar.google.com/calendar/r/settings/import"
+                       target="_blank" rel="noopener noreferrer"
+                       class="eagles-shortcut-btn">
+                      <i class="fas fa-calendar"></i> Google Calendar
+                    </a>
+                    <span class="eagles-shortcut-btn eagles-shortcut-static">
+                      <i class="fab fa-apple"></i> Apple Cal — double-click the file
+                    </span>
+                    <a href="https://outlook.live.com/calendar/0/options/calendar/SharedCalendars"
+                       target="_blank" rel="noopener noreferrer"
+                       class="eagles-shortcut-btn">
+                      <i class="fas fa-envelope"></i> Outlook
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Divider to secondary path -->
+                <div class="eagles-divider"><span>or get email invites</span></div>
+
+                <!-- Email invite form -->
                 <form id="inviteForm" class="invite_form">
                   <div class="form-group" id="formGroup">
                     <div class="marquee-text">
                       <span>"Fly Eagles Fly!" 🦅🏈</span>
                     </div>
-
                     <input
                       type="email"
                       id="email"
@@ -219,18 +271,54 @@
                       required
                     />
                   </div>
-
                   <button type="submit" id="submitButton" class="btn">
                     <span class="button-text">Get Invites</span>
                     <i class="fa-solid fa-football spinner-icon"></i>
                     <div class="spinner"></div>
                   </button>
-
                   <div id="responseMessage">
                     <i id="responseIcon" class="fa-solid"></i>
                     <span id="responseText"></span>
                   </div>
                 </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- NFL Team Calendar Picker -->
+          <div class="nfl-calendar-wrapper row">
+            <div class="padd_15 nfl-calendar-section" style="width:100%">
+              <h3 class="nfl-section-title">🏈 Add Any NFL Team to Your Calendar</h3>
+              <p class="nfl-section-sub">
+                Pick one or more teams — schedules are fetched live from ESPN and exported as a standard .ics file that works everywhere.
+              </p>
+
+              <div class="nfl-toolbar">
+                <button class="nfl-toolbar-btn" id="nfl-select-all-btn">Select All 32</button>
+                <button class="nfl-toolbar-btn" id="nfl-clear-btn">Clear</button>
+                <span class="nfl-selected-count" id="nfl-selected-count">No teams selected</span>
+              </div>
+
+              <div class="nfl-teams-grid" id="nfl-teams-grid"></div>
+
+              <div class="nfl-actions">
+                <button class="nfl-btn nfl-btn-primary" id="nfl-download-ics" disabled>
+                  <i class="fas fa-download"></i> Download .ics
+                </button>
+                <button class="nfl-btn nfl-btn-ghost" id="nfl-clear-btn-2">
+                  <i class="fas fa-times"></i> Clear
+                </button>
+              </div>
+
+              <div id="nfl-status"></div>
+
+              <div id="nfl-import-guide" class="nfl-import-guide" hidden>
+                <p>How to import into your calendar:</p>
+                <ul>
+                  <li>🍎 <strong>Apple Calendar</strong>: Double-click the .ics file</li>
+                  <li>📅 <strong>Google Calendar</strong>: Settings ⚙️ → Import → Upload file</li>
+                  <li>📧 <strong>Outlook</strong>: File → Open &amp; Export → Import/Export</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -246,28 +334,37 @@
             </div>
 
             <div class="projects-grid" id="projects-grid"></div>
-          </section>
 
-          <div class="modal-overlay" id="modal-overlay">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h3 class="modal-title" id="modal-title">Loading Project...</h3>
-                <button class="modal-close-btn" id="modal-close-btn">
-                  &times;
+            <!-- Inline Quick Look preview — replaces the grid in place -->
+            <div class="ql-preview" id="ql-preview" hidden>
+              <div class="ql-preview-bar">
+                <button class="ql-back-btn" id="ql-back-btn">
+                  <i class="fas fa-arrow-left"></i> Back to projects
                 </button>
+                <span class="ql-preview-title" id="ql-preview-title"></span>
+                <a
+                  class="ql-open-new"
+                  id="ql-open-new"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Open in a new tab"
+                >
+                  <i class="fas fa-up-right-from-square"></i> Open site
+                </a>
               </div>
-              <div class="modal-body">
-                <div class="modal-loader" id="modal-loader"></div>
+              <div class="ql-preview-body">
+                <div class="ql-preview-loader" id="ql-preview-loader"></div>
                 <iframe
-                  class="modal-iframe"
-                  id="modal-iframe"
+                  class="ql-preview-frame"
+                  id="ql-preview-frame"
                   src=""
                   frameborder="0"
                   title="Project Quick Look"
                 ></iframe>
               </div>
             </div>
-          </div>
+          </section>
         </div>
       </section>
 
@@ -317,7 +414,10 @@
         </div>
       </section>
 
-      <section class="about_content padd_15" id="about">
+      <section class="about_content padd_15 section" id="about">
+        <div class="section_title padd_15" style="margin-bottom:2.5rem">
+          <h2>About Me</h2>
+        </div>
         <div class="about_text padd_15">
           <!-- <p>Noicee you are here! I guess I can introduce myself</p> -->
 
@@ -364,14 +464,12 @@
             on the Web! 🧑‍💻🤓
           </p>
 
-          <p class="div-joke">
-            ...or <i>Perhaps</i> Trying to figure out why I cannot center a
-            <span class="bloody-div-text"
-              >blooody 'div'
-              <div class="div-box" id="theDivBox">----click to save me---</div>
-            </span>
+          <div class="div-joke">
+            <p>...or <i>Perhaps</i> Trying to figure out why I cannot center a
+            <span class="bloody-div-text">blooody 'div'</span></p>
+            <div class="div-box" id="theDivBox">----click to save me---</div>
             <span id="centerSuccessMsg" class="success-message"></span>
-          </p>
+          </div>
         </div>
       </section>
 
@@ -394,23 +492,13 @@
         </div>
       </section> -->
 
-      <section class="mobile_contact">
-        <li>
-          <a
-            href="https://www.linkedin.com/in/anil-kumar-karapa/"
-            target="_blank"
-            >LinkedIn</a
-          >
-        </li>
-        <li>
-          <a href="https://github.com/AnilKumar3494" target="_blank">GitHub</a>
-        </li>
-        <li>
-          <a href="https://anilkumar3494.github.io/resume/" target="_blank"
-            >Resume</a
-          >
-        </li>
-      </section>
+      <footer class="site-footer">
+        <ul class="mobile_contact">
+          <li><a href="https://www.linkedin.com/in/anil-kumar-karapa/" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="https://github.com/AnilKumar3494" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
+          <li><a href="https://anilkumar3494.github.io/resume/" target="_blank" rel="noopener"><i class="fas fa-file-alt"></i> Resume</a></li>
+        </ul>
+      </footer>
     </main>
 
     <button class="scroll-top-btn" id="scrollTopBtn" title="Back to top" aria-label="Scroll to top">
@@ -458,9 +546,11 @@
     <!-- JS for Calendar Invites -->
     <script src="./scripts/calendarInvite.js"></script>
 
-    <script src="./scripts/experienceCal.js"></script>
-
     <script src="./scripts/script.js"></script>
     <script src="./scripts/style-switcher.js"></script>
+    <script src="./scripts/nfl-calendar.js"></script>
+    <script src="./scripts/easter-eggs.js"></script>
+    <script src="./scripts/visitor-tracker.js"></script>
+    <script src="./scripts/animations.js" defer></script>
   </body>
 </html>
