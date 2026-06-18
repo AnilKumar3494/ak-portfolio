@@ -334,36 +334,37 @@
             </div>
 
             <div class="projects-grid" id="projects-grid"></div>
-          </section>
 
-          <div class="modal-overlay" id="modal-overlay">
-            <button
-              class="modal-close-float"
-              id="modal-close-float"
-              title="Close preview (Esc)"
-              aria-label="Close preview"
-            >
-              <i class="fas fa-times"></i>
-            </button>
-            <div class="modal-content">
-              <div class="modal-header">
-                <h3 class="modal-title" id="modal-title">Loading Project...</h3>
-                <button class="modal-close-btn" id="modal-close-btn" aria-label="Close preview">
-                  <i class="fas fa-times"></i> Close
+            <!-- Inline Quick Look preview — replaces the grid in place -->
+            <div class="ql-preview" id="ql-preview" hidden>
+              <div class="ql-preview-bar">
+                <button class="ql-back-btn" id="ql-back-btn">
+                  <i class="fas fa-arrow-left"></i> Back to projects
                 </button>
+                <span class="ql-preview-title" id="ql-preview-title"></span>
+                <a
+                  class="ql-open-new"
+                  id="ql-open-new"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title="Open in a new tab"
+                >
+                  <i class="fas fa-up-right-from-square"></i> Open site
+                </a>
               </div>
-              <div class="modal-body">
-                <div class="modal-loader" id="modal-loader"></div>
+              <div class="ql-preview-body">
+                <div class="ql-preview-loader" id="ql-preview-loader"></div>
                 <iframe
-                  class="modal-iframe"
-                  id="modal-iframe"
+                  class="ql-preview-frame"
+                  id="ql-preview-frame"
                   src=""
                   frameborder="0"
                   title="Project Quick Look"
                 ></iframe>
               </div>
             </div>
-          </div>
+          </section>
         </div>
       </section>
 
