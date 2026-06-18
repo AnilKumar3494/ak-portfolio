@@ -2,7 +2,7 @@
   {
     "title": "Finance ERP",
     "description": "A full-stack financial ERP (Enterprise Resource Planning) platform for accounting, transactions, and reporting — TypeScript frontend, Python backend, PostgreSQL data layer.",
-    "image": "./projects/atm.png",
+    "image": "./projects/finance-erp.png",
     "tags": ["TypeScript", "Python", "PostgreSQL", "Full Stack", "Pinned"],
     "links": {
       "github": "https://github.com/AnilKumar3494/finance-erp",
