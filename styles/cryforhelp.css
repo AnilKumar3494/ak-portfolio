@@ -74,26 +74,26 @@
   padding: 6px 0 0;
 }
 
-.cry_for_help:hover #image-popup,
-.cry_for_help #hover-trigger:focus + #image-popup {
+/* Click/tap toggle (works on every device) */
+#image-popup.show {
   opacity: 1;
   visibility: visible;
   transform: translateY(0) scale(1);
+  pointer-events: auto;
 }
 
-/* On touch screens hover is unreliable — show the GIF inline, always visible */
-@media (hover: none), (max-width: 860px) {
-  .cry_for_help { display: block; }
-  #image-popup {
-    position: static;
+/* Hover reveal — only on devices that actually support hover (desktop) */
+@media (hover: hover) {
+  .cry_for_help:hover #image-popup {
     opacity: 1;
     visibility: visible;
-    transform: none;
-    width: 100%;
-    max-width: 320px;
-    margin-top: 12px;
-    pointer-events: auto;
+    transform: translateY(0) scale(1);
   }
+}
+
+/* Hint that the line is interactive */
+.cry_for_help #hover-trigger {
+  cursor: pointer;
 }
 
 /* ── Heartbeat ── */

@@ -1,9 +1,3 @@
-// Footer year
-document.addEventListener("DOMContentLoaded", () => {
-  const yr = document.getElementById("footer-year");
-  if (yr) yr.textContent = new Date().getFullYear();
-});
-
 // Mobile nav toggle — opens/closes the slide-down nav at <860px
 function asideNavBar() {
   const nav     = document.querySelector(".aside .nav");
@@ -127,35 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
     el.classList.add("reveal");
     io.observe(el);
   });
-});
-
-// ─── Count-up animation for years of experience ────────────────────────────
-document.addEventListener("DOMContentLoaded", () => {
-  const el = document.getElementById("years_experience");
-  if (!el) return;
-
-  // Wait until experienceCal.js has set the text
-  const waitForText = setInterval(() => {
-    const raw = el.textContent;
-    const match = raw.match(/([\d.]+)/);
-    if (!match) return;
-    clearInterval(waitForText);
-
-    const target = parseFloat(match[1]);
-    const prefix = raw.slice(0, raw.indexOf(match[1]));
-    const suffix = raw.slice(raw.indexOf(match[1]) + match[1].length);
-    let start = null;
-    const DURATION = 1400;
-
-    function step(ts) {
-      if (!start) start = ts;
-      const progress = Math.min((ts - start) / DURATION, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = prefix + (eased * target).toFixed(1) + suffix;
-      if (progress < 1) requestAnimationFrame(step);
-    }
-    requestAnimationFrame(step);
-  }, 100);
 });
 
 // ─── Typed.js ───────────────────────────────────────────────────────────────

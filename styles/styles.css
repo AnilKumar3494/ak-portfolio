@@ -643,14 +643,6 @@ p {
   transform: translateY(-2px);
 }
 
-.footer-copy {
-  font-size: 0.78rem;
-  color: var(--text-black-700);
-  opacity: 0.55;
-  margin: 0;
-  padding: 0;
-}
-
 /* ─── div-joke layout fix ── */
 .div-joke {
   display: flex;

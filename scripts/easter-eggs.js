@@ -36,6 +36,35 @@
   );
 })();
 
+// ─── 1.5. Ballmer "Developers!" GIF — click/tap to toggle ─────────────────────
+(function ballmerEasterEgg() {
+  document.addEventListener("DOMContentLoaded", () => {
+    const trigger = document.getElementById("hover-trigger");
+    const popup   = document.getElementById("image-popup");
+    if (!trigger || !popup) return;
+
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      popup.classList.toggle("show");
+    });
+
+    // Keyboard accessible: Enter/Space toggles too
+    trigger.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        popup.classList.toggle("show");
+      }
+    });
+
+    // Tap/click anywhere else closes it
+    document.addEventListener("click", (e) => {
+      if (e.target !== trigger && !popup.contains(e.target)) {
+        popup.classList.remove("show");
+      }
+    });
+  });
+})();
+
 // ─── 2. Konami Code ───────────────────────────────────────────────────────────
 (function konamiCode() {
   const SEQUENCE = [
