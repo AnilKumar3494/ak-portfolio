@@ -239,9 +239,8 @@
 .modal-content {
   background: #1e1e1e;
   border-radius: 12px;
-  width: 78%;
-  height: 78%;
-  max-width: 1080px;
+  width: 70vw;
+  height: 68dvh;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
