@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function applyTilt(card) {
     card.addEventListener("mousemove", (e) => {
+      if (card.querySelector(".card-inner.flipped")) return;
       const r   = card.getBoundingClientRect();
       const x   = e.clientX - r.left;
       const y   = e.clientY - r.top;
