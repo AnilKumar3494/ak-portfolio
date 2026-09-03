@@ -7,6 +7,14 @@
   padding-bottom: 4rem;
 }
 
+/* Keep hero copy to a comfortable reading measure instead of letting lines
+   stretch the full width of large screens. */
+.need_job .cry_for_help,
+.need_job .asking_job,
+.need_job .contact-section {
+  max-width: 46rem;
+}
+
 /* h1 is now handled by fun-ui.css gradient, no override needed */
 .need_job h1 { cursor: help; }
 

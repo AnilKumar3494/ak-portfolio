@@ -45,6 +45,16 @@ document.addEventListener("DOMContentLoaded", () => {
     "NFC East","NFC North","NFC South","NFC West",
   ];
 
+  // ─── Current NFL season ───────────────────────────────────────────────────
+  // A season is labeled by the year it starts in (e.g. the 2026 season runs
+  // Sept 2026 → Feb 2027). Before ~March we're still in the previous season's
+  // playoffs, so roll back a year until then.
+  function getNflSeasonYear() {
+    const now = new Date();
+    return now.getMonth() >= 2 ? now.getFullYear() : now.getFullYear() - 1;
+  }
+  const SEASON = getNflSeasonYear();
+
   // ─── DOM refs ─────────────────────────────────────────────────────────────
   const grid          = document.getElementById("nfl-teams-grid");
   const downloadBtn   = document.getElementById("nfl-download-ics");
@@ -55,6 +65,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const importGuide   = document.getElementById("nfl-import-guide");
 
   if (!grid) return;
+
+  // Reflect the live season in the section title (e.g. "2026 Season").
+  const nflTitle = document.querySelector(".nfl-section-title");
+  if (nflTitle && !/\d{4}/.test(nflTitle.textContent)) {
+    const badge = document.createElement("span");
+    badge.className = "nfl-season-badge";
+    badge.textContent = `${SEASON} Season`;
+    nflTitle.appendChild(badge);
+  }
 
   // ─── State ────────────────────────────────────────────────────────────────
   const selected = new Set();
@@ -144,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ─── ESPN API helpers ─────────────────────────────────────────────────────
   async function fetchTeamSchedule(teamId) {
-    const url = `https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/${teamId}/schedule`;
+    const url = `https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/${teamId}/schedule?season=${SEASON}`;
     const res = await fetch(url);
     if (!res.ok) throw new Error(`ESPN API ${res.status} for team ${teamId}`);
     return res.json();
@@ -181,10 +200,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const lines = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//NFL Schedule 2025//AK Portfolio//EN",
+      `PRODID:-//NFL Schedule ${SEASON}//AK Portfolio//EN`,
       "CALSCALE:GREGORIAN",
       "METHOD:PUBLISH",
-      "X-WR-CALNAME:NFL Schedule 2025",
+      `X-WR-CALNAME:NFL Schedule ${SEASON}`,
       "X-WR-TIMEZONE:America/New_York",
     ];
 
@@ -262,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const teamNames = teamIds
         .map((id) => NFL_TEAMS.find((t) => t.id === id)?.abbr)
         .join("-");
-      triggerDownload(ics, `nfl-schedule-${teamNames}-2025.ics`);
+      triggerDownload(ics, `nfl-schedule-${teamNames}-${SEASON}.ics`);
 
       setStatus(
         `✅ Downloaded ${unique.length} game${unique.length !== 1 ? "s" : ""} for ${teamIds.length} team${teamIds.length !== 1 ? "s" : ""}!`,

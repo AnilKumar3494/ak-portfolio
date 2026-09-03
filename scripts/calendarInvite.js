@@ -65,6 +65,20 @@ document.addEventListener("DOMContentLoaded", () => {
   // ── Direct ICS download (primary path) ───────────────────────────────────
   const EAGLES_TEAM_ID = "21";
 
+  // Current NFL season — labeled by its starting year (2026 season = Sept 2026
+  // → Feb 2027). Roll back before ~March while last season's playoffs finish.
+  const SEASON = (() => {
+    const now = new Date();
+    return now.getMonth() >= 2 ? now.getFullYear() : now.getFullYear() - 1;
+  })();
+
+  // Keep the card heading in sync with the live season (e.g. "2026-27").
+  const calTitle = document.getElementById("eagles-cal-title");
+  if (calTitle) {
+    calTitle.textContent =
+      `Add All Eagles ${SEASON}-${String((SEASON + 1) % 100).padStart(2, "0")} Games to Calendar`;
+  }
+
   const directBtn     = document.getElementById("eagles-direct-ics");
   const btnLabel      = document.getElementById("eagles-btn-label");
   const gameCountEl   = document.getElementById("eagles-game-count");
@@ -126,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Trigger download
     const ics = buildICS(cachedGames);
-    triggerDownload(ics, "eagles-2025-schedule.ics");
+    triggerDownload(ics, `eagles-${SEASON}-schedule.ics`);
 
     // Advance step 1 → step 2
     if (step1) step1.classList.add("completed");
@@ -174,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ── ESPN helpers ──────────────────────────────────────────────────────────
   async function fetchEaglesSchedule() {
-    const url = `https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/${EAGLES_TEAM_ID}/schedule`;
+    const url = `https://site.api.espn.com/apis/site/v2/sports/football/nfl/teams/${EAGLES_TEAM_ID}/schedule?season=${SEASON}`;
     const res = await fetch(url);
     if (!res.ok) throw new Error(`ESPN API ${res.status}`);
     return res.json();
@@ -195,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
           uid:         e.id,
           start:       new Date(e.date),
           summary:     `🦅 Eagles: ${awayAbbr} @ ${homeAbbr}${isHomeGame ? " 🏟" : ""}`,
-          description: `Philadelphia Eagles — ${e.season?.year ?? "2025"} NFL Season\n${e.name ?? ""}`,
+          description: `Philadelphia Eagles — ${e.season?.year ?? SEASON} NFL Season\n${e.name ?? ""}`,
           location:    [venue.fullName, venue.address?.city, venue.address?.state]
             .filter(Boolean)
             .join(", "),
@@ -212,10 +226,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const lines = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//Eagles 2025 Schedule//AK Portfolio//EN",
+      `PRODID:-//Eagles ${SEASON} Schedule//AK Portfolio//EN`,
       "CALSCALE:GREGORIAN",
       "METHOD:PUBLISH",
-      "X-WR-CALNAME:🦅 Eagles 2025 Season",
+      `X-WR-CALNAME:🦅 Eagles ${SEASON} Season`,
       "X-WR-TIMEZONE:America/New_York",
     ];
 
