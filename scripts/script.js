@@ -128,7 +128,9 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", function () {
   const typingElement = document.querySelector(".typing");
 
-  if (typingElement) {
+  // Guard against the typed.js CDN failing to load (ad blocker, offline, etc.)
+  // so the missing library can't throw and abort the rest of the handler.
+  if (typingElement && typeof Typed !== "undefined") {
     const restartTypingAnimation = (instance) => {
       if (!instance.typing) {
         instance.reset();
