@@ -40,6 +40,9 @@ const portfolioItems = [
 // Function to create and populate portfolio items
 function populatePortfolioItems() {
     const portfolioRow = document.getElementById("portfolioRow");
+    // Legacy list — projects now render via updatedProjects.js into
+    // #projects-grid. Skip quietly when the old container isn't present.
+    if (!portfolioRow) return;
 
     portfolioItems.forEach((item) => {
         const portfolioItem = document.createElement("div");

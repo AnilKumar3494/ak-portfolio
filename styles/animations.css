@@ -10,11 +10,22 @@
   .tl-slide { transition: none !important; }
 }
 
-/* ─── Custom cursor (desktop/fine-pointer only) ───────────────────────────── */
+/* ─── Custom cursor (desktop/fine-pointer only) ───────────────────────────────
+   The native cursor is ONLY hidden once JS confirms the custom cursor is live
+   (html.custom-cursor-on is added on the first real mouse move). This way the
+   OS cursor always stays visible on page load and if the cursor JS never runs
+   or fails — no more "invisible cursor on open". */
 @media (pointer: fine) {
-  body { cursor: none; }
-  a, button, [role="button"], .card-btn, .filter-btn,
-  .project-card, .nav li a, input, .style-switcher-toggler {
+  html.custom-cursor-on body { cursor: none; }
+  html.custom-cursor-on a,
+  html.custom-cursor-on button,
+  html.custom-cursor-on [role="button"],
+  html.custom-cursor-on .card-btn,
+  html.custom-cursor-on .filter-btn,
+  html.custom-cursor-on .project-card,
+  html.custom-cursor-on .nav li a,
+  html.custom-cursor-on input,
+  html.custom-cursor-on .style-switcher-toggler {
     cursor: none;
   }
 }

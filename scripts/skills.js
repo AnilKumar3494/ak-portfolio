@@ -96,6 +96,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const bookshelf = document.getElementById("bookshelf");
   const descriptionPanel = document.getElementById("skill-description-panel");
+  // The skills bookshelf section is currently disabled in the markup — bail
+  // out cleanly instead of throwing when its containers aren't on the page.
+  if (!bookshelf || !descriptionPanel) return;
   const initialPanelText = descriptionPanel.innerHTML;
 
   const bookColors = [

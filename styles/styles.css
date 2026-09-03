@@ -45,6 +45,16 @@ li {
   list-style: none;
 }
 
+/* ─── Keyboard accessibility ───────────────────────────────────────────────
+   The blanket `outline: none` above strips focus rings from every element,
+   which leaves keyboard users unable to see where they are. Restore a clear,
+   skin-colored ring only for keyboard focus (not mouse clicks). */
+:focus-visible {
+  outline: 2px solid var(--skin-color, #dfa70a);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
 body {
   line-height: 1.5;
   font-size: 1rem;

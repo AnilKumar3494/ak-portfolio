@@ -13,6 +13,20 @@
   margin-bottom: 0.25rem;
 }
 
+.nfl-season-badge {
+  display: inline-block;
+  margin-left: 0.6rem;
+  padding: 0.15em 0.6em;
+  font-size: 0.7em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: var(--skin-color);
+  border-radius: 999px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
 .nfl-section-sub {
   color: var(--text-black-700);
   font-size: 0.95rem;

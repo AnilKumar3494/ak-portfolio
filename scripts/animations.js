@@ -20,13 +20,15 @@
       dot.style.left = mx + "px";
       dot.style.top  = my + "px";
 
-      // First move: teleport ring to exact position, then reveal both
+      // First move: teleport ring to exact position, reveal both, and only now
+      // hand cursor duty to the custom cursor (hides the native one via CSS).
       if (!cursorReady) {
         rx = mx; ry = my;
         ring.style.left = rx + "px";
         ring.style.top  = ry + "px";
         dot.classList.remove("cur-gone");
         ring.classList.remove("cur-gone");
+        document.documentElement.classList.add("custom-cursor-on");
         cursorReady = true;
       }
     });
