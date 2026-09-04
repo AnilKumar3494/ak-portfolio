@@ -2,10 +2,10 @@
   padding-inline: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* center hero content so the space is balanced,
-                              not dumped below the email */
+  justify-content: center;
   gap: 2.25rem;
-  padding-block: 4rem;
+  padding-block: 4rem; /* sole source of the hero's vertical breathing room —
+                          the section sizes to its content, no forced height */
 }
 
 /* Keep hero copy to a comfortable reading measure instead of letting lines

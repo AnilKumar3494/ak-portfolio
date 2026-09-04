@@ -12,7 +12,8 @@ body.dark {
 .need_job {
   position: relative;
   overflow: hidden;
-  min-height: 80dvh;
+  /* Size to content only — the padding-block in cryforhelp.css supplies the
+     breathing room, so there's no forced empty space below the email. */
 }
 
 .need_job::before {
