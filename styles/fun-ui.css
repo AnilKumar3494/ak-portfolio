@@ -12,7 +12,7 @@ body.dark {
 .need_job {
   position: relative;
   overflow: hidden;
-  min-height: 88dvh;
+  min-height: 80dvh;
 }
 
 .need_job::before {
