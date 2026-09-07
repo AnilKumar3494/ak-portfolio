@@ -1,0 +1,145 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   GitHub Contribution Graph
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.gh-graph-section {
+  padding: 3rem 1rem 2rem;
+}
+
+.gh-graph-head {
+  margin-bottom: 1.5rem;
+}
+
+.gh-graph-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-black-900);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.gh-graph-title .gh-handle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--skin-color);
+  background: color-mix(in srgb, var(--skin-color) 14%, transparent);
+  padding: 0.15em 0.6em;
+  border-radius: 999px;
+}
+
+.gh-note {
+  color: var(--text-black-700);
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+  min-height: 1.2em;
+}
+
+/* ─── Stat row ─────────────────────────────────────────────────────────────── */
+.gh-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.gh-stat {
+  background: var(--project-card-bg, rgba(30, 30, 30, 0.6));
+  border: 1px solid color-mix(in srgb, var(--skin-color) 18%, transparent);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  text-align: center;
+}
+
+.gh-stat-value {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--skin-color);
+  line-height: 1.1;
+}
+
+.gh-stat-label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-black-700);
+  margin-top: 0.3rem;
+}
+
+/* ─── Heatmap ──────────────────────────────────────────────────────────────── */
+.gh-graph-scroll {
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+}
+
+.gh-grid {
+  display: inline-flex;
+  gap: 3px;
+  min-width: max-content;
+}
+
+.gh-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.gh-cell {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  /* Empty-day track — visible on both themes so the grid always reads. */
+  background: rgba(140, 140, 140, 0.22);
+  outline: 1px solid rgba(140, 140, 140, 0.12);
+  outline-offset: -1px;
+  transition: transform 0.12s ease;
+}
+
+.gh-cell[data-level="1"] { background: color-mix(in srgb, var(--skin-color) 42%, rgba(128,128,128,0.16)); }
+.gh-cell[data-level="2"] { background: color-mix(in srgb, var(--skin-color) 68%, rgba(128,128,128,0.16)); }
+.gh-cell[data-level="3"] { background: color-mix(in srgb, var(--skin-color) 88%, transparent); }
+.gh-cell[data-level="4"] { background: var(--skin-color); box-shadow: 0 0 6px color-mix(in srgb, var(--skin-color) 55%, transparent); }
+
+.gh-cell.gh-pad {
+  background: transparent;
+  outline: none;
+}
+
+.gh-cell:not(.gh-pad):hover {
+  transform: scale(1.35);
+  cursor: help;
+}
+
+/* ─── Legend ───────────────────────────────────────────────────────────────── */
+.gh-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-black-700);
+}
+
+.gh-legend .gh-cell { cursor: default; }
+.gh-legend .gh-cell:hover { transform: none; }
+
+.gh-status {
+  color: var(--text-black-700);
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+}
+
+.gh-status a {
+  color: var(--skin-color);
+  font-weight: 600;
+}
+
+/* ─── Responsive ───────────────────────────────────────────────────────────── */
+@media (max-width: 720px) {
+  .gh-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .gh-cell  { width: 11px; height: 11px; }
+}
