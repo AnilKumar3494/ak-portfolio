@@ -1,10 +1,10 @@
 /**
  * Eagles Calendar Invite
  * Primary:   Download an ICS file built in real-time from ESPN's public API
- * Secondary: Email invite via Google Apps Script (requires user email)
+ * Secondary: Email sign-up via Formspree (collects the visitor's email)
  */
 document.addEventListener("DOMContentLoaded", () => {
-  // ── Email-based invite (secondary path) ──────────────────────────────────
+  // ── Email sign-up (secondary path) ────────────────────────────────────────
   const form               = document.getElementById("inviteForm");
   const emailInput         = document.getElementById("email");
   const submitButton       = document.getElementById("submitButton");
@@ -13,12 +13,33 @@ document.addEventListener("DOMContentLoaded", () => {
   const responseIcon       = document.getElementById("responseIcon");
   const responseText       = document.getElementById("responseText");
 
-  const SCRIPT_URL =
-    "https://script.google.com/macros/s/AKfycbyYmu3bPV2n79YBC1uSPphErMxAGGrAmwLbR-QzqLtu71LrxemqDldZaj0K-w-FVciFVg/exec";
+  // Formspree endpoint. Create a free form at https://formspree.io, then
+  // replace YOUR_FORM_ID below with the id from your form's endpoint
+  // (e.g. "https://formspree.io/f/abcdwxyz"). Until then the form politely
+  // points visitors at the direct download instead of appearing broken.
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/YOUR_FORM_ID";
+  const formspreeReady = !FORMSPREE_ENDPOINT.includes("YOUR_FORM_ID");
+
+  function showResponse(type, icon, msg) {
+    responseIcon.className = icon;
+    responseText.textContent = msg;
+    responseMessageDiv.classList.remove("success", "error");
+    responseMessageDiv.classList.add(type, "visible");
+  }
 
   if (form) {
-    form.addEventListener("submit", (e) => {
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
+      // Not configured yet — never leave the visitor staring at a spinner.
+      if (!formspreeReady) {
+        showResponse(
+          "error",
+          "fa-solid fa-circle-info",
+          "Email sign-up is being set up — grab the direct download below for now! 🦅"
+        );
+        return;
+      }
 
       submitButton.disabled = true;
       submitButton.classList.add("loading");
@@ -26,39 +47,42 @@ document.addEventListener("DOMContentLoaded", () => {
       emailInput.disabled = true;
       responseMessageDiv.classList.remove("visible", "success", "error");
 
-      fetch(SCRIPT_URL, {
-        method: "POST",
-        redirect: "follow",
-        body: new URLSearchParams({ email: emailInput.value }),
-      })
-        .then((r) => {
-          if (!r.ok) throw new Error(`HTTP ${r.status}`);
-          return r.json();
-        })
-        .then((data) => {
-          responseText.textContent = data.message;
-          responseIcon.className =
-            data.status === "success"
-              ? "fa-solid fa-circle-check"
-              : "fa-solid fa-circle-xmark";
-          responseMessageDiv.classList.add(
-            data.status === "success" ? "success" : "error"
-          );
-          if (data.status === "success") form.reset();
-        })
-        .catch(() => {
-          responseMessageDiv.classList.add("error");
-          responseIcon.className = "fa-solid fa-triangle-exclamation";
-          responseText.textContent =
-            "Couldn't reach the server. Try the direct download below instead!";
-        })
-        .finally(() => {
-          submitButton.disabled = false;
-          submitButton.classList.remove("loading");
-          formGroup.classList.remove("loading");
-          emailInput.disabled = false;
-          responseMessageDiv.classList.add("visible");
+      try {
+        const res = await fetch(FORMSPREE_ENDPOINT, {
+          method: "POST",
+          headers: { Accept: "application/json", "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: emailInput.value,
+            _subject: "🦅 Eagles calendar invite request",
+          }),
         });
+
+        if (res.ok) {
+          showResponse(
+            "success",
+            "fa-solid fa-circle-check",
+            "You're on the list! I'll send the Eagles invite your way. 🦅"
+          );
+          form.reset();
+        } else {
+          const data = await res.json().catch(() => ({}));
+          const msg =
+            data?.errors?.map((x) => x.message).join(", ") ||
+            "Hmm, that didn't go through. Try the direct download below instead!";
+          showResponse("error", "fa-solid fa-circle-xmark", msg);
+        }
+      } catch {
+        showResponse(
+          "error",
+          "fa-solid fa-triangle-exclamation",
+          "Couldn't reach the server. Try the direct download below instead!"
+        );
+      } finally {
+        submitButton.disabled = false;
+        submitButton.classList.remove("loading");
+        formGroup.classList.remove("loading");
+        emailInput.disabled = false;
+      }
     });
   }
 

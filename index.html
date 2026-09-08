@@ -70,6 +70,7 @@
     <link rel="stylesheet" href="./styles/projectStyles.css" />
     <link rel="stylesheet" href="./styles/cryforhelp.css" />
     <link rel="stylesheet" href="./styles/nfl-calendar.css" />
+    <link rel="stylesheet" href="./styles/github-graph.css" />
     <link rel="stylesheet" href="./styles/easter-eggs.css" />
     <link rel="stylesheet" href="./styles/fun-ui.css" />
     <link rel="stylesheet" href="./styles/animations.css" />
@@ -457,6 +458,51 @@
         </div>
       </section> -->
 
+      <section class="gh-graph-section section" id="gh-graph">
+        <div class="gh-graph-head">
+          <h3 class="gh-graph-title">
+            🟩 My GitHub Contributions
+            <span class="gh-handle">@AnilKumar3494</span>
+          </h3>
+          <p class="gh-note" id="gh-note">Loading the last year of commits…</p>
+        </div>
+
+        <div class="gh-stats">
+          <div class="gh-stat">
+            <span class="gh-stat-value" id="gh-total">—</span>
+            <span class="gh-stat-label">Contributions (1 yr)</span>
+          </div>
+          <div class="gh-stat">
+            <span class="gh-stat-value" id="gh-current-streak">—</span>
+            <span class="gh-stat-label">Current streak</span>
+          </div>
+          <div class="gh-stat">
+            <span class="gh-stat-value" id="gh-longest-streak">—</span>
+            <span class="gh-stat-label">Longest streak</span>
+          </div>
+          <div class="gh-stat">
+            <span class="gh-stat-value" id="gh-best-day">—</span>
+            <span class="gh-stat-label">Busiest day</span>
+          </div>
+        </div>
+
+        <div class="gh-graph-scroll">
+          <div class="gh-grid" id="gh-grid"></div>
+        </div>
+
+        <div class="gh-legend" aria-hidden="true">
+          <span>Less</span>
+          <span class="gh-cell" data-level="0"></span>
+          <span class="gh-cell" data-level="1"></span>
+          <span class="gh-cell" data-level="2"></span>
+          <span class="gh-cell" data-level="3"></span>
+          <span class="gh-cell" data-level="4"></span>
+          <span>More</span>
+        </div>
+
+        <p class="gh-status" id="gh-status" hidden></p>
+      </section>
+
       <footer class="site-footer">
         <ul class="mobile_contact">
           <li><a href="https://github.com/AnilKumar3494" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a></li>
@@ -513,6 +559,7 @@
     <script src="./scripts/script.js"></script>
     <script src="./scripts/style-switcher.js"></script>
     <script src="./scripts/nfl-calendar.js"></script>
+    <script src="./scripts/github-graph.js"></script>
     <script src="./scripts/easter-eggs.js"></script>
     <script src="./scripts/visitor-tracker.js"></script>
     <script src="./scripts/animations.js" defer></script>
